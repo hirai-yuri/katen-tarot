@@ -4,23 +4,165 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KATEN TAROT</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div class="card-container">
-      <!-- 22枚のタロットカードを表示 -->
-      <div class="card" data-id="0">
-        <img src="img/0_The fool.jpg" alt="The Fool" />
-      </div>
-      <div class="card" data-id="1">
-        <img src="img/1_The Magus.jpg" alt="The Magician" />
-      </div>
+    <!-- メインページ -->
+    <div id="home">
+      <h1>KATENタロット</h1>
+      <h2>~あなたの運勢占います~</h2>
+      <button onclick="showTarot1()">今日の運勢</button>
+      <button onclick="showTarot2()">今日の心の状態</button>
     </div>
 
-    <div id="result">
-      <p>カードの意味: <span id="meaning"></span></p>
+    <!-- 今日の運勢ページ -->
+    <div id="tarot1" style="display: none">
+      <h1>今日の運勢</h1>
+      <div class="card-display">
+        <div class="card" data-id="0">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="1">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="2">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="3">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="4">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="5">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="6">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="7">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="8">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="9">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="10">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="11">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="12">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="13">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="14">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="15">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="16">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="17">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="18">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="19">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="20">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="21">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+      </div>
+      <button onclick="shuffleCards()">カードをシャッフル</button>
     </div>
 
-    <script src="js/app.js"></script>
+    <!-- 今日の心の状態ページ -->
+    <div id="tarot2" style="display: none">
+      <h1>今日の心の状態</h1>
+      <div class="card-display">
+        <div class="card" data-id="0">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="1">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="2">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="3">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="4">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="5">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="6">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="7">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="8">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="9">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="10">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="11">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="12">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="13">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="14">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="15">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="16">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="17">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="18">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="19">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="20">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+        <div class="card" data-id="21">
+          <img src="./img/rowsen_cross.jpg" alt="tarot card" />
+        </div>
+      </div>
+      <button onclick="shuffleCards()">カードをシャッフル</button>
+    </div>
+
+    <script src="./js/app.js"></script>
   </body>
 </html>
