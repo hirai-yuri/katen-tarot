@@ -1,0 +1,22 @@
+/* シャッフルアニメーション */
+@keyframes shuffle {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100px, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* カードのめくりアニメーション */
+.card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
