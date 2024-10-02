@@ -6,6 +6,26 @@
   <title>Q&A</title>
 </head>
 <body>
+  <style>
+    body{
+      background-color: #192f60;
+    }
+    h1,h2{
+      color: aqua;
+    }
+    p,label{
+      color: teal;
+    }
+    input[type='text']{
+  border:1px solid teal;
+    }
+    input[type='submit']{
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    }
+   
+  </style>
   <header>
     <h1>制作者へのQ&A</h1>
     <p>今回の結果を見て、わからないところがあれば返信ください。<br>
@@ -23,7 +43,7 @@
     <label for="THOTH">占いの内容</label><br>
     <input type="text" name="THOTH" id="THOTH"><br>
     <label for="address">記入欄</label><br>
-    <input type="text"><br>
+    <input type="text" name="address"><br>
     <input type="submit" value="送信">
 
 
