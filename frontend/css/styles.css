@@ -1,22 +1,35 @@
-/* シャッフルアニメーション */
-@keyframes shuffle {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(100px, -50px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
 }
 
-/* カードのめくりアニメーション */
 .card {
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
+  width: 100px;
+  height: 150px;
+  margin: 10px;
+  perspective: 1000px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .card.is-flipped {
   transform: rotateY(180deg);
+}
+
+@keyframes shuffle {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
