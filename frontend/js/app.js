@@ -1,31 +1,30 @@
-// カードのシャッフル関数
+function showTarot1() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("tarot1").style.display = "block";
+}
+
+function showTarot2() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("tarot2").style.display = "block";
+}
+
+/* カードをシャッフルする機能 */
 function shuffleCards() {
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
-    const randomPos = Math.floor(Math.random() * 22);
-    card.style.order = randomPos;
-    card.style.animation = "shuffle 1s ease";
+  const cards = document.querySelectorAll(".card-display .card");
+  const cardDisplay = document.querySelector(".card-display");
+  const cardArray = Array.from(cards);
+
+  // Fisher-Yatesアルゴリズムで配列をシャッフルする
+  for (let i = cardArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cardArray[i], cardArray[j]] = [cardArray[j], cardArray[i]];
+  }
+
+  // 現在のカードをすべて削除し、シャッフルされた順に再表示
+  cardDisplay.innerHTML = "";
+  cardArray.forEach((card) => {
+    cardDisplay.appendChild(card);
   });
+
+  console.log(cardArray);
 }
-
-// カードのめくりと意味取得
-document.querySelectorAll(".card").forEach((card) => {
-  card.addEventListener("click", function () {
-    this.classList.toggle("is-flipped");
-    const cardId = this.dataset.id;
-    fetchCardMeaning(cardId);
-  });
-});
-
-// PHPからカードの意味を取得
-function fetchCardMeaning(cardId) {
-  fetch(`php/getCardMeaning.php?cardId=${cardId}`)
-    .then((response) => response.json())
-    .then((data) => {
-      document.getElementById("meaning").innerText = data.meaning;
-    })
-    .catch((error) => console.error("Error:", error));
-}
-
-// ページ読み込み時にカードをシャッフル
-window.onload = shuffleCards;
