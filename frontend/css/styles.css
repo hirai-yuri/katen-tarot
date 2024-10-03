@@ -28,3 +28,19 @@ button {
   height: 100%;
   display: block;
 }
+
+/* クリック順を表示するためのクラス */
+.bundle-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+  z-index: 100;
+}
+
+.bundle-clicked {
+  border: 2px solid red;
+}

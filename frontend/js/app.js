@@ -2,6 +2,7 @@ const totalCards = 22;
 
 // タロットページ表示関数
 function showTarot(tarotIdToShow, tarotIdToHide) {
+  document.getElementById("home").style.display = "none";
   document.getElementById(tarotIdToShow).style.display = "block";
   document.getElementById(tarotIdToHide).style.display = "none";
 
@@ -91,6 +92,8 @@ function shuffleCards(displayId) {
 function arrangeBundles(bundles) {
   const bundleOffsets = [-150, 0, 150]; // 束を左 (-150px)、中央 (0px)、右 (+150px) に配置するオフセット
 
+  const clickedBundles = []; // クリックされた順に束を記録する配列
+
   bundles.forEach((bundle, index) => {
     const offsetX = bundleOffsets[index]; // 各束のX軸オフセット
     const offsetY = 0; // Y軸のオフセットは同じ高さに固定
@@ -98,9 +101,72 @@ function arrangeBundles(bundles) {
     // 束のカードを同じ位置に揃えて表示する
     bundle.forEach((card) => {
       card.style.transition = "transform 1s ease"; // 束を1秒かけて配置するアニメーション
-
-      // カードのランダムな位置と回転をリセットしてから、束の位置を適用
       card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(0deg)`; // X軸位置を揃えて配置
+    });
+
+    bundle.forEach((card) => {
+      card.addEventListener("click", () => {
+        // クリックされたら枠を追加
+        card.classList.add("bundle-clicked");
+
+        if (!clickedBundles.includes(bundle)) {
+          clickedBundles.push(bundle); // クリックされた束を記録
+
+          // クリック順を示す番号を表示する処理
+          bundle.forEach((clickedCard) => {
+            let numberIndicator = clickedCard.querySelector(".bundle-number");
+
+            // 既に番号がある場合は更新、無ければ新たに作成
+            if (!numberIndicator) {
+              numberIndicator = document.createElement("div");
+              numberIndicator.className = "bundle-number";
+              clickedCard.appendChild(numberIndicator);
+            }
+
+            numberIndicator.innerText = clickedBundles.length; // クリック順に対応する番号を設定
+          });
+        }
+
+        // 3つの束がクリックされたら、順番に重ねる処理を実行
+        if (clickedBundles.length === 3) {
+          // 束をクリック順に重ねる処理を実行
+          stackBundles(clickedBundles);
+
+          // すべての束から bundle-clicked クラスを削除
+          clickedBundles.forEach((clickedBundle) => {
+            clickedBundle.forEach((clickedCard) => {
+              const numberIndicator =
+                clickedCard.querySelector(".bundle-number");
+              if (numberIndicator) {
+                numberIndicator.remove(); // 番号を削除
+              }
+
+              clickedCard.classList.remove("bundle-clicked");
+            });
+          });
+
+          // クリックされた束のリストをリセット
+          clickedBundles.length = 0;
+        }
+      });
+    });
+  });
+}
+
+// 束をクリック順に重ねる関数
+function stackBundles(clickedBundles) {
+  const totalBundles = clickedBundles.length;
+
+  clickedBundles.forEach((bundle, index) => {
+    const offsetX = 0; // 束を中央に集めるためにX軸位置を0に設定
+    const offsetY = 0; // Y軸も同じ高さに固定
+    const zIndex = totalBundles - index; // 束をクリック順に重ねるためのz-index
+
+    // 束内の各カードに対して処理
+    bundle.forEach((card) => {
+      card.style.transition = "transform 1s ease"; // 1秒かけて重ねるアニメーション
+      card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(0deg)`; // 中央に集める
+      card.style.zIndex = zIndex; // z-indexを設定してクリック順に重ねる
     });
   });
 }
