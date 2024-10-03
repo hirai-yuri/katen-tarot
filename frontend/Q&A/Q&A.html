@@ -16,7 +16,7 @@
     form,
     p {
       margin-top: 0;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     h1,
@@ -56,19 +56,20 @@
       また、当サイトではできない複雑な内容があれば記入欄に内容に記載して、
       <br>お知らせください。お早く対応して返信をお送りします。
     </p>
-    <p>※占い、占術関係の質問等も承っております。それ以外の相談も受け付けておりますので、
+    <p>※占い、占術関係の質問等も承っております。
+      <br>それ以外の相談も受け付けておりますので、
       <br>ご遠慮なさらず相談しに来てください。
     </p>
     <h2>質問メール</h2>
-    <form action="#">
-      <p><label>氏名<br>
-          <input type="text" name="name" id="name"></label></p>
-      <p><label>生年月日<br>
-          <input type="text" name="birthday" id="birthday"></label></p>
-      <p><label>メールアドレス<br>
-          <input type="email" name="Email" id="Email"></label></p>
-      <p><label>占いの内容<br>
-          <input type="text" name="THOTH" id="THOTH"></label></p>
+    <form action="./Q&A.php" method="post">
+      <p><label>氏名(必須)<br>
+          <input type="text" name="name" id="name" required></label></p>
+      <p><label>生年月日(必須)<br>
+          <input type="text" name="birthday" id="birthday" required></label></p>
+      <p><label>メールアドレス(必須)<br>
+          <input type="email" name="Email" id="Email" required></label></p>
+      <p><label>占いの内容(必須)<br>
+          <input type="text" name="THOTH" id="THOTH" required></label></p>
       <p><label>記入欄<br>
           <textarea name="address"></textarea></label></p>
       <p><input type="submit" value="送信"></p>
