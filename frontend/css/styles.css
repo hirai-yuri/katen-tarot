@@ -20,7 +20,7 @@ button {
   width: 100px; /* カードの幅 */
   height: 150px; /* カードの高さ */
   z-index: 1;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease-in-out;
 }
 
 .card img {
