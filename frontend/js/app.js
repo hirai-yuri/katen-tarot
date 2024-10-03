@@ -2,6 +2,7 @@ const totalCards = 22;
 
 // 今日の運勢タロットページ表示関数
 function showTarot1(tarotId) {
+  // document.getElementById("home").style.display = "none";
   document.getElementById("tarot1").style.display = "block";
   document.getElementById("tarot2").style.display = "none";
 
@@ -14,6 +15,7 @@ function showTarot1(tarotId) {
 
 // 恋占いタロットページ表示関数
 function showTarot2(tarotId) {
+  // document.getElementById("home").style.display = "none";
   document.getElementById("tarot1").style.display = "none";
   document.getElementById("tarot2").style.display = "block";
   document.querySelectorAll(".tarot-page").forEach((page) => {
@@ -42,9 +44,9 @@ function generateCards(displayId) {
 }
 
 /* カードをシャッフルする機能 */
-function shuffleCards() {
-  const cards = document.querySelectorAll(".card-display .card");
-  const cardDisplay = document.querySelector(".card-display");
+function shuffleCards(displayId) {
+  const cardDisplay = document.getElementById(displayId);
+  const cards = cardDisplay.querySelectorAll(".card");
   const cardArray = Array.from(cards);
 
   // カードの位置をリセット（全てのカードを元の位置に戻す）
@@ -68,7 +70,6 @@ function shuffleCards() {
     }
 
     // シャッフル後に表示を更新
-    const cardDisplay = document.querySelector(".card-display");
     cardDisplay.innerHTML = "";
     cardArray.forEach((card) => {
       cardDisplay.appendChild(card);
