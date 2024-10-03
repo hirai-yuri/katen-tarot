@@ -1,11 +1,44 @@
-function showTarot1() {
-  document.getElementById("home").style.display = "none";
+const totalCards = 22;
+
+// 今日の運勢タロットページ表示関数
+function showTarot1(tarotId) {
   document.getElementById("tarot1").style.display = "block";
+  document.getElementById("tarot2").style.display = "none";
+
+  document.querySelectorAll(".tarot-page").forEach((page) => {
+    page.style.display = "none";
+  });
+  document.getElementById(tarotId).style.display = "block";
+  generateCards(tarotId);
 }
 
-function showTarot2() {
-  document.getElementById("home").style.display = "none";
+// 恋占いタロットページ表示関数
+function showTarot2(tarotId) {
+  document.getElementById("tarot1").style.display = "none";
   document.getElementById("tarot2").style.display = "block";
+  document.querySelectorAll(".tarot-page").forEach((page) => {
+    page.style.display = "none";
+  });
+  document.getElementById(tarotId).style.display = "block";
+  generateCards(tarotId);
+}
+
+// カード生成関数
+function generateCards(displayId) {
+  const displayElement = document
+    .getElementById(displayId)
+    .querySelector(".card-display");
+  displayElement.innerHTML = ""; // 既存のカードをクリア
+  for (let i = 0; i < totalCards; i++) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.dataset.id = i;
+    const img = document.createElement("img");
+    img.src = "./img/rowsen_cross.jpg";
+    img.alt = "tarot card";
+    card.appendChild(img);
+    displayElement.appendChild(card);
+  }
 }
 
 /* カードをシャッフルする機能 */
