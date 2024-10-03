@@ -1,54 +1,82 @@
 <!DOCTYPE html>
 <html lang="Ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Q&A</title>
 </head>
+
 <body>
   <style>
-    body{
+    body {
       background-color: #192f60;
     }
-    h1,h2{
+
+    form,
+    p {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    h1,
+    h2 {
       color: aqua;
     }
-    p,label{
+
+    p,
+    label {
       color: teal;
     }
-    input[type='text']{
-  border:1px solid teal;
+
+    input[type='text'] {
+      border: 1px solid teal;
     }
-    input[type='submit']{
-    background-color: teal;
-    color: white;
-    font-weight: bold;
+
+    input[type='submit'] {
+      background-color: teal;
+      color: white;
+      font-weight: bold;
     }
-   
+
+    input[type='email'] {
+      color: white;
+      font-weight: bold;
+    }
+    textarea{
+      width: 200px;
+      height: 300px;
+      overflow-y: auto;
+
+    }
   </style>
   <header>
     <h1>制作者へのQ&A</h1>
     <p>今回の結果を見て、わからないところがあれば返信ください。<br>
-    また、当サイトではできない複雑な内容があれば記入欄に内容に記載して、
-  <br>お知らせください。お早く対応して返信をお送りします。</p>
-  <p>※占い、占術関係の質問等も承っております。それ以外の相談も受け付けておりますので、
-    <br>ご遠慮なさらず相談しに来てください。</p>
+      また、当サイトではできない複雑な内容があれば記入欄に内容に記載して、
+      <br>お知らせください。お早く対応して返信をお送りします。
+    </p>
+    <p>※占い、占術関係の質問等も承っております。それ以外の相談も受け付けておりますので、
+      <br>ご遠慮なさらず相談しに来てください。
+    </p>
     <h2>質問メール</h2>
-    <label for="name">氏名</label><br>
-    <input type="text" name="name" id="name"><br>
-    <label for="birthday">生年月日</label><br>
-    <input type="text" name="birthday" id="birthday"><br>
-    <label for="Email">メールアドレス</label><br>
-    <input type="text" name="Email" id="Email"><br>
-    <label for="THOTH">占いの内容</label><br>
-    <input type="text" name="THOTH" id="THOTH"><br>
-    <label for="address">記入欄</label><br>
-    <input type="text" name="address"><br>
-    <input type="submit" value="送信">
+    <form action="#">
+      <p><label>氏名<br>
+          <input type="text" name="name" id="name"></label></p>
+      <p><label>生年月日<br>
+          <input type="text" name="birthday" id="birthday"></label></p>
+      <p><label>メールアドレス<br>
+          <input type="email" name="Email" id="Email"></label></p>
+      <p><label>占いの内容<br>
+          <input type="text" name="THOTH" id="THOTH"></label></p>
+      <p><label>記入欄<br>
+          <textarea name="address"></textarea></label></p>
+      <p><input type="submit" value="送信"></p>
+    </form>
 
 
-  
 
   </header>
 </body>
+
 </html>
