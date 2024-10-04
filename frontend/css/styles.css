@@ -29,112 +29,18 @@ button {
   display: block;
 }
 
-.card[data-id="0"] {
-  left: 0px;
-  z-index: 1;
+/* クリック順を表示するためのクラス */
+.bundle-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+  z-index: 100;
 }
 
-.card[data-id="1"] {
-  left: 10px;
-  z-index: 2;
-}
-
-.card[data-id="2"] {
-  left: 20px;
-  z-index: 3;
-}
-
-.card[data-id="3"] {
-  left: 30px;
-  z-index: 4;
-}
-
-.card[data-id="4"] {
-  left: 40px;
-  z-index: 5;
-}
-
-.card[data-id="5"] {
-  left: 50px;
-  z-index: 6;
-}
-
-.card[data-id="6"] {
-  left: 60px;
-  z-index: 7;
-}
-
-.card[data-id="7"] {
-  left: 70px;
-  z-index: 8;
-}
-
-.card[data-id="8"] {
-  left: 80px;
-  z-index: 9;
-}
-
-.card[data-id="9"] {
-  left: 90px;
-  z-index: 10;
-}
-
-.card[data-id="10"] {
-  left: 100px;
-  z-index: 11;
-}
-
-.card[data-id="11"] {
-  left: 110px;
-  z-index: 12;
-}
-
-.card[data-id="12"] {
-  left: 120px;
-  z-index: 13;
-}
-
-.card[data-id="13"] {
-  left: 130px;
-  z-index: 14;
-}
-
-.card[data-id="14"] {
-  left: 140px;
-  z-index: 15;
-}
-
-.card[data-id="15"] {
-  left: 150px;
-  z-index: 16;
-}
-
-.card[data-id="16"] {
-  left: 160px;
-  z-index: 17;
-}
-
-.card[data-id="17"] {
-  left: 170px;
-  z-index: 18;
-}
-
-.card[data-id="18"] {
-  left: 180px;
-  z-index: 19;
-}
-
-.card[data-id="19"] {
-  left: 190px;
-  z-index: 20;
-}
-
-.card[data-id="20"] {
-  left: 200px;
-  z-index: 21;
-}
-
-.card[data-id="21"] {
-  left: 210px;
-  z-index: 22;
+.bundle-clicked {
+  border: 2px solid red;
 }
