@@ -34,11 +34,10 @@ function generateCards(displayId) {
 
 // カードをシャッフルする機能
 function shuffleCards(displayId) {
-
   // シャッフルボタンを非表示にする
   const shuffleButtons = ["shuffleButton1", "shuffleButton2"];
 
-  shuffleButtons.forEach(id => {
+  shuffleButtons.forEach((id) => {
     const button = document.getElementById(id);
     if (button) {
       button.style.display = "none"; // ボタンを非表示にする
@@ -104,6 +103,7 @@ function shuffleCards(displayId) {
     arrangeBundles([bundle1, bundle2, bundle3]); // シャッフル後に束を配置する
   }, 2000); // 2秒後に配置を開始
 }
+console.log(bundle);
 
 // 3つの束を画面上で別々の位置に配置し、それぞれの位置を揃える関数
 function arrangeBundles(bundles) {
@@ -138,7 +138,7 @@ function arrangeBundles(bundles) {
         // }
 
         numberIndicator.innerText = clickedBundles.length; // クリック順に対応する番号を設定
-      };
+      }
     });
   });
 
@@ -167,7 +167,6 @@ function arrangeBundles(bundles) {
   // });
   //   });
 }
-
 
 // 束をクリック順に重ねる関数
 function stackBundles(clickedBundles) {
