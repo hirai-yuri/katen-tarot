@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <!-- トップページ -->
+
+    <div id="top"></div>
+
     <!-- メインページ -->
     <div id="home">
       <h1>KATENタロット</h1>
@@ -19,6 +23,8 @@
     <div id="tarot1" class="tarot-page" style="display: none">
       <h1>今日の運勢</h1>
       <div class="card-display" id="cardDisplay1"></div>
+
+      <div class="card-description" id="cardDescription1"></div>
       <button id="shuffleButton1" onclick="shuffleCards('cardDisplay1')">
         カードをシャッフル
       </button>
@@ -28,6 +34,8 @@
     <div id="tarot2" class="tarot-page" style="display: none">
       <h1>恋占い</h1>
       <div class="card-display" id="cardDisplay2"></div>
+      <div class="card-description" id="cardDescription2"></div>
+
       <button id="shuffleButton2" onclick="shuffleCards('cardDisplay2')">
         カードをシャッフル
       </button>

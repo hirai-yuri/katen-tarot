@@ -127,7 +127,7 @@ function arrangeBundles(bundles) {
         }
 
         // クリックされたら枠を追加
-        card.classList.add("bundle-clicked");
+        // card.classList.add("bundle-clicked");
 
         // 3つの束がクリックされたら、順番に重ねる処理を実行
         if (clickedBundles.length === 3) {
@@ -203,6 +203,23 @@ function flipCard(card) {
       const img = card.querySelector("img");
       img.src = flippedCard.img; // カードデータから裏面の画像を設定
       img.alt = flippedCard.name; // 代替テキストを設定
+
+      // カードの説明を表示
+      const descriptionElement1 = document.getElementById("cardDescription1");
+      descriptionElement1.innerHTML = `<strong>${flippedCard.name}</strong>
+       <p>${flippedCard.keyword}</p>
+       <div class="description1">${flippedCard.description1}</div>`;
+      descriptionElement1.style.display = "block"; // カードの説明を表示
+
+      // カードの説明を表示
+      const descriptionElement2 = document.getElementById("cardDescription2");
+      descriptionElement2.innerHTML = `<strong>${flippedCard.name}</strong>
+      <p>${flippedCard.keyword}</p>
+      <div class="description1">${flippedCard.description2}</div>`;
+      descriptionElement2.style.display = "block"; // カードの説明を表示
     }
-  }, 400); // 回転が完了した後に画像を変更する（0.8秒後）
+
+    // カードのクリックを無効化
+    card.style.pointerEvents = "none"; // カードがクリックされないようにする
+  }, 400); // 回転が完了した後に画像を変更し、説明を表示
 }
