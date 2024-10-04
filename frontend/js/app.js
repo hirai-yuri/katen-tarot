@@ -103,8 +103,8 @@ function shuffleCards(displayId) {
     arrangeBundles([bundle1, bundle2, bundle3]); // シャッフル後に束を配置する
   }, 2000); // 2秒後に配置を開始
 }
-console.log(bundle);
 
+// 3つの束を画面上で別々の位置に配置し、それぞれの位置を揃える関数
 // 3つの束を画面上で別々の位置に配置し、それぞれの位置を揃える関数
 function arrangeBundles(bundles) {
   const bundleOffsets = [-150, 0, 150]; // 束を左 (-150px)、中央 (0px)、右 (+150px) に配置するオフセット
@@ -118,54 +118,24 @@ function arrangeBundles(bundles) {
     bundle.forEach((card) => {
       card.style.transition = "transform 1s ease"; // 束を1秒かけて配置するアニメーション
       card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(0deg)`; // X軸位置を揃えて配置
-    });
 
-    bundle.addEventListener("click", () => {
-      // クリックされたら枠を追加
-      // bundle.classList.add("bundle-clicked");
-      // クリック順を示す番号を表示する処理
-      // bundle.forEach((clickedCard) => {
-      //   let numberIndicator = clickedCard.querySelector(".bundle-number");
+      //カードをクリック
+      card.addEventListener("click", () => {
+        //クリックした束をclickedBundlesに記録
+        if (!clickedBundles.includes(bundle)) {
+          clickedBundles.push(bundle);
+        }
 
-      if (!clickedBundles.includes(bundle)) {
-        clickedBundles.push(bundle); // クリックされた束を記録
+        // クリックされたら枠を追加
+        card.classList.add("bundle-clicked");
 
-        // // 既に番号がある場合は更新、無ければ新たに作成
-        // if (!numberIndicator) {
-        //   numberIndicator = document.createElement("div");
-        //   numberIndicator.className = "bundle-number";
-        //   clickedCard.appendChild(numberIndicator);
-        // }
-
-        numberIndicator.innerText = clickedBundles.length; // クリック順に対応する番号を設定
-      }
+        // 3つの束がクリックされたら、順番に重ねる処理を実行
+        if (clickedBundles.length === 3) {
+          stackBundles(clickedBundles);
+        }
+      });
     });
   });
-
-  // 3つの束がクリックされたら、順番に重ねる処理を実行
-  if (clickedBundles.length === 3) {
-    // 束をクリック順に重ねる処理を実行
-    stackBundles(clickedBundles);
-
-    // すべての束から bundle-clicked クラスを削除
-    // clickedBundles.forEach((clickedBundle) => {
-    //   clickedBundle.forEach((clickedCard) => {
-    //     const numberIndicator =
-    //       clickedCard.querySelector(".bundle-number");
-    //     if (numberIndicator) {
-    //       numberIndicator.remove(); // 番号を削除
-    //     }
-
-    // clickedCard.classList.remove("bundle-clicked");
-    // });
-    // });
-
-    // クリックされた束のリストをリセット
-    // clickedBundles.length = 0;
-  }
-  //   });
-  // });
-  //   });
 }
 
 // 束をクリック順に重ねる関数
@@ -204,11 +174,18 @@ function stackBundles(clickedBundles) {
   }
 }
 
-// カードをめくるアニメーションを実装する関数
 function flipCard(card) {
   // めくる前にすべてのtransformをリセットする
   card.style.transition = "none"; // 一旦トランジションを無効化
   card.style.transform = "translate(0px, 0px) rotate(0deg)"; // 元の位置と回転にリセット
+
+  // 他のカードを非表示にする処理
+  const allCards = document.querySelectorAll(".card");
+  allCards.forEach((otherCard) => {
+    if (otherCard !== card) {
+      otherCard.style.display = "none"; // 他のカードを非表示にする
+    }
+  });
 
   // 少し時間を空けてからめくるアニメーションを設定
   setTimeout(() => {
@@ -216,10 +193,16 @@ function flipCard(card) {
     card.style.transform = "rotateY(180deg)"; // Y軸方向に180度回転させてめくる
   }, 50); // 少し時間を空けてアニメーションを適用
 
-  // カードがめくられた後に裏面の画像を表示する
+  // カードIDを取得して対応する裏面の画像を表示する
+  const cardId = parseInt(card.dataset.id, 10);
+  const flippedCard = cardData.find((c) => c.id === cardId);
+
+  // カードがめくられて180度回転した後に裏面の画像を表示する
   setTimeout(() => {
-    const img = card.querySelector("img");
-    img.src = "./img/0_The fool.jpg"; // 裏面の画像を設定
-    img.alt = "flipped tarot card"; // 画像の代替テキストを設定
-  }, 400); // 回転中に裏面画像に切り替える（400ms後）
+    if (flippedCard) {
+      const img = card.querySelector("img");
+      img.src = flippedCard.img; // カードデータから裏面の画像を設定
+      img.alt = flippedCard.name; // 代替テキストを設定
+    }
+  }, 400); // 回転が完了した後に画像を変更する（0.8秒後）
 }
