@@ -7,7 +7,7 @@ $birthday = $_POST['birthday'];
 $Email = $_POST['Email'];
 $THOTH = $_POST['THOTH'];
 $address = $_POST['address'];
-$gmail = "From: yoshinori52671@gmail.com";
+$gmail = "From: {$Email}\nReply-To: {$Email}\nContent-Type: text/plain;";
 
 if (mb_send_mail($name, $birthday, $Email, $THOTH, $address, $gmail)) {
   echo "メール送信成功です";
