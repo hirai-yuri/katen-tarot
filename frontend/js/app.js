@@ -3,13 +3,14 @@ const totalCards = 22;
 // タロットページ表示関数
 function showTarot(tarotIdToShow, tarotIdToHide) {
   document.getElementById("tarot-button").style.display = "none";
-  document.getElementById(tarotIdToShow).style.display = "block";
+  document.getElementById(tarotIdToShow).style.display = "flex";
   document.getElementById(tarotIdToHide).style.display = "none";
+  document.querySelector(".dialogue-box").style.display = "none";
 
   document.querySelectorAll(".tarot-page").forEach((page) => {
     page.style.display = "none";
   });
-  document.getElementById(tarotIdToShow).style.display = "block";
+  document.getElementById(tarotIdToShow).style.display = "flex";
   generateCards(tarotIdToShow);
 }
 

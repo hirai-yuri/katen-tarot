@@ -30,6 +30,7 @@ function startDialogue() {
 
   // フォームを非表示にし、ダイアログボックスを表示
   document.querySelector(".form-container").style.display = "none";
+  document.getElementById("tarot-button").style.display = "block";
   document.querySelector(".dialogue-box").style.display = "block";
 
   // 台詞の初期表示を開始
