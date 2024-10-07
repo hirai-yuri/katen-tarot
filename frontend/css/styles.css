@@ -1,8 +1,32 @@
+/* 共通の設定　ここから */
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+
 button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  margin: 20px 10px;
+  margin-bottom: 20px;
+}
+
+/* 共通の設定　ここまで */
+
+/* タロットページの設定　ここから*/
+
+.tarot-page {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* シャッフルカードの動き調整 */
@@ -21,12 +45,18 @@ button {
   height: 150px; /* カードの高さ */
   z-index: 1;
   transition: transform 0.6s ease-in-out;
+  perspective: 1000px; /* 3D回転のためのパースペクティブを適用 */
 }
 
 .card img {
   width: 100%;
   height: 100%;
   display: block;
+  backface-visibility: hidden; /* 背面が見えないようにする */
+}
+
+.card.flipped {
+  transform: rotateY(180deg); /* カードをめくった時の状態 */
 }
 
 /* クリック順を表示するためのクラス */
@@ -44,3 +74,67 @@ button {
 .bundle-clicked {
   border: 2px solid red;
 }
+
+/* カードの説明を表示するためのクラス */
+.card-description {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  display: none; /* 初期状態は非表示 */
+}
+
+/* タロットページの設定　ここまで */
+
+/* セリフ画面の設定　ここから */
+.dialogue-box {
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  position: relative;
+  margin-top: 20px;
+  display: none;
+}
+.dialogue-text {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  background-color: black;
+  animation: blink 0.5s step-end infinite;
+}
+@keyframes blink {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.name-input {
+  font-size: 14px;
+  width: 200px;
+}
+.start-button {
+  /* width: 50px; */
+  margin-top: 3px;
+  margin-left: auto;
+  padding: 5px 15px;
+
+  /* cursor: pointer; */
+}
+
+/* セリフ画面の設定　ここまで */
