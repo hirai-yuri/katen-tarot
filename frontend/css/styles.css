@@ -16,31 +16,46 @@ button {
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 /* 共通の設定　ここまで */
 
 /* タロットページの設定　ここから*/
 
-.tarot-page {
-  display: flex;
-  justify-content: center;
+.tarot {
   margin-left: auto;
   margin-right: auto;
+}
+
+#tarot-button {
+  display: none;
+}
+
+.tarot-page {
+  display: none;
+  flex-direction: column;
+  justify-content: center; /* 横方向の中央揃え */
+  align-items: center; /* 縦方向の中央揃え */
+  width: 100vw; /* 横幅を画面全体に */
+  height: 100vh; /* 縦幅を画面全体に */
+  color: #f0f0f0;
 }
 
 /* シャッフルカードの動き調整 */
 .card-display {
   position: relative;
-  width: 400px; /* 表示領域の幅 */
+  width: 100px; /* 表示領域の幅 */
   height: 150px; /* 表示領域の高さ */
   margin: 0 auto; /* 中央に配置 */
+  margin-top: 50px;
 }
 
 .card {
   position: absolute;
   top: 0;
   left: 0;
+  /* transform: translate(-50%, -50%); */
   width: 100px; /* カードの幅 */
   height: 150px; /* カードの高さ */
   z-index: 1;
@@ -77,9 +92,9 @@ button {
 
 /* カードの説明を表示するためのクラス */
 .card-description {
-  margin-top: 20px;
+  margin-top: 50px;
   font-size: 16px;
-  color: #333;
+  color: #f0f0f0;
   display: none; /* 初期状態は非表示 */
 }
 
@@ -138,3 +153,47 @@ button {
 }
 
 /* セリフ画面の設定　ここまで */
+
+/* 星空背景の設定　ここから */
+/* 星空の背景のスタイル */
+.stars {
+  position: relative;
+  width: 100%; /* 星空の横幅 */
+  height: 100vh; /* 星空の縦幅 */
+  background-image: linear-gradient(
+    0deg,
+    #00dedc,
+    #115d89,
+    #080f1c
+  ); /* 星空の背景色 */
+  overflow: hidden; /* 星が枠外にはみ出すのを防ぐ */
+}
+
+/* 星のスタイル */
+.star {
+  position: absolute;
+  display: block;
+  background-color: #fff; /* 星の色 */
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(#fff, 0.2); /* 星の影 */
+  opacity: 0;
+  animation: twinkle 5s infinite;
+}
+
+/* 星がキラキラ光るアニメーション */
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+/* 星空背景の設定　ここまで */
