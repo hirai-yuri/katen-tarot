@@ -30,11 +30,12 @@ function startDialogue() {
   }
 
   // ここで名前を送信してセッションに保存
-  saveResult(userName, null); // 名前のみをセッションに保存する（タロット結果はまだない）
+  // saveResult(userName, null); // 名前のみをセッションに保存する（タロット結果はまだない）
 
   // フォームを非表示にし、ダイアログボックスを表示
   document.querySelector(".form-container").style.display = "none";
-  document.getElementById("tarot-button").style.display = "block";
+  document.querySelector(".main").style.display = "block";
+  document.querySelector(".tarot-button").style.display = "flex";
   document.querySelector(".dialogue-box").style.display = "block";
 
   // 台詞の初期表示を開始

@@ -5,15 +5,10 @@ body {
   background-color: #f0f0f0;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   height: 100vh;
   margin: 0;
   flex-direction: column;
-
-  background-image: url(../img/KAREN\(スマホ用\).jpg);
-  background-size: cover; /* 画像を画面全体に表示する */
-  background-position: center; /* 画像の位置を中央に */
-  background-repeat: no-repeat; /* 繰り返さない */
 }
 
 /* 共通の設定　ここまで */
@@ -61,6 +56,18 @@ h1 {
   z-index: 1;
   transition: transform 0.6s ease-in-out;
   perspective: 1000px; /* 3D回転のためのパースペクティブを適用 */
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+/* カーソルを置いたカード */
+.card:hover {
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* クリックしたカード */
+.bundle-clicked {
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
 }
 
 .card img {
@@ -68,34 +75,59 @@ h1 {
   height: 100%;
   display: block;
   backface-visibility: hidden; /* 背面が見えないようにする */
+  transform: scale(-1, 1);
 }
 
 .card.flipped {
   transform: rotateY(180deg); /* カードをめくった時の状態 */
 }
 
-/* クリック順を表示するためのクラス */
-.bundle-number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  font-weight: bold;
-  color: red;
-  z-index: 100;
-}
-
-.bundle-clicked {
-  border: 2px solid red;
-}
-
 /* カードの説明を表示するためのクラス */
 .card-description {
-  margin-top: 50px;
-  font-size: 16px;
+  margin-top: 20px;
+  font-size: 12px;
   color: #f0f0f0;
   display: none; /* 初期状態は非表示 */
+  position: relative;
+  width: 250px;
+}
+
+.card-description p {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.meaning,
+.keyword {
+  margin: 0;
+  margin-top: 5px;
+  margin-left: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.description {
+  /* margin-top: 5px; */
+  padding: 10px;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 300px;
+}
+
+#description1 {
+  background: rgba(243, 255, 5, 0.5);
+}
+
+#description2 {
+  background: rgba(255, 30, 109, 0.5);
+}
+
+.message1,
+.message2 {
+  display: none;
+  margin-top: 10px;
 }
 
 /* タロットページの設定　ここまで */
@@ -134,6 +166,17 @@ h1 {
 
 /* セリフ画面の設定　ここから */
 
+.main {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/KAREN\(スマホ用\).jpg);
+  background-size: cover; /* 画像を画面全体に表示する */
+  background-position: center; /* 画像の位置を中央に */
+  background-repeat: no-repeat; /* 繰り返さない */
+
+  position: relative;
+}
 .dialogue-box {
   width: 300px;
   /* border: 2px solid #333; */
@@ -141,9 +184,12 @@ h1 {
   font-size: 12px;
   color: #f0f0f0;
   line-height: 1.8;
-  position: relative;
-  margin-top: 5px;
-  margin-left: auto;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  /* transform: translate(-50%, -50%); */
+  margin-top: 10px;
+  /* margin-left: auto; */
   text-align: right;
   display: none;
   background: linear-gradient(
@@ -195,12 +241,36 @@ h1 {
 
 .tarot-button {
   display: none;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
-  width: 300px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  /* left: 50%; */
+  transform: translate(0%, -100%);
+  width: 200px;
+  justify-content: center;
+  color: #f0f0f0;
 }
-#tarot-button2 {
+
+#tarot-button1 {
+  padding: 10px;
   margin-right: 10px;
+  background-color: #044b74;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+#tarot-button1:hover {
+  background-color: #00dedc;
+}
+
+#tarot-button2 {
+  padding: 10px;
+
+  background-color: deeppink;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+#tarot-button2:hover {
+  background-color: #00dedc;
 }
 
 /* セリフ画面の設定　ここまで */

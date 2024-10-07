@@ -6,12 +6,16 @@ function showTarot(tarotIdToShow, tarotIdToHide) {
   document.getElementById(tarotIdToShow).style.display = "flex";
   document.getElementById(tarotIdToHide).style.display = "none";
   document.querySelector(".dialogue-box").style.display = "none";
+  document.querySelector(".main").style.display = "none";
 
   document.querySelectorAll(".tarot-page").forEach((page) => {
     page.style.display = "none";
   });
   document.getElementById(tarotIdToShow).style.display = "flex";
   generateCards(tarotIdToShow);
+
+
+
 }
 
 // カード生成関数
@@ -44,6 +48,9 @@ function shuffleCards(displayId) {
       button.style.display = "none"; // ボタンを非表示にする
     }
   });
+
+
+
 
   //カードが表示されている場所の取得
   const cardDisplay = document.getElementById(displayId);
@@ -103,12 +110,14 @@ function shuffleCards(displayId) {
   setTimeout(() => {
     arrangeBundles([bundle1, bundle2, bundle3]); // シャッフル後に束を配置する
   }, 2000); // 2秒後に配置を開始
+
+
 }
 
 // 3つの束を画面上で別々の位置に配置し、それぞれの位置を揃える関数
 // 3つの束を画面上で別々の位置に配置し、それぞれの位置を揃える関数
 function arrangeBundles(bundles) {
-  const bundleOffsets = [-150, 0, 150]; // 束を左 (-150px)、中央 (0px)、右 (+150px) に配置するオフセット
+  const bundleOffsets = [-125, 0, 125]; // 束を左 (-150px)、中央 (0px)、右 (+150px) に配置するオフセット
   const clickedBundles = []; // クリックされた順に束を記録する配列
 
   bundles.forEach((bundle, index) => {
@@ -120,6 +129,9 @@ function arrangeBundles(bundles) {
       card.style.transition = "transform 1s ease"; // 束を1秒かけて配置するアニメーション
       card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(0deg)`; // X軸位置を揃えて配置
 
+      //メッセージ１を表示
+      document.querySelector(".message1").style.display = "block";
+
       //カードをクリック
       card.addEventListener("click", () => {
         //クリックした束をclickedBundlesに記録
@@ -128,7 +140,7 @@ function arrangeBundles(bundles) {
         }
 
         // クリックされたら枠を追加
-        // card.classList.add("bundle-clicked");
+        card.classList.add("bundle-clicked");
 
         // 3つの束がクリックされたら、順番に重ねる処理を実行
         if (clickedBundles.length === 3) {
@@ -166,6 +178,11 @@ function stackBundles(clickedBundles) {
     }
   });
 
+  //メッセージ１を非表示、メッセージ２を表示
+  document.querySelector(".message1").style.display = "none";
+  document.querySelector(".message2").style.display = "block";
+
+
   // 一番上のカードをクリックできるようにする
   if (topCard) {
     topCard.style.pointerEvents = "auto"; // 一番上のカードのみクリックを許可
@@ -186,7 +203,12 @@ function flipCard(card) {
     if (otherCard !== card) {
       otherCard.style.display = "none"; // 他のカードを非表示にする
     }
+
+
   });
+
+  //メッセージ2を非表示
+  document.querySelector(".message2").style.display = "none";
 
   // 少し時間を空けてからめくるアニメーションを設定
   setTimeout(() => {
@@ -207,24 +229,49 @@ function flipCard(card) {
 
       // カードの説明を表示
       const descriptionElement1 = document.getElementById("cardDescription1");
-      descriptionElement1.innerHTML = `<strong>${flippedCard.name}</strong>
-       <p>${flippedCard.keyword}</p>
-       <div class="description1">${flippedCard.description1}</div>`;
+      descriptionElement1.innerHTML =
+        `
+        <p>カードの意味</p>
+        <div class="meaning">
+        <strong>${flippedCard.meaning}</strong>
+        </div>
+        <p>キーワード</p>
+        <div class="keyword">
+        <strong>${flippedCard.keyword}</strong>
+        </div>
+      <div class="description" id="description1">${flippedCard.description1}</div>`;
+
       descriptionElement1.style.display = "block"; // カードの説明を表示
 
       // カードの説明を表示
       const descriptionElement2 = document.getElementById("cardDescription2");
-      descriptionElement2.innerHTML = `<strong>${flippedCard.name}</strong>
-      <p>${flippedCard.keyword}</p>
-      <div class="description1">${flippedCard.description2}</div>`;
+      descriptionElement2.innerHTML =
+        `
+      <p>カードの意味</p>
+      <div class="meaning">
+      <strong>${flippedCard.meaning}</strong>
+      </div>
+
+      <p>キーワード</p>
+      <div class="keyword">
+      <strong>${flippedCard.keyword}</strong>
+      </div>
+
+      <div class="description" id="description2">${flippedCard.description2}</div>`;
+
+
       descriptionElement2.style.display = "block"; // カードの説明を表示
 
-      // ここでタロットの結果を送信
-      const userName = document.getElementById("name").value; // ユーザー名を取得
-      saveResult(userName, flippedCard.name); // 名前とタロット結果をセッションに保存
+      // // ここでタロットの結果を送信
+      // const userName = document.getElementById("name").value; // ユーザー名を取得
+      // saveResult(userName, flippedCard.name); // 名前とタロット結果をセッションに保存
     }
+
 
     // カードのクリックを無効化
     card.style.pointerEvents = "none"; // カードがクリックされないようにする
   }, 400); // 回転が完了した後に画像を変更し、説明を表示
+
+
+
 }
