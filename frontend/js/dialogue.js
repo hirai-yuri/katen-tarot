@@ -1,5 +1,6 @@
 const dialogueText = [
-  "はじめまして、〇〇ちゃん。タロット占い師のKARENと申します。",
+  "はじめまして、〇〇ちゃん。",
+  "タロット占い師のKARENと申します。",
   "ぼくがこの先起こる〇〇ちゃんの未来を占います。",
   "今日の運勢、または恋愛運、どちらを占いますか？",
 ];
@@ -27,6 +28,9 @@ function startDialogue() {
       userName + "ちゃん"
     );
   }
+
+  // ここで名前を送信してセッションに保存
+  saveResult(userName, null); // 名前のみをセッションに保存する（タロット結果はまだない）
 
   // フォームを非表示にし、ダイアログボックスを表示
   document.querySelector(".form-container").style.display = "none";

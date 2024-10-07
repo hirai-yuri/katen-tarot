@@ -5,18 +5,15 @@ body {
   background-color: #f0f0f0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   height: 100vh;
   margin: 0;
   flex-direction: column;
-}
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  margin-top: 50px;
+  background-image: url(../img/KAREN\(スマホ用\).jpg);
+  background-size: cover; /* 画像を画面全体に表示する */
+  background-position: center; /* 画像の位置を中央に */
+  background-repeat: no-repeat; /* 繰り返さない */
 }
 
 /* 共通の設定　ここまで */
@@ -31,8 +28,8 @@ h1 {
   margin-right: auto;
 }
 
-#tarot-button {
-  display: none;
+.shuffleButton {
+  margin-top: 10px;
 }
 
 .tarot-page {
@@ -103,56 +100,107 @@ h1 {
 
 /* タロットページの設定　ここまで */
 
+/* トップページの設定　ここから */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* 縦方向の中央揃え */
+  text-align: left;
+  width: 300px;
+  color: #f0f0f0;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-input {
+  font-size: 14px;
+  width: 200px;
+  height: 30px;
+}
+.start-button {
+  /* width: 50px; */
+  margin-top: 5px;
+  margin-left: auto;
+  padding: 0px 10px;
+
+  /* cursor: pointer; */
+}
+
+/* トップページの設定　ここまで */
+
 /* セリフ画面の設定　ここから */
+
 .dialogue-box {
   width: 300px;
-  padding: 20px;
-  background-color: white;
-  border: 2px solid #333;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  font-size: 14px;
-  color: #333;
-  line-height: 1.6;
+  /* border: 2px solid #333; */
+  /* border-radius: 10px; */
+  font-size: 12px;
+  color: #f0f0f0;
+  line-height: 1.8;
   position: relative;
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-left: auto;
+  text-align: right;
   display: none;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(70, 70, 70, 0.5)
+  );
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  padding-top: 40px;
 }
+
 .dialogue-text {
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
+
+.katenname {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: -50px;
+  width: 120px;
+  text-align: right;
+  padding: 2px;
+  padding-right: 40px;
+  clear: #f0f0f0;
+}
+
 .cursor {
   display: inline-block;
-  width: 10px;
+  width: 8px;
   height: 1em;
   background-color: black;
-  animation: blink 0.5s step-end infinite;
+  animation: blink 0.9s step-end infinite;
 }
 @keyframes blink {
-  from {
+  0% {
     background-color: black;
   }
-  to {
-    background-color: transparent;
+  50% {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background-color: black;
   }
 }
-.form-container {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-.name-input {
-  font-size: 14px;
-  width: 200px;
-}
-.start-button {
-  /* width: 50px; */
-  margin-top: 3px;
-  margin-left: auto;
-  padding: 5px 15px;
 
-  /* cursor: pointer; */
+.tarot-button {
+  display: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 300px;
+}
+#tarot-button2 {
+  margin-right: 10px;
 }
 
 /* セリフ画面の設定　ここまで */
@@ -166,7 +214,7 @@ h1 {
   background-image: linear-gradient(
     0deg,
     #00dedc,
-    #115d89,
+    #044b74,
     #080f1c
   ); /* 星空の背景色 */
   overflow: hidden; /* 星が枠外にはみ出すのを防ぐ */

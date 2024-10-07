@@ -218,6 +218,10 @@ function flipCard(card) {
       <p>${flippedCard.keyword}</p>
       <div class="description1">${flippedCard.description2}</div>`;
       descriptionElement2.style.display = "block"; // カードの説明を表示
+
+      // ここでタロットの結果を送信
+      const userName = document.getElementById("name").value; // ユーザー名を取得
+      saveResult(userName, flippedCard.name); // 名前とタロット結果をセッションに保存
     }
 
     // カードのクリックを無効化
