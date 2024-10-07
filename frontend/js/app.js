@@ -2,7 +2,7 @@ const totalCards = 22;
 
 // タロットページ表示関数
 function showTarot(tarotIdToShow, tarotIdToHide) {
-  document.getElementById("home").style.display = "none";
+  document.getElementById("tarot-button").style.display = "none";
   document.getElementById(tarotIdToShow).style.display = "block";
   document.getElementById(tarotIdToHide).style.display = "none";
 
