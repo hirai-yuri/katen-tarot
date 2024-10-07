@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>セルフが流れるページ</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+      }
+
+      .dialogue-box {
+        width: 600px;
+        padding: 20px;
+        background-color: white;
+        border: 2px solid #333;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        font-size: 1.2rem;
+        color: #333;
+        line-height: 1.6;
+        position: relative;
+        margin-top: 20px;
+        display: none;
+      }
+
+      .dialogue-text {
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 10px;
+        height: 1em;
+        background-color: black;
+        animation: blink 0.5s step-end infinite;
+      }
+
+      @keyframes blink {
+        from {
+          background-color: black;
+        }
+        to {
+          background-color: transparent;
+        }
+      }
+
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .name-input {
+        font-size: 14px;
+        width: 200px;
+      }
+
+      .start-button {
+        width: 50px;
+        margin-top: 3px;
+        margin-left: auto;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <label for="name" class="name-input">あなたの名前を教えてね</label>
+      <input id="name" type="text" class="name-input" />
+
+      <button class="start-button" onclick="startDialogue()">開始</button>
+    </div>
+
+    <div class="dialogue-box">
+      <div id="dialogue" class="dialogue-text"></div>
+      <span class="cursor"></span>
+    </div>
+
+    <script>
+      const dialogueText = [
+        "はじめまして、〇〇ちゃん。タロット占い師のKARENと申します。",
+        "ぼくがこの先起こる〇〇ちゃんの未来を占います。",
+        "今日の運勢、または恋愛運、どちらを占いますか？",
+      ];
+
+      const dialogueElement = document.getElementById("dialogue");
+      let currentText = "";
+      let textIndex = 0;
+      let charIndex = 0;
+      let delayBetweenLines = 1000; // 台詞間の遅延 (ミリ秒)
+      let userName = ""; // ユーザーの名前を格納する変数
+
+      function startDialogue() {
+        // フォームで入力された名前を取得
+        const nameInput = document.getElementById("name").value;
+        if (nameInput.trim() === "") {
+          alert("名前を入力してください！");
+          return;
+        }
+        userName = nameInput.trim(); // 名前をトリムして格納
+
+        // 名前を置き換えた台詞を準備
+        for (let i = 0; i < dialogueText.length; i++) {
+          dialogueText[i] = dialogueText[i].replace(
+            /〇〇ちゃん/g,
+            userName + "ちゃん"
+          );
+        }
+
+        // フォームを非表示にし、ダイアログボックスを表示
+        document.querySelector(".form-container").style.display = "none";
+        document.querySelector(".dialogue-box").style.display = "block";
+
+        // 台詞の初期表示を開始
+        typeText();
+      }
+
+      function typeText() {
+        if (textIndex < dialogueText.length) {
+          const currentLine = dialogueText[textIndex];
+          if (charIndex < currentLine.length) {
+            currentText += currentLine[charIndex];
+            dialogueElement.textContent = currentText;
+            charIndex++;
+            setTimeout(typeText, 50); // 文字ごとの表示速度
+          } else {
+            // 次の台詞に移るための遅延
+            setTimeout(() => {
+              charIndex = 0;
+              currentText += "\n"; // 改行を追加
+              textIndex++;
+              typeText();
+            }, delayBetweenLines);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
