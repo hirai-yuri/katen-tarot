@@ -7,5 +7,20 @@ https://www.taroscope.ai/ja/index
 CSSとJsで星空の背景を設定する方法
 https://web-dev.tech/front-end/javascript/twinkle-stars-effect/
 
+メールフォーム参考
+https://madoseed.com/php-contact-form/　Mado Seed 
+PHPを学ぶ 2021年4月26日/24年1月4日
+https://codepen.io/programmerlife/pen/RwoYoPx
+チェックボックスを一つだけ選択する（変動対応+ループ処理）
+サイト名：CodePen
+
+タロット文献参考
+https://sacredstory.info/　
+Story　Symbol
+https://www5e.biglobe.ne.jp/~kurenai-/thoth-atu.html
+『トート・タロット図解』1. アテュ
+https://ameblo.jp/misakinoe/entry-11396914042.html　
+一般社団法人タロットリーダー協会　みさきのゑ
+
 
 

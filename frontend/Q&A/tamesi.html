@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="Ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <label><input type="checkbox"
+      name="check" class="check" value="チェック１">チェック1</label>
+    <label><input type="checkbox" 
+      name="check" class="check" value="チェック2">チェック2</label>
+    <label><input type="checkbox" 
+      name="check" class="check" value="チェック3">チェック3</label>
+  </div>
+  <script>
+    'use strict';
+    $(function () {
+      $('.check').on('click', function () {
+        if ($(this).prop('checked')) {
+          // 一旦全てをクリアして再チェックする
+          $('.check').prop('checked', false);
+          $(this).prop('checked', true);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
