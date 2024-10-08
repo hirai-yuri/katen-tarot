@@ -29,7 +29,13 @@
       color: teal;
     }
 
-    input[type='text'] {
+    .tarot-area {
+      margin-bottom: 20px;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    textarea {
       border: 1px solid teal;
       width: 200px;
     }
@@ -40,15 +46,15 @@
       font-weight: bold;
     }
 
-    input[type='email'] {
-      border: 1px solid teal;
-      width: 200px;
-    }
-    textarea{
+    textarea {
       width: 200px;
       height: 300px;
       overflow-y: auto;
 
+    }
+    p{
+      font-weight: bold;
+      font-style: 20px;
     }
   </style>
   <header>
@@ -61,20 +67,43 @@
       <br>それ以外の相談も受け付けておりますので、
       <br>ご遠慮なさらず相談しに来てください。
     </p>
-    
-    <form action="./Q&A.php" method="post">
+
+    <form action="./confirm.php" method="post">
       <h2>質問メール</h2>
-      <p><label>氏名(必須)<br>
-          <input type="text" name="name" id="name" required></label></p>
-      <p><label>生年月日(必須)<br>
-          <input type="text" name="birthday" id="birthday" required></label></p>
-      <p><label>メールアドレス(必須)<br>
-          <input type="email" name="Email" id="Email" required></label></p>
-      <p><label>占いの内容(必須)<br>
-          <input type="text" name="THOTH" id="THOTH" required></label></p>
-      <p><label>記入欄<br>
-          <textarea name="address"></textarea></label></p>
-      <p><input type="submit" value="送信"></p>
+
+      <div class="tarot-area">
+        <p>名前（必須）</p>
+        <input type="text" name="name" placeholder="例）木崎　鈴里" required>
+      </div>
+
+      <div class="tarot-area">
+        <p>メールアドレス（必須）</p>
+        <input type="email" name="Email" placeholder="例）abc@abc.com" required>
+      </div>
+
+      <div class="tarot-area">
+        <p>性別</p>
+        <label><input type="radio" name="sex" value="男性">男性</label>
+        <label><input type="radio" name="sex" value="女性" checked>女性</label>
+      </div>
+
+      <div class="tarot-area">
+        <p>お問い合わせ理由</p>
+        <label><input type="checkbox" name="reason[]" value="全体運">全体運</label>
+        <label><input type="checkbox" name="reason[]" value="恋愛相談">恋愛相談</label>
+        <label><input type="checkbox" name="reason[]" value="金銭面">金銭面</label><br>
+        <label><input type="checkbox" name="reason[]" value="相手の心">相手の心</label>
+        <label><input type="checkbox" name="reason[]" value="一定期間内の占い">一定期間内の占い</label><br>
+        <label><input type="checkbox" name="reason[]" value="その他">その他</label>
+      </div>
+
+      <div class="tarot-area">
+        <p>お問い合わせ内容（必須）</p>
+        <textarea name="address" rows="5" placeholder="例）具体的な内容を記載" required></textarea>
+      </div>
+      <div class="tarot-area">
+        <input type="submit" name="submit" value="確認画面へ" class="btn-border">
+      </div>
     </form>
 
 
