@@ -10,6 +10,8 @@ https://web-dev.tech/front-end/javascript/twinkle-stars-effect/
 メールフォーム参考
 https://madoseed.com/php-contact-form/　Mado Seed 
 PHPを学ぶ 2021年4月26日/24年1月4日
+https://codepen.io/programmerlife/pen/RwoYoPx
+チェックボックスを一つだけ選択する（変動対応+ループ処理）
 
 タロット文献参考
 https://sacredstory.info/　
