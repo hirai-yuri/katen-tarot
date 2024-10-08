@@ -14,12 +14,12 @@ let userName = ""; // ユーザーの名前を格納する変数
 
 function startDialogue() {
   // フォームで入力された名前を取得
-  const nameInput = document.getElementById("name").value;
-  if (nameInput.trim() === "") {
+  const userNameElement = document.getElementById("name").value;
+  if (userNameElement.trim() === "") {
     alert("名前を入力してください！");
     return;
   }
-  userName = nameInput.trim(); // 名前をトリムして格納
+  userName = userNameElement.trim(); // 名前をトリムして格納
 
   // 名前を置き換えた台詞を準備
   for (let i = 0; i < dialogueText.length; i++) {

@@ -251,11 +251,10 @@ function flipCard(card) {
       <div class="description" id="description2">${flippedCard.description2}</div>`;
 
       descriptionElement2.style.display = "block"; // カードの説明を表示
-
-      // // ここでタロットの結果を送信
-      // const userName = document.getElementById("name").value; // ユーザー名を取得
-      // saveResult(userName, flippedCard.name); // 名前とタロット結果をセッションに保存
     }
+
+    // ここでタロットの結果を画像としてキャプチャし、保存する
+    captureTarotResult();
 
     // カードのクリックを無効化
     card.style.pointerEvents = "none"; // カードがクリックされないようにする
