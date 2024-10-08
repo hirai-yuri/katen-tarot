@@ -13,9 +13,6 @@ function showTarot(tarotIdToShow, tarotIdToHide) {
   });
   document.getElementById(tarotIdToShow).style.display = "flex";
   generateCards(tarotIdToShow);
-
-
-
 }
 
 // カード生成関数
@@ -48,9 +45,6 @@ function shuffleCards(displayId) {
       button.style.display = "none"; // ボタンを非表示にする
     }
   });
-
-
-
 
   //カードが表示されている場所の取得
   const cardDisplay = document.getElementById(displayId);
@@ -110,8 +104,6 @@ function shuffleCards(displayId) {
   setTimeout(() => {
     arrangeBundles([bundle1, bundle2, bundle3]); // シャッフル後に束を配置する
   }, 2000); // 2秒後に配置を開始
-
-
 }
 
 // 3つの束を画面上で別々の位置に配置し、それぞれの位置を揃える関数
@@ -130,7 +122,8 @@ function arrangeBundles(bundles) {
       card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(0deg)`; // X軸位置を揃えて配置
 
       //メッセージ１を表示
-      document.querySelector(".message1").style.display = "block";
+      document.getElementById("message1-tarot1").style.display = "block";
+      document.getElementById("message1-tarot2").style.display = "block";
 
       //カードをクリック
       card.addEventListener("click", () => {
@@ -179,9 +172,10 @@ function stackBundles(clickedBundles) {
   });
 
   //メッセージ１を非表示、メッセージ２を表示
-  document.querySelector(".message1").style.display = "none";
-  document.querySelector(".message2").style.display = "block";
-
+  document.getElementById("message1-tarot1").style.display = "none";
+  document.getElementById("message2-tarot1").style.display = "block";
+  document.getElementById("message1-tarot2").style.display = "none";
+  document.getElementById("message2-tarot2").style.display = "block";
 
   // 一番上のカードをクリックできるようにする
   if (topCard) {
@@ -203,12 +197,11 @@ function flipCard(card) {
     if (otherCard !== card) {
       otherCard.style.display = "none"; // 他のカードを非表示にする
     }
-
-
   });
 
   //メッセージ2を非表示
-  document.querySelector(".message2").style.display = "none";
+  document.getElementById("message2-tarot1").style.display = "none";
+  document.getElementById("message2-tarot2").style.display = "none";
 
   // 少し時間を空けてからめくるアニメーションを設定
   setTimeout(() => {
@@ -229,8 +222,7 @@ function flipCard(card) {
 
       // カードの説明を表示
       const descriptionElement1 = document.getElementById("cardDescription1");
-      descriptionElement1.innerHTML =
-        `
+      descriptionElement1.innerHTML = `
         <p>カードの意味</p>
         <div class="meaning">
         <strong>${flippedCard.meaning}</strong>
@@ -245,8 +237,7 @@ function flipCard(card) {
 
       // カードの説明を表示
       const descriptionElement2 = document.getElementById("cardDescription2");
-      descriptionElement2.innerHTML =
-        `
+      descriptionElement2.innerHTML = `
       <p>カードの意味</p>
       <div class="meaning">
       <strong>${flippedCard.meaning}</strong>
@@ -259,7 +250,6 @@ function flipCard(card) {
 
       <div class="description" id="description2">${flippedCard.description2}</div>`;
 
-
       descriptionElement2.style.display = "block"; // カードの説明を表示
 
       // // ここでタロットの結果を送信
@@ -267,11 +257,7 @@ function flipCard(card) {
       // saveResult(userName, flippedCard.name); // 名前とタロット結果をセッションに保存
     }
 
-
     // カードのクリックを無効化
     card.style.pointerEvents = "none"; // カードがクリックされないようにする
   }, 400); // 回転が完了した後に画像を変更し、説明を表示
-
-
-
 }

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KATEN TAROT</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="stars">
     <!-- トップページ -->
@@ -38,9 +44,8 @@
     </div>
     <!-- 今日の運勢のタロットページ -->
     <div id="tarot1" class="tarot-page">
-      <h1>今日の運勢</h1>
+      <h1></h1>
       <div class="card-display" id="cardDisplay1"></div>
-
       <div class="card-description" id="cardDescription1"></div>
       <button
         class="shuffleButton"
@@ -49,14 +54,15 @@
       >
         シャッフルスタート
       </button>
-
-      <div class="message1">カードを好きな順番にクリック</div>
-      <div class="message2">カードをめくってね</div>
+      <div class="message1" id="message1-tarot1">
+        カードを好きな順番にクリック
+      </div>
+      <div class="message2" id="message2-tarot1">カードをめくってね</div>
     </div>
 
     <!-- 恋占いのタロットページ -->
     <div id="tarot2" class="tarot-page">
-      <h1>恋愛運</h1>
+      <h1></h1>
       <div class="card-display" id="cardDisplay2"></div>
       <div class="card-description" id="cardDescription2"></div>
 
@@ -67,8 +73,10 @@
       >
         シャッフルスタート
       </button>
-      <div class="message1">カードを好きな順番にクリック</div>
-      <div class="message2">カードをめくってね</div>
+      <div class="message1" id="message1-tarot2">
+        カードを好きな順番にクリック
+      </div>
+      <div class="message2" id="message2-tarot2">カードをめくってね</div>
     </div>
     <script src="./js/cardData.js"></script>
     <script src="./js/stars.js"></script>
