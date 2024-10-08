@@ -5,56 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KATEN TAROT</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="stars">
     <!-- トップページ -->
 
     <div class="form-container">
       <div class="title">
         <p>KATENタロット</p>
-      </div>
-      <label for="name" class="name-input">あなたの名前を教えてね</label>
-      <input id="name" type="text" class="name-input" />
 
-      <button class="start-button" onclick="startDialogue()">開始</button>
+        <label for="name" class="name-input">あなたの名前を教えてね</label>
+        <input id="name" type="text" class="name-input" />
+        <button class="start-button" onclick="startDialogue()">開始</button>
+      </div>
     </div>
 
     <!-- メインページ -->
+    <div class="main">
+      <div class="tarot-button" id="tarot-button">
+        <div onclick="showTarot('tarot1', 'tarot2')" id="tarot-button1">
+          <span>▶︎</span>今日の運勢
+        </div>
+        <div onclick="showTarot('tarot2', 'tarot1')" id="tarot-button2">
+          <span>▶︎</span>恋愛運
+        </div>
+      </div>
 
-    <div class="dialogue-box">
-      <div id="dialogue" class="dialogue-text"></div>
-      <span class="cursor"></span>
+      <div class="dialogue-box">
+        <div class="katenname">KATEN</div>
+        <div id="dialogue" class="dialogue-text"></div>
+        <span class="cursor"></span>
+      </div>
     </div>
-
-    <div id="tarot-button">
-      <button onclick="showTarot('tarot1', 'tarot2')">今日の運勢</button>
-      <button onclick="showTarot('tarot2', 'tarot1')">恋占い</button>
-    </div>
-
     <!-- 今日の運勢のタロットページ -->
-    <div id="tarot1" class="tarot-page stars">
-      <h1>今日の運勢</h1>
+    <div id="tarot1" class="tarot-page">
+      <h1></h1>
       <div class="card-display" id="cardDisplay1"></div>
-
       <div class="card-description" id="cardDescription1"></div>
-      <button id="shuffleButton1" onclick="shuffleCards('cardDisplay1')">
-        カードをシャッフル
+      <button
+        class="shuffleButton"
+        id="shuffleButton1"
+        onclick="shuffleCards('cardDisplay1')"
+      >
+        シャッフルスタート
       </button>
+      <div class="message1" id="message1-tarot1">
+        カードを好きな順番にクリック
+      </div>
+      <div class="message2" id="message2-tarot1">カードをめくってね</div>
     </div>
 
     <!-- 恋占いのタロットページ -->
-    <div id="tarot2" class="tarot-page stars">
-      <h1>恋占い</h1>
+    <div id="tarot2" class="tarot-page">
+      <h1></h1>
       <div class="card-display" id="cardDisplay2"></div>
       <div class="card-description" id="cardDescription2"></div>
 
-      <button id="shuffleButton2" onclick="shuffleCards('cardDisplay2')">
-        カードをシャッフル
+      <button
+        class="shuffleButton"
+        id="shuffleButton2"
+        onclick="shuffleCards('cardDisplay2')"
+      >
+        シャッフルスタート
       </button>
+      <div class="message1" id="message1-tarot2">
+        カードを好きな順番にクリック
+      </div>
+      <div class="message2" id="message2-tarot2">カードをめくってね</div>
     </div>
     <script src="./js/cardData.js"></script>
     <script src="./js/stars.js"></script>
     <script src="./js/dialogue.js"></script>
     <script src="./js/app.js"></script>
+    <!-- <script>
+      function saveResult(name, tarotResult) {
+        // 1.fetch で指定したPHPファイルにデータを送信します。
+        fetch("./backend/save_results.php", {
+          //2. POSTリクエストでデータを送信
+          method: "POST",
+          // 3. データ形式はJSONで、bodyに設定される
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name, // ユーザーが入力した名前
+            tarot_result: tarotResult, // タロット占いの結果
+          }),
+        })
+          // 4. リクエストが成功すれば、サーバーのレスポンスを受け取り、処理を実行します。
+          .then((response) => response.json()) // レスポンスがJSON形式の場合、パースする
+          .then((data) => {
+            console.log("成功:", data);
+          })
+          // 5. エラーが発生した場合は、catch でエラーメッセージを表示します。
+          .catch((error) => {
+            console.error("エラー:", error);
+          });
+      }
+    </script> -->
   </body>
 </html>

@@ -1,5 +1,6 @@
 const dialogueText = [
-  "はじめまして、〇〇ちゃん。タロット占い師のKARENと申します。",
+  "はじめまして、〇〇ちゃん。",
+  "タロット占い師のKARENと申します。",
   "ぼくがこの先起こる〇〇ちゃんの未来を占います。",
   "今日の運勢、または恋愛運、どちらを占いますか？",
 ];
@@ -28,9 +29,13 @@ function startDialogue() {
     );
   }
 
+  // ここで名前を送信してセッションに保存
+  // saveResult(userName, null); // 名前のみをセッションに保存する（タロット結果はまだない）
+
   // フォームを非表示にし、ダイアログボックスを表示
   document.querySelector(".form-container").style.display = "none";
-  document.getElementById("tarot-button").style.display = "block";
+  document.querySelector(".main").style.display = "block";
+  document.querySelector(".tarot-button").style.display = "flex";
   document.querySelector(".dialogue-box").style.display = "block";
 
   // 台詞の初期表示を開始
