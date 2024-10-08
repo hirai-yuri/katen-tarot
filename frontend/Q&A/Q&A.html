@@ -89,12 +89,12 @@
 
       <div class="tarot-area">
         <p>お問い合わせ理由</p>
-        <label><input type="checkbox" name="reason[]" value="全体運">全体運</label>
-        <label><input type="checkbox" name="reason[]" value="恋愛相談">恋愛相談</label>
-        <label><input type="checkbox" name="reason[]" value="金銭面">金銭面</label><br>
-        <label><input type="checkbox" name="reason[]" value="相手の心">相手の心</label>
-        <label><input type="checkbox" name="reason[]" value="一定期間内の占い">一定期間内の占い</label><br>
-        <label><input type="checkbox" name="reason[]" value="その他">その他</label>
+        <label><input type="checkbox" id="check1" name="reason[]" value="全体運" checked="checked" onclick="chbx(this)">全体運</label>
+        <label><input type="checkbox" id="check2" name="reason[]" value="恋愛相談" onclick="chbx(this)">恋愛相談</label>
+        <label><input type="checkbox" id="check3" name="reason[]" value="金銭面" onclick="chbx(this)">金銭面</label><br>
+        <label><input type="checkbox" id="check4" name="reason[]" value="相手の心" onclick="chbx(this)">相手の心</label>
+        <label><input type="checkbox" id="check5" name="reason[]" value="一定期間内の占い" onclick="chbx(this)">一定期間内の占い</label><br>
+        <label><input type="checkbox" id="check6" name="reason[]" value="その他" onclick="chbx(this)">その他</label>
       </div>
 
       <div class="tarot-area">
@@ -106,7 +106,20 @@
       </div>
     </form>
 
+    <script>
+  'use strict';
+  function chbx(obj) {
+  let that = obj;
+  if (document.getElementById(that.id).checked == true) {
+    let boxes = document.querySelectorAll('input[type="checkbox"]');
 
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].checked = false;
+    }
+    document.getElementById(that.id).checked = true;
+  }
+}
+</script>
 
   </header>
 </body>
