@@ -4,82 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/Q&A.css">
   <title>Q&A</title>
 </head>
 
 <body>
-  <style>
-    body {
-      background-color: #192f60;
-    }
-
-    form,
-    p {
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
-    h1,
-    h2 {
-      color: aqua;
-    }
-
-    p,
-    label {
-      color: teal;
-    }
-
-    .tarot-area {
-      margin-bottom: 20px;
-    }
-
-    input[type='text'],
-    input[type='email'],
-    textarea {
-      border: 1px solid teal;
-      width: 200px;
-    }
-
-    input[type='submit'] {
-      background-color: teal;
-      color: white;
-      font-weight: bold;
-    }
-
-    textarea {
-      width: 200px;
-      height: 300px;
-      overflow-y: auto;
-
-    }
-
-    p{
-      font-weight: bold;
-      font-style: 20px;
-    }
-  </style>
-  <header>
+  <div class="questioner">
     <h1>制作者へのQ&A</h1>
-    <p>今回の結果を見て、わからないところがあれば返信ください。<br>
-      また、当サイトではできない複雑な内容があれば記入欄に内容に記載して、
-      お知らせください。早く対応して返信をお送りします。
+    <p>当サイトではできない複雑な内容がある。
+      またはほかに読み取れることをしりたい人は名前問う質問メールに記載して
+      お送りください。早く対応して返信をお送りします。
     </p>
-    <p>※占い、占術関係の質問等も承っております。
-      <br>それ以外の相談も受け付けておりますので、
-      <br>ご遠慮なさらず相談しに来てください。
-    </p>
-
-    <form action="./confirm.php" method="post">
+    <hr>
+    <!-- <p>※占い、占術関係の質問等も承っております。
+      それ以外の相談も受け付けておりますので、
+      ご遠慮なさらず相談しに来てください。
+    </p> -->
+ </div>
+    <form action="./confirm.php" method="post" class="mailform">
       <h2>質問メール</h2>
 
       <div class="tarot-area">
-        <p>名前（必須）</p>
-        <input type="text" name="name" placeholder="例）木崎　鈴里" required>
+        <p><span class="required">名前</span></p>
+        <input type="text" name="name" class="input-pro" placeholder="例）木崎　鈴里" required>
       </div>
 
       <div class="tarot-area">
-        <p>メールアドレス（必須）</p>
-        <input type="email" name="Email" placeholder="例）abc@abc.com" required>
+        <p><span class="required">メールアドレス</span></p>
+        <input type="email" name="Email" class="input-pro" placeholder="例）abc@abc.com" required>
       </div>
 
       <div class="tarot-area">
@@ -101,17 +53,18 @@
       </div>
 
       <div class="tarot-area">
-        <p>お問い合わせ内容（必須）</p>
+        <p> <span class="required">お問い合わせ内容</span></p>
         <textarea name="address" rows="5" placeholder="例）具体的な内容を記載" required></textarea>
       </div>
       <div class="tarot-area">
         <input type="submit" name="submit" value="確認画面へ" class="btn-border">
       </div>
     </form>
+    <footer>
 
+    </footer>
+ 
     <script src="../js/Q&A.js"></script>
-
-  </header>
 </body>
 
 </html>
