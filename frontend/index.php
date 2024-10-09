@@ -45,7 +45,7 @@
   </div>
   <!-- 今日の運勢のタロットページ -->
   <div id="tarot1" class="tarot-page">
-    <h1></h1>
+    <!-- <h1></h1> -->
     <div class="card-display" id="cardDisplay1"></div>
     <div class="card-description" id="cardDescription1"></div>
     <button
@@ -62,7 +62,7 @@
 
   <!-- 恋占いのタロットページ -->
   <div id="tarot2" class="tarot-page">
-    <h1></h1>
+    <!-- <h1></h1> -->
     <div class="card-display" id="cardDisplay2"></div>
     <div class="card-description" id="cardDescription2"></div>
 
@@ -78,8 +78,22 @@
     <div class="message2" id="message2-tarot2">カードをめくってね</div>
   </div>
 
-  <a href="https://twitter.com/intent/tweet?url=http://your-domain.com/images/tarot_result.png&text=タロット占い結果をシェア！" target="_blank">共有</a>
 
+
+  <!-- モーダルの構造 -->
+  <div id="downloadModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <p>タロットの結果をダウンロードしますか？</p>
+
+      <!-- 画像を表示する要素 -->
+      <img id="modalImage" src="" alt="タロット結果画像" style="max-width: 100%; height: auto;" />
+
+      <button id="confirmDownload">はい</button>
+      <button id="cancelDownload">いいえ</button>
+    </div>
+  </div>
+
+  <div id="showModalButton">画像確認＆ダウンロード</div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>

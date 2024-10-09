@@ -1,8 +1,14 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "tarot_db";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "tarot_db";
+
+// dockerを使用する場合の変数
+$servername = "db";  // Docker ComposeのMySQLサービス名に変更
+$username = "root";  // 環境変数MYSQL_USERに設定した値
+$password = "";      // 環境変数MYSQL_PASSWORDに設定した値（空ならそのまま）
+$dbname = "tarot_db";  // データベース名
 
 // データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);

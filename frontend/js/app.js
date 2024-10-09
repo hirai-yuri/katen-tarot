@@ -251,6 +251,8 @@ function flipCard(card) {
       <div class="description" id="description2">${flippedCard.description2}</div>`;
 
       descriptionElement2.style.display = "block"; // カードの説明を表示
+
+      document.getElementById("showModalButton").style.display = "block";
     }
 
     // ここでタロットの結果を画像としてキャプチャし、保存する
