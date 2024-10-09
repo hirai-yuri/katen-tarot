@@ -321,8 +321,8 @@ h1 {
 /* モーダル用の設定 　ここから*/
 .modal {
   display: none; /* デフォルトは非表示 */
-  position: fixed;
-  z-index: 2;
+  position: absolute;
+  z-index: 5;
   left: 0;
   top: 0;
   width: 100%;
