@@ -341,6 +341,10 @@ h1 {
   border-radius: 8px;
 }
 
+#downloadModal {
+  display: none;
+}
+
 #confirmDownload,
 #cancelDownload {
   width: 60px;
@@ -362,6 +366,11 @@ h1 {
   font-size: 14px;
   padding: 10px 10px;
   cursor: pointer;
+}
+
+#modalImage {
+  max-width: 100%;
+  height: auto;
 }
 
 /* モーダル用の設定　ここまで */

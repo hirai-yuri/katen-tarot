@@ -10,7 +10,6 @@ const showModalButton = document.getElementById("showModalButton");
 // 占い結果の画像データを生成
 function captureTarotResult() {
   const tarotPage = document.querySelector(".tarot-page");
-
   // 必要なデータ
   const tarotResult = document.querySelector(".card-description").innerText; // 実際の結果に変更
 
@@ -40,14 +39,15 @@ function captureTarotResult() {
       // 画像データをサーバーに送信
       fetch("../backend/save_image.php", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           imgData: imgData,
           user_name: userName,
           tarot_result: tarotResult,
+          tarot_type: tarotType, // 占いタイプを送信
         }),
-        headers: {
-          "Content-Type": "application/json",
-        },
       })
         .then((response) => {
           if (!response.ok) {
