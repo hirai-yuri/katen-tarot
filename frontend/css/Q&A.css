@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/35_R_Member-registration画像.jpg);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.tarot-area p .required::after {
+  content: '必須';
+  font-size: 13px;
+  color: crimson;
+  margin-left: 10px;
+}
+.questioner {
+  /* margin-top: 30px; */
+  padding: 20px;
+  margin-top: 180px;
+}
+
+.questioner h1 p .mailform .tarot-area {
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.questioner h1 p {
+  display: block;
+  text-align: center;
+}
+.questioner{
+  font-size: 15px;
+}
+
+.mailfome .tarot-area {
+  margin-top: 50px;
+  
+}
+.tarot-area{
+ font-size: 15px;
+}
+
+.mailform .questioner {
+  height: 250px;
+  width: 150px;
+  padding-top: 800px;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  overflow-y: scroll;
+
+}
+
+@media(min-width:400px) {
+  body {
+    background-image: url(../img/25_Member-registration画像.jpg);
+  }
+
+  .tarot-area .input-pro {
+    width: 180px;
+    min-width: 260px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .tarot-area p .required::after {
+    content: '必須';
+    font-size: 10px;
+    color: crimson;
+    margin-left: 10px;
+  }
+
+  textarea {
+    width: 300px;
+    padding: 150px;
+    overflow-y: scroll;
+  }
+}
