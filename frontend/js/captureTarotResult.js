@@ -7,49 +7,6 @@ const confirmDownloadButton = document.getElementById("confirmDownload");
 const cancelDownloadButton = document.getElementById("cancelDownload");
 const showModalButton = document.getElementById("showModalButton");
 
-// ダウンロードを確認するモーダルを表示する関数
-function showDownloadModal(imgSrc) {
-  // 画像をモーダルに表示
-  modalImage.src = imgSrc;
-
-  // モーダルを表示
-  downloadModal.style.display = "block";
-}
-
-// ダウンロードボタンを押したときのイベント
-confirmDownloadButton.addEventListener("click", () => {
-  // ダウンロードを実行
-  downloadTarotResultImage();
-
-  // モーダルを閉じる
-  downloadModal.style.display = "none";
-});
-
-// ダウンロードボタンを押したときのイベント
-confirmDownloadButton.addEventListener("click", () => {
-  // ダウンロードを実行
-  downloadTarotResultImage();
-
-  // モーダルを閉じる
-  downloadModal.style.display = "none";
-});
-
-// 背景クリックでモーダルを閉じる処理
-window.addEventListener("click", (event) => {
-  if (event.target == downloadModal) {
-    downloadModal.style.display = "none";
-  }
-});
-
-// モーダル表示ボタンのクリックイベント
-showModalButton.addEventListener("click", () => {
-  if (imgData) {
-    showDownloadModal(imgData);
-  } else {
-    alert("画像がまだ生成されていません。まず画像を生成してください。");
-  }
-});
-
 // 占い結果の画像データを生成
 function captureTarotResult() {
   const tarotPage = document.querySelector(".tarot-page");
@@ -132,3 +89,42 @@ function downloadTarotResultImage() {
     alert("画像がまだ生成されていません。まず画像を生成してください。");
   }
 }
+
+// ダウンロードを確認するモーダルを表示する関数
+function showDownloadModal(imgSrc) {
+  // 画像をモーダルに表示
+  modalImage.src = imgSrc;
+
+  // モーダルを表示
+  downloadModal.style.display = "block";
+}
+
+// ダウンロードボタンを押したときのイベント
+confirmDownloadButton.addEventListener("click", () => {
+  // ダウンロードを実行
+  downloadTarotResultImage();
+
+  // モーダルを閉じる
+  downloadModal.style.display = "none";
+});
+
+// キャンセルボタンを押したときのイベント
+cancelDownloadButton.addEventListener("click", () => {
+  downloadModal.style.display = "none";
+});
+
+// 背景クリックでモーダルを閉じる処理
+window.addEventListener("click", (event) => {
+  if (event.target == downloadModal) {
+    downloadModal.style.display = "none";
+  }
+});
+
+// モーダル表示ボタンのクリックイベント
+showModalButton.addEventListener("click", () => {
+  if (imgData) {
+    showDownloadModal(imgData);
+  } else {
+    alert("画像がまだ生成されていません。まず画像を生成してください。");
+  }
+});
