@@ -50,20 +50,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tarotResult = $conn->real_escape_string($data['tarot_result']);
     $tarotType = $conn->real_escape_string($data['tarot_type']);
 
-    // ユーザー名を users テーブルから取得
-    $sql = "SELECT user_name FROM users WHERE user_id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $stmt->bind_result($userName);
-    $stmt->fetch();
-    $stmt->close();
+    // // ユーザー名を users テーブルから取得
+    // $sql = "SELECT user_name FROM users WHERE user_id = ?";
+    // $stmt = $conn->prepare($sql);
+    // $stmt->bind_param("i", $user_id);
+    // $stmt->execute();
+    // $stmt->bind_result($userName);
+    // $stmt->fetch();
+    // $stmt->close();
 
-    // ユーザー名が取得できない場合のエラー処理
-    if (!$userName) {
-      echo json_encode(['success' => false, 'error' => 'ユーザー名が見つかりません。']);
-      exit();
-    }
+    // // ユーザー名が取得できない場合のエラー処理
+    // if (!$userName) {
+    //   echo json_encode(['success' => false, 'error' => 'ユーザー名が見つかりません。']);
+    //   exit();
+    // }
 
     // 画像データの処理
     $imgData = str_replace('data:image/jpeg;base64,', '', $imgData);
