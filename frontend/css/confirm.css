@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/35_R_Member-registration画像.jpg);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tarot-area {
+  margin-bottom: 50px;
+  /* width: 100%;
+  min-width: 200px;
+  height: 30px; */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+p {
+  font-weight: bold;
+  font-size: 20px;
+  /* border-bottom: 5px solid #000; */
+  padding-top: 20px;
+}
+
+.text-from {
+  background-color: #eae5e3;
+  margin-top: 250px;
+  padding: 35px;
+  border: 2px solid #000;
+}
+
+.text-from h2 {
+  font-size: 20px;
+}
+
+.btn-border {
+  display: block;
+  /* max-width: 180px;*/
+  /* text-align: center; */
+  margin: 10px auto;
+  border: 2px solid #9ec34b;
+  font-size: 15px;
+  color: #9ec34b;
+  /* text-decoration: none; */
+  /* font-weight: bold; */
+  padding: 8px 16px;
+  /* border-radius: 4px; */
+  transition: .4s;
+  
+}
+
+.btn-border:hover {
+  background-color: #9ec34b;
+  border-color: #cbe585;
+  color: #FFF;
+}
+/*Q&A.php*/
+.final-fool{
+  margin-top: 500px;
+}
+
+@media(min-width:410px) {
+  body {
+    background-image: url(../img/25_Member-registration画像.jpg);
+    align-items: center;
+  }
+
+  .tarot-area {
+    width: 180px;
+    min-width: 270px;
+    height: 40px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  textarea {
+    width: 450px;
+    height: 200px;
+    overflow-y: scroll;
+  }
+  
+}
+
+
+
+
