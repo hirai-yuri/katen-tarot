@@ -29,13 +29,12 @@ $reason = $_POST['reason'];
 		}
 
 		.tarot-area {
-			margin-bottom: 20px;
-			width: 100%;
+			margin-bottom: 50px;
+			/* width: 100%;
 			min-width: 200px;
-			height: 30px;
+			height: 30px; */
 			padding-left: 10px;
 			padding-right: 10px;
-
 		}
 
 		p {
@@ -59,17 +58,19 @@ $reason = $_POST['reason'];
 		}
 
 		.btn-border {
-			display: inline-block;
-			max-width: 180px;
-			text-align: left;
+			display: block;
+			/* max-width: 180px;*/
+			/* text-align: center; */
+			margin: 10px auto;
 			border: 2px solid #9ec34b;
 			font-size: 15px;
 			color: #9ec34b;
-			text-decoration: none;
-			font-weight: bold;
+			/* text-decoration: none; */
+			/* font-weight: bold; */
 			padding: 8px 16px;
-			border-radius: 4px;
+			/* border-radius: 4px; */
 			transition: .4s;
+			
 		}
 
 		.btn-border:hover {
@@ -107,25 +108,19 @@ $reason = $_POST['reason'];
 				overflow-y: scroll;
 			}
 			.btn-border {
-			display: inline-block;
-			max-width: 180px;
-			text-align: left;
-			border: 2px solid #9ec34b;
+			display: block;
+			/* max-width: 180px;*/
+			/* text-align: center; */
+			margin: 10px auto;
+			border: 2px solid #0d0015;
 			font-size: 15px;
-			color: #9ec34b;
-			text-decoration: none;
-			font-weight: bold;
+			color: #0d0015;
+			/* text-decoration: none; */
+			/* font-weight: bold; */
 			padding: 8px 16px;
-			border-radius: 4px;
+			/* border-radius: 4px; */
 			transition: .4s;
-		}
-
-		.btn-border:hover {
-			background-color: #9ec34b;
-			border-color: #cbe585;
-			color: #FFF;
-		}
-
+		} 
 		}
 	</style>
 </head>
