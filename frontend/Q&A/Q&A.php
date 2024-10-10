@@ -53,7 +53,7 @@ mb_send_mail($to, $Mail,$message,$headers);
 <title>完了画面</title>
 <style type="text/css">
 	body {
-		background-color: #f9fff2;
+		background-image: url(../img/35_R_Member-registration画像.jpg);
 	}
 </style>
 </head>
