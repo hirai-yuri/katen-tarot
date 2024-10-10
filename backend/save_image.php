@@ -10,9 +10,9 @@ error_reporting(E_ALL);
 ini_set('log_errors', 1);
 ini_set('error_log', '/path_to_your_logs/php_errors.log'); // ログファイルのパスを指定
 
-$servername = "localhost";
+$servername = "tarot-db-instance.cujbwcxqcbel.us-east-1.rds.amazonaws.com";
 $username = "root";
-$password = "";
+$password = "fOm36AO6U7v7Y6CcvUyc";
 $dbname = "tarot_db";
 
 // データベース接続
