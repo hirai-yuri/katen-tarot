@@ -39,12 +39,12 @@ $isLoggedIn = isset($_SESSION['user_id']);
       <a href="../backend/tarotresult.php">
         <button class="results-button">占い結果を見る</button>
       </a>
-      <a href="logout.php">
+      <a href="../backend/logout.php">
         <button class="logout-button">ログアウト</button>
       </a>
     <?php else: ?>
       <!-- ログインしていない場合に表示されるリンク -->
-      <a href="login.php">
+      <a href="../backend/login.php">
         <button class="login-button">ログイン</button>
       </a>
     <?php endif; ?>
