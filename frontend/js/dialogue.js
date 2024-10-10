@@ -13,6 +13,10 @@ let delayBetweenLines = 1000; // 台詞間の遅延 (ミリ秒)
 let userName = ""; // ユーザーの名前を格納する変数
 
 function startDialogue() {
+  //index.phpにとびたい
+  // リダイレクトしたいURLを指定
+  window.location.href = "index.php";
+
   // フォームで入力された名前を取得
   const userNameElement = document.getElementById("usernameInput").value;
   if (userNameElement.trim() === "") {
@@ -29,11 +33,8 @@ function startDialogue() {
     );
   }
 
-  // ここで名前を送信してセッションに保存
-  // saveResult(userName, null); // 名前のみをセッションに保存する（タロット結果はまだない）
-
   // フォームを非表示にし、ダイアログボックスを表示
-  document.querySelector(".form-container").style.display = "none";
+  // document.querySelector(".form-container").style.display = "none";
   document.querySelector(".main").style.display = "block";
   document.querySelector(".tarot-button").style.display = "flex";
   document.querySelector(".dialogue-box").style.display = "block";
