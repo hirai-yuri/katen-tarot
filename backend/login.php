@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // 入力チェック
   if (!empty($email) && !empty($password)) {
     // ユーザーをデータベースで確認
-    $sql = "SELECT id, password FROM users WHERE email = ?";
+    $sql = "SELECT user_id, password FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();

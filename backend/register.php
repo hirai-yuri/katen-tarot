@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // パスワードの一致を確認
     if ($password === $confirmPassword) {
       // メールアドレスがすでに存在しないか確認
-      $sql = "SELECT id FROM users WHERE email = ?";
+      $sql = "SELECT user_id FROM users WHERE email = ?";
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("s", $email);
       $stmt->execute();
