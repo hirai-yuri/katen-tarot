@@ -240,6 +240,14 @@ function flipCard(card) {
 
       // ダウンロードボタンを表示
       document.getElementById("showModalButton").style.display = "block";
+      document.getElementById("index_to_button").style.display = "block";
+
+      document
+        .getElementById("index_to_button")
+        .addEventListener("click", function () {
+          // リダイレクトしたいURLを指定
+          window.location.href = "/github/katen-tarot/frontend/index.php";
+        });
     }
 
     // タロットの結果を画像としてキャプチャし、保存する

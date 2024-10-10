@@ -36,7 +36,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
 
     <?php if ($isLoggedIn): ?>
       <!-- ログインしている場合に表示されるリンク -->
-      <a href="saved_results.php">
+      <a href="../backend/tarotresult.php">
         <button class="results-button">占い結果を見る</button>
       </a>
       <a href="logout.php">
@@ -108,8 +108,12 @@ $isLoggedIn = isset($_SESSION['user_id']);
     </div>
   </div>
 
-  <div id="showModalButton">画像確認＆ダウンロード</div>
-
+  <div>
+    <div class="button_area">
+      <div id="showModalButton">ダウンロード</div>
+      <div id="index_to_button">戻る</div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="./js/cardData.js"></script>
   <script src="./js/stars.js"></script>
