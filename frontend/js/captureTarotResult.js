@@ -44,7 +44,7 @@ function captureTarotResult() {
         },
         body: JSON.stringify({
           imgData: imgData,
-          user_name: userName,
+          // user_name: userName,
           tarot_result: tarotResult,
           tarot_type: tarotType, // 占いタイプを送信
         }),
