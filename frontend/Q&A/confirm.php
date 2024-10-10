@@ -63,11 +63,6 @@ $reason = implode('/', $_POST['reason']);
 	 	</div>
 
 	 	<div class="tarot-area">
-		 	<p>性別</p>
-		 	<?php echo $sex;?>
-	 	</div>
-
-	 	<div class="tarot-area">
 		 	<p>お問い合わせ理由</p>
 		 	<?php echo $reason;?>
 	 	</div>

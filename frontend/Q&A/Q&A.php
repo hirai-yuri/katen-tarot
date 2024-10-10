@@ -12,7 +12,7 @@ $to="yoshinori52671@gmail.com";
 $Mail = 'yoshinori52671@gmail.com';
 $name = $_POST['name'];
 $Email = $_POST['Email'];
-$sex = $_POST['sex'];
+// $sex = $_POST['sex'];
 $address = $_POST['address'];
 
 $message = <<<EOF
@@ -26,9 +26,6 @@ $message = <<<EOF
 【メールアドレス】
 {$_POST['Email']}
 
-【性別】
-{$_POST['sex']}
-
 【お問い合わせ理由】
 {$_POST['reason']}
 
@@ -40,7 +37,8 @@ EOF;
 $headers = "From: {$Mail}\nReply-To: {$Mail}\nContent-Type: text/plain;";
 //メール送信
 mb_send_mail($to, $Mail,$message,$headers);
-
+//【性別】
+//{$_POST['sex']}
 // if (mb_send_mail($to, $Mail,$message,$headers)) {
 //   echo "メール送信成功です";
 // } elseif (empty($_POST['check_data'])) {

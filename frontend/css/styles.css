@@ -33,8 +33,8 @@ h1 {
   flex-direction: column;
   /* justify-content: center; 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
-  width: 100vw; /* 横幅を画面全体に */
-  height: 100vh; /* 縦幅を画面全体に */
+  width: 100vw; /*横幅を画面全体に*/
+  height: 100vh; /*縦幅を画面全体に*/
   color: #f0f0f0;
 }
 
@@ -44,7 +44,7 @@ h1 {
   width: 100px; /* 表示領域の幅 */
   height: 150px; /* 表示領域の高さ */
   margin: 0 auto; /* 中央に配置 */
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 .card {
@@ -109,12 +109,13 @@ h1 {
 
 .description {
   /* margin-top: 5px; */
-  padding: 10px;
+  padding: 15px;
   position: absolute;
-  top: 200px;
+  top: 145px;
   left: 50%;
   transform: translate(-50%, 0%);
   width: 300px;
+  line-height: 1.8;
 }
 
 #description1 {
@@ -171,7 +172,7 @@ h1 {
   display: none;
   width: 100%;
   height: 100vh;
-  background-image: url(../img/KAREN\(スマホ用\).jpg);
+  background-image: url(../img/34_R_Tarot画像.jpg);
   background-size: cover; /* 画像を画面全体に表示する */
   background-position: center; /* 画像の位置を中央に */
   background-repeat: no-repeat; /* 繰り返さない */
@@ -316,3 +317,60 @@ h1 {
   }
 }
 /* 星空背景の設定　ここまで */
+
+/* モーダル用の設定 　ここから*/
+.modal {
+  display: none; /* デフォルトは非表示 */
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 背景の黒 */
+  font-size: 12px;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  width: 50%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#downloadModal {
+  display: none;
+}
+
+#confirmDownload,
+#cancelDownload {
+  width: 60px;
+  padding: 5px 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#showModalButton {
+  display: none;
+  background: #f0f0f0;
+  color: #080f1c;
+  border-radius: 10px;
+  position: fixed;
+  /* height: 50px; */
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 14px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+#modalImage {
+  max-width: 100%;
+  height: auto;
+}
+
+/* モーダル用の設定　ここまで */

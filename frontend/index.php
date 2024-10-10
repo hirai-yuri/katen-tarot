@@ -1,3 +1,10 @@
+<?php
+session_start(); // セッションを開始
+
+// ユーザーがログインしているかどうかをチェック
+$isLoggedIn = isset($_SESSION['user_id']);
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -7,7 +14,6 @@
   <title>KATEN TAROT</title>
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
     rel="stylesheet" />
@@ -15,19 +21,35 @@
 
 <body class="stars">
   <!-- トップページ -->
-
   <div class="form-container">
     <div class="title">
       <p>KATENタロット</p>
 
       <label for="name" class="name-input"></label>
-      <input id="name" type="text" class="name-input" id="usernameInput" placeholder="あなたのニックネームを入力してね" />
+      <input type="text" class="name-input" id="usernameInput" placeholder="あなたのニックネームを入力してね" />
       <button class="start-button" onclick="startDialogue()">開始</button>
     </div>
   </div>
 
   <!-- メインページ -->
   <div class="main">
+
+    <?php if ($isLoggedIn): ?>
+      <!-- ログインしている場合に表示されるリンク -->
+      <a href="saved_results.php">
+        <button class="results-button">占い結果を見る</button>
+      </a>
+      <a href="logout.php">
+        <button class="logout-button">ログアウト</button>
+      </a>
+    <?php else: ?>
+      <!-- ログインしていない場合に表示されるリンク -->
+      <a href="login.php">
+        <button class="login-button">ログイン</button>
+      </a>
+    <?php endif; ?>
+
+
     <div class="tarot-button" id="tarot-button">
       <div onclick="showTarot('tarot1', 'tarot2')" id="tarot-button1">
         <span>▶︎</span>今日の運勢
@@ -43,9 +65,9 @@
       <span class="cursor"></span>
     </div>
   </div>
+
   <!-- 今日の運勢のタロットページ -->
   <div id="tarot1" class="tarot-page">
-    <h1></h1>
     <div class="card-display" id="cardDisplay1"></div>
     <div class="card-description" id="cardDescription1"></div>
     <button
@@ -57,15 +79,13 @@
     <div class="message1" id="message1-tarot1">
       カードを好きな順番にクリック
     </div>
-    <div class="message2" id="message2-tarot1">カードをめくってね</div>
+    <div class="message2" id="message2-tarot1">カードをクリックしてめくってね</div>
   </div>
 
   <!-- 恋占いのタロットページ -->
   <div id="tarot2" class="tarot-page">
-    <h1></h1>
     <div class="card-display" id="cardDisplay2"></div>
     <div class="card-description" id="cardDescription2"></div>
-
     <button
       class="shuffleButton"
       id="shuffleButton2"
@@ -75,12 +95,20 @@
     <div class="message1" id="message1-tarot2">
       カードを好きな順番にクリック
     </div>
-    <div class="message2" id="message2-tarot2">カードをめくってね</div>
+    <div class="message2" id="message2-tarot2">カードをクリックしてめくってね</div>
   </div>
 
-  <a href="https://twitter.com/intent/tweet?url=http://your-domain.com/images/tarot_result.png&text=タロット占い結果をシェア！" target="_blank">共有</a>
+  <!-- モーダルの構造 -->
+  <div id="downloadModal" class="modal">
+    <div class="modal-content">
+      <p>タロットの結果をダウンロードしますか？</p>
+      <img id="modalImage" src="" alt="タロット結果画像" />
+      <button id="confirmDownload">はい</button>
+      <button id="cancelDownload">いいえ</button>
+    </div>
+  </div>
 
-
+  <div id="showModalButton">画像確認＆ダウンロード</div>
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="./js/cardData.js"></script>
