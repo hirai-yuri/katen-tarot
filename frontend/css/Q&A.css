@@ -17,58 +17,76 @@ body {
   /* justify-content: center; */
   align-items: center;
 }
+p{
+  width: 300px;
+  margin-top: 15px;
+}
+.mailform h2{
+  font-size: 20px;
+}
+
+.mailform p{
+  font-size: 13px;
+}
+
 .tarot-area p .required::after {
   content: '必須';
-  font-size: 13px;
+  font-size: 11px;
   color: crimson;
   margin-left: 10px;
 }
-.questioner {
-  /* margin-top: 30px; */
+
+/* .tarot-area{
+ font-size: 14px;
+} */
+/* .questioner {
+  margin-top: 30px;
   padding: 20px;
   margin-top: 180px;
-}
+} */
+/* .questioner h1 p  */
+/* .mailform .tarot-area {
+  /* margin-top: 30px; */
+  /* padding-top: 10px; 
+  /* margin-top: 50px; 
+} */
 
-.questioner h1 p .mailform .tarot-area {
-  margin-top: 30px;
-  padding-top: 30px;
-}
-
-.questioner h1 p {
+/* .questioner h1 p {
   display: block;
   text-align: center;
 }
 .questioner{
   font-size: 15px;
+} */
+.tarot-area .input-pro,#ALM {
+  width: 100%;
+  min-width: 200px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.mailfome .tarot-area {
-  margin-top: 50px;
-  
-}
-.tarot-area{
- font-size: 15px;
-}
 
-.mailform .questioner {
-  height: 250px;
-  width: 150px;
-  padding-top: 800px;
+/* .questioner */
+.mailform  {
+  height: 200px;
+  width: 100px;
+  padding-top: 300px;
 }
 
 textarea {
-  width: 100%;
-  padding: 15px;
+  width: 80px;
+  padding: 60px;
   overflow-y: scroll;
 
 }
 
-@media(min-width:400px) {
+@media(min-width:410px) {
   body {
     background-image: url(../img/25_Member-registration画像.jpg);
   }
 
-  .tarot-area .input-pro {
+  .tarot-area .input-pro,#ALM {
     width: 180px;
     min-width: 260px;
     height: 40px;
