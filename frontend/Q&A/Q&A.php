@@ -12,7 +12,6 @@ $to="yoshinori52671@gmail.com";
 $Mail = 'yoshinori52671@gmail.com';
 $name = $_POST['name'];
 $Email = $_POST['Email'];
-// $sex = $_POST['sex'];
 $address = $_POST['address'];
 
 $message = <<<EOF
