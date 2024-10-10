@@ -1,17 +1,28 @@
 const totalCards = 22;
+let tarotType;
 
 // タロットページ表示関数
 function showTarot(tarotIdToShow, tarotIdToHide) {
-  document.getElementById("tarot-button").style.display = "none";
-  document.getElementById(tarotIdToShow).style.display = "flex";
-  document.getElementById(tarotIdToHide).style.display = "none";
-  document.querySelector(".dialogue-box").style.display = "none";
-  document.querySelector(".main").style.display = "none";
+  document.getElementById("tarot-button").style.display = "none"; // タロットボタンを非表示
+  document.getElementById(tarotIdToShow).style.display = "flex"; // 表示するタロットページを表示
+  document.getElementById(tarotIdToHide).style.display = "none"; // 非表示にするタロットページを隠す
+  document.querySelector(".dialogue-box").style.display = "none"; // ダイアログボックスを非表示
+  document.querySelector(".main").style.display = "none"; // メイン部分を非表示
 
+  // 占いの種類を記録する
+  tarotType = tarotIdToShow === "tarot1" ? "今日の運勢" : "恋愛運";
+
+  console.log(tarotType);
+
+  // 他のすべてのタロットページを非表示にする
   document.querySelectorAll(".tarot-page").forEach((page) => {
     page.style.display = "none";
   });
+
+  // 表示するタロットページを表示
   document.getElementById(tarotIdToShow).style.display = "flex";
+
+  // カードを生成
   generateCards(tarotIdToShow);
 }
 
@@ -22,122 +33,113 @@ function generateCards(displayId) {
     .querySelector(".card-display");
   displayElement.innerHTML = ""; // 既存のカードをクリア
 
+  // 22枚のカードを生成
   for (let i = 0; i < totalCards; i++) {
     const card = document.createElement("div");
     card.className = "card";
-    card.dataset.id = i;
+    card.dataset.id = i; // カードIDを設定
     const img = document.createElement("img");
-    img.src = "./img/rowsen_cross.jpg";
+    img.src = "./img/rowsen_cross.jpg"; // 画像パスを設定
     img.alt = "tarot card";
     card.appendChild(img);
     displayElement.appendChild(card);
   }
 }
 
-// カードをシャッフルする機能
-function shuffleCards(displayId) {
-  // シャッフルボタンを非表示にする
-  const shuffleButtons = ["shuffleButton1", "shuffleButton2"];
-
-  shuffleButtons.forEach((id) => {
+// ボタンの表示切り替え関数
+function toggleButtonDisplay(buttonIds, displayState) {
+  buttonIds.forEach((id) => {
     const button = document.getElementById(id);
     if (button) {
-      button.style.display = "none"; // ボタンを非表示にする
+      button.style.display = displayState; // ボタンの表示/非表示を切り替える
     }
   });
-
-  //カードが表示されている場所の取得
-  const cardDisplay = document.getElementById(displayId);
-
-  //カードを取得
-  const cards = cardDisplay.querySelectorAll(".card");
-
-  //配列にカードを入れる
-  const cardArray = Array.from(cards);
-
-  // Fisher-Yatesアルゴリズムで配列をシャッフルする
-  for (let i = cardArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [cardArray[i], cardArray[j]] = [cardArray[j], cardArray[i]];
-  }
-
-  // カードをランダムにシャッフル（最初のランダムな配置）
-  cardArray.forEach((card) => {
-    const startX = Math.floor(Math.random() * 200 - 100); // -100pxから100pxの範囲でランダム移動
-    const startY = Math.floor(Math.random() * 200 - 100); // -100pxから100pxの範囲でランダム移動
-    const startRotation =
-      Math.floor(Math.random() * 360) * (Math.random() < 0.5 ? 1 : -1); // ランダムな回転
-    card.style.transition = "transform 0.5s ease"; // 0.5秒でランダム位置に移動
-    card.style.transform = `translate(${startX}px, ${startY}px) rotate(${startRotation}deg)`;
-  });
-
-  // 0.5秒後にランダムなシャッフルを再度適用
-  setTimeout(() => {
-    cardArray.forEach((card) => {
-      const randomX = Math.floor(Math.random() * 200 - 100); // -100pxから100pxの範囲でランダム移動
-      const randomY = Math.floor(Math.random() * 200 - 100); // -100pxから100pxの範囲でランダム移動
-      const randomRotation =
-        Math.floor(Math.random() * 360) * (Math.random() < 0.5 ? 1 : -1); // ランダムな回転
-      card.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`;
-    });
-  }, 500); // シャッフルアニメーションの開始を0.5秒遅らせる
-
-  // 3秒後に初期位置に戻るアニメーション
-  setTimeout(() => {
-    cardArray.forEach((card, index) => {
-      card.style.transition = "transform 1s ease"; // 1秒かけて初期位置に戻るアニメーション
-      card.style.transform = "translate(0px, 0px) rotate(0deg)"; // 初期位置に戻る
-
-      // z-indexを利用してカードの重なりを変更する
-      card.style.zIndex = cardArray.length - index; // 新しい順序を反映
-    });
-  }, 2000); // 3秒後に初期位置に戻る
-
-  // シャッフル後に3つのグループに分ける
-  const bundle1 = cardArray.slice(0, Math.floor(cardArray.length / 3)); // 最初の1/3のカードを束1に
-  const bundle2 = cardArray.slice(
-    Math.floor(cardArray.length / 3),
-    Math.floor((2 * cardArray.length) / 3)
-  ); // 次の1/3を束2に
-  const bundle3 = cardArray.slice(Math.floor((2 * cardArray.length) / 3)); // 残りのカードを束3に
-
-  setTimeout(() => {
-    arrangeBundles([bundle1, bundle2, bundle3]); // シャッフル後に束を配置する
-  }, 2000); // 2秒後に配置を開始
 }
 
-// 3つの束を画面上で別々の位置に配置し、それぞれの位置を揃える関数
-// 3つの束を画面上で別々の位置に配置し、それぞれの位置を揃える関数
+// カードをシャッフルする機能
+function shuffleCards(displayId) {
+  // シャッフルボタンを非表示
+  toggleButtonDisplay(["shuffleButton1", "shuffleButton2"], "none");
+
+  // カードが表示されている場所の取得
+  const cardDisplay = document.getElementById(displayId);
+  const cards = Array.from(cardDisplay.querySelectorAll(".card")); // カードを配列に変換
+
+  // シャッフルアルゴリズムを適用
+  shuffleArray(cards);
+
+  // カードをランダムな位置に配置
+  cards.forEach((card, index) => {
+    const startX = Math.floor(Math.random() * 200 - 100); // -100pxから100pxの範囲でランダムに配置
+    const startY = Math.floor(Math.random() * 200 - 100);
+    const startRotation =
+      Math.floor(Math.random() * 360) * (Math.random() < 0.5 ? 1 : -1); // ランダムに回転
+    card.style.transition = "transform 2s ease"; // トランジション効果を設定
+    card.style.transform = `translate(${startX}px, ${startY}px) rotate(${startRotation}deg)`; // カードをランダムに配置
+  });
+
+  // 2秒後に束を配置する
+  setTimeout(() => {
+    arrangeBundles(splitIntoBundles(cards, 3)); // カードを3つの束に分ける
+  }, 2000);
+}
+
+// 配列シャッフル関数（Fisher-Yatesアルゴリズム）
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // 配列要素を交換
+  }
+  return array;
+}
+
+// カードを3つの束に分ける
+function splitIntoBundles(cards, numBundles) {
+  const bundles = [];
+  const bundleSize = Math.floor(cards.length / numBundles); // 各束の標準サイズ
+  let remainder = cards.length % numBundles; // 余りのカードの数
+
+  let startIndex = 0;
+
+  // 各束にカードを割り当てる
+  for (let i = 0; i < numBundles; i++) {
+    let size = bundleSize;
+
+    // 余りのカードを均等に分ける
+    if (remainder > 0) {
+      size += 1; // 1枚追加
+      remainder -= 1; // 残りの余りを減らす
+    }
+
+    bundles.push(cards.slice(startIndex, startIndex + size)); // 束にカードを分割して追加
+    startIndex += size; // 次の束の開始位置を更新
+  }
+
+  return bundles;
+}
+
+// 束を配置する関数
 function arrangeBundles(bundles) {
-  const bundleOffsets = [-125, 0, 125]; // 束を左 (-150px)、中央 (0px)、右 (+150px) に配置するオフセット
-  const clickedBundles = []; // クリックされた順に束を記録する配列
+  const bundleOffsets = [-125, 0, 125]; // 束を配置するオフセット
+  const clickedBundles = []; // クリックされた束を記録する配列
 
   bundles.forEach((bundle, index) => {
     const offsetX = bundleOffsets[index]; // 各束のX軸オフセット
-    const offsetY = 0; // Y軸のオフセットは同じ高さに固定
 
-    // 束のカードを同じ位置に揃えて表示する
+    // 各カードを表示
     bundle.forEach((card) => {
-      card.style.transition = "transform 1s ease"; // 束を1秒かけて配置するアニメーション
-      card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(0deg)`; // X軸位置を揃えて配置
+      card.style.transition = "transform 1s ease"; // 1秒かけて配置するアニメーション
+      card.style.transform = `translate(${offsetX}px, 0) rotate(0deg)`; // 束を表示
 
-      //メッセージ１を表示
-      document.getElementById("message1-tarot1").style.display = "block";
-      document.getElementById("message1-tarot2").style.display = "block";
-
-      //カードをクリック
+      // カードクリック時の処理
       card.addEventListener("click", () => {
-        //クリックした束をclickedBundlesに記録
         if (!clickedBundles.includes(bundle)) {
-          clickedBundles.push(bundle);
+          clickedBundles.push(bundle); // クリックされた束を記録
         }
+        card.classList.add("bundle-clicked"); // クリックされた束にクラスを追加
 
-        // クリックされたら枠を追加
-        card.classList.add("bundle-clicked");
-
-        // 3つの束がクリックされたら、順番に重ねる処理を実行
         if (clickedBundles.length === 3) {
-          stackBundles(clickedBundles);
+          stackBundles(clickedBundles); // 3つの束がクリックされたら、順番に重ねる
         }
       });
     });
@@ -149,35 +151,30 @@ function stackBundles(clickedBundles) {
   const totalBundles = clickedBundles.length;
   let topCard; // 一番上のカードを保持する変数
 
-  // クリックした束の位置を設定する
+  // クリックした束を中央に集める
   clickedBundles.forEach((bundle, index) => {
-    const offsetX = 0; // 束を中央に集めるためにX軸位置を0に設定
-    const offsetY = 0; // Y軸も同じ高さに固定
-    const zIndex = totalBundles - index; // 束をクリック順に重ねるためのz-index
+    const offsetX = 0;
+    const offsetY = 0;
+    const zIndex = totalBundles - index; // 束を重ねるためのz-indexを設定
 
-    // 束内の各カードに対して処理
     bundle.forEach((card) => {
-      card.style.transition = "transform 1s ease"; // 1秒かけて重ねるアニメーション
+      card.style.transition = "transform 1s ease"; // アニメーション設定
       card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(0deg)`; // 中央に集める
       card.style.zIndex = zIndex; // z-indexを設定してクリック順に重ねる
-
-      // カードのクリックイベントを無効化（重なった束のカードをクリックできないようにする）
-      card.style.pointerEvents = "none";
+      card.style.pointerEvents = "none"; // クリックできないように設定
     });
 
-    // 一番上の束の最初のカード（z-indexが最も高いカード）をtopCardに設定
     if (index === 0) {
-      topCard = bundle[0]; // 一番上の束の最初のカードを取得
+      topCard = bundle[0]; // 一番上の束の最初のカードをtopCardに設定
     }
   });
 
-  //メッセージ１を非表示、メッセージ２を表示
+  // メッセージ表示を切り替える
   document.getElementById("message1-tarot1").style.display = "none";
   document.getElementById("message2-tarot1").style.display = "block";
   document.getElementById("message1-tarot2").style.display = "none";
   document.getElementById("message2-tarot2").style.display = "block";
 
-  // 一番上のカードをクリックできるようにする
   if (topCard) {
     topCard.style.pointerEvents = "auto"; // 一番上のカードのみクリックを許可
     topCard.addEventListener("click", () => {
@@ -186,20 +183,21 @@ function stackBundles(clickedBundles) {
   }
 }
 
+// カードをめくる関数
 function flipCard(card) {
-  // めくる前にすべてのtransformをリセットする
-  card.style.transition = "none"; // 一旦トランジションを無効化
+  // めくる前にすべてのtransformをリセット
+  card.style.transition = "none"; // トランジションを無効化
   card.style.transform = "translate(0px, 0px) rotate(0deg)"; // 元の位置と回転にリセット
 
   // 他のカードを非表示にする処理
   const allCards = document.querySelectorAll(".card");
   allCards.forEach((otherCard) => {
     if (otherCard !== card) {
-      otherCard.style.display = "none"; // 他のカードを非表示にする
+      otherCard.style.display = "none"; // 他のカードを非表示
     }
   });
 
-  //メッセージ2を非表示
+  // メッセージ2を非表示
   document.getElementById("message2-tarot1").style.display = "none";
   document.getElementById("message2-tarot2").style.display = "none";
 
@@ -209,11 +207,11 @@ function flipCard(card) {
     card.style.transform = "rotateY(180deg)"; // Y軸方向に180度回転させてめくる
   }, 50); // 少し時間を空けてアニメーションを適用
 
-  // カードIDを取得して対応する裏面の画像を表示する
-  const cardId = parseInt(card.dataset.id, 10);
-  const flippedCard = cardData.find((c) => c.id === cardId);
+  // カードIDを取得して対応する裏面の画像を表示
+  const cardId = parseInt(card.dataset.id, 10); // データ属性からカードIDを取得
+  const flippedCard = cardData.find((c) => c.id === cardId); // カードIDに対応するデータを検索
 
-  // カードがめくられて180度回転した後に裏面の画像を表示する
+  // カードがめくられて180度回転した後に裏面の画像を表示
   setTimeout(() => {
     if (flippedCard) {
       const img = card.querySelector("img");
@@ -224,41 +222,59 @@ function flipCard(card) {
       const descriptionElement1 = document.getElementById("cardDescription1");
       descriptionElement1.innerHTML = `
         <p>カードの意味</p>
-        <div class="meaning">
-        <strong>${flippedCard.meaning}</strong>
-        </div>
+        <div class="meaning"><strong>${flippedCard.meaning}</strong></div>
         <p>キーワード</p>
-        <div class="keyword">
-        <strong>${flippedCard.keyword}</strong>
-        </div>
-      <div class="description" id="description1">${flippedCard.description1}</div>`;
-
+        <div class="keyword"><strong>${flippedCard.keyword}</strong></div>
+        <div class="description" id="description1">${flippedCard.description1}</div>`;
       descriptionElement1.style.display = "block"; // カードの説明を表示
 
-      // カードの説明を表示
+      // 恋愛運の場合の説明も表示
       const descriptionElement2 = document.getElementById("cardDescription2");
       descriptionElement2.innerHTML = `
-      <p>カードの意味</p>
-      <div class="meaning">
-      <strong>${flippedCard.meaning}</strong>
-      </div>
-
-      <p>キーワード</p>
-      <div class="keyword">
-      <strong>${flippedCard.keyword}</strong>
-      </div>
-
-      <div class="description" id="description2">${flippedCard.description2}</div>`;
-
+        <p>カードの意味</p>
+        <div class="meaning"><strong>${flippedCard.meaning}</strong></div>
+        <p>キーワード</p>
+        <div class="keyword"><strong>${flippedCard.keyword}</strong></div>
+        <div class="description" id="description2">${flippedCard.description2}</div>`;
       descriptionElement2.style.display = "block"; // カードの説明を表示
 
+      // ダウンロードボタンを表示
       document.getElementById("showModalButton").style.display = "block";
     }
 
-    // ここでタロットの結果を画像としてキャプチャし、保存する
+    // タロットの結果を画像としてキャプチャし、保存する
     captureTarotResult();
 
     // カードのクリックを無効化
     card.style.pointerEvents = "none"; // カードがクリックされないようにする
   }, 400); // 回転が完了した後に画像を変更し、説明を表示
+}
+// タロット結果をキャプチャする関数
+function captureTarotResult() {
+  const tarotPage = document.querySelector(".tarot-page");
+
+  // html2canvasを使ってタロット結果をキャプチャ
+  html2canvas(tarotPage, { backgroundColor: "#044b74" }).then((canvas) => {
+    const imgData = canvas.toDataURL("image/jpeg"); // 画像をJPEG形式に変換
+
+    // サーバーに画像データを送信
+    fetch("../backend/save_image.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ imgData: imgData }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          console.log("画像が保存されました: " + data.url);
+        } else {
+          console.error("エラーが発生しました:", data.error);
+        }
+      })
+      .catch((error) => {
+        console.error("リクエストに失敗しました:", error);
+      });
+  });
 }

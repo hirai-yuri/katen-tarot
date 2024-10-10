@@ -14,7 +14,7 @@ let userName = ""; // ユーザーの名前を格納する変数
 
 function startDialogue() {
   // フォームで入力された名前を取得
-  const userNameElement = document.getElementById("name").value;
+  const userNameElement = document.getElementById("usernameInput").value;
   if (userNameElement.trim() === "") {
     alert("名前を入力してください！");
     return;
