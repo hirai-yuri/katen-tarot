@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+
+/* 共通 */
+body {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Serif JP";
+}
+
+form {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button[type="submit"],
+textarea {
+  width: 250px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  width: 100px;
+  border-radius: 30px;
+  margin-top: 5px;
+  padding: 0.8rem;
+  font-size: 14px;
+}
+
+/* 共通　ここまで */
+
+/* トップページ */
+.top {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  width: 300px;
+  font-size: 50px;
+  font-family: "Dela Gothic One", sans-serif;
+  color: #b09eaf;
+  text-align: center;
+}
+
+.top img {
+  width: 300px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.start-button:hover {
+  background-color: #b09eaf;
+}
+
+/* トップページ　ここまで */
+
+/* メインページ */
+
+.main {
+  background-image: url(../img/main画像.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* 画像を画面全体に表示する */
+  /* background-position: center; 画像の位置を中央に */
+  background-repeat: no-repeat; /* 繰り返さない */
+  background-color: #f7f7f7;
+}
+
+.login-button-area {
+  height: 150px;
+  display: flex;
+}
+.login-button-area button {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  width: 50px;
+  border: 5px solid #ddde51;
+  border-top: 0px;
+  background-color: #373333;
+  color: #ffffff;
+  padding: 0.8rem;
+  padding-top: 25px;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.login-button-area button:hover {
+  opacity: 0.8;
+}
+
+.dialogue-box {
+  height: 500px;
+}
+
+.main img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.main-text {
+  width: 300px;
+  font-size: 12px;
+  color: #f0f0f0;
+  line-height: 1.8;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: 10px;
+  text-align: right;
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(70, 70, 70, 0.5)
+  );
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  padding-top: 40px;
+}
+
+/* メインページ　ここまで */
