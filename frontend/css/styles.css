@@ -128,7 +128,7 @@ h1 {
 
 .message1,
 .message2 {
-  display: none;
+  display: block;
   margin-top: 50px;
 }
 
@@ -169,7 +169,7 @@ h1 {
 /* セリフ画面の設定　ここから */
 
 .main {
-  display: none;
+  display: block;
   width: 100%;
   height: 100vh;
   background-image: url(../img/34_R_Tarot画像.jpg);
@@ -189,7 +189,7 @@ h1 {
   right: 0;
   margin-top: 10px;
   text-align: right;
-  display: none;
+  display: block;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.8),
@@ -238,7 +238,7 @@ h1 {
 }
 
 .tarot-button {
-  display: none;
+  display: block;
   font-size: 12px;
   cursor: pointer;
   position: absolute;
