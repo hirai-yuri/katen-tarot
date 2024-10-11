@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/confirm.css">
 <?php
 //直リンクされた場合index.phpにリダイレクト
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
@@ -13,116 +14,10 @@ $reason = $_POST['reason'];
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>確認画面</title>
-	<style type="text/css">
-		body {
-			height: 100vh;
-			width: 100%;
-			background-image: url(../img/35_R_Member-registration画像.jpg);
-			background-repeat: no-repeat;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		.tarot-area {
-			margin-bottom: 50px;
-			/* width: 100%;
-			min-width: 200px;
-			height: 30px; */
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-
-		p {
-			font-weight: bold;
-			font-size: 20px;
-			/* border-bottom: 5px solid #000; */
-			padding-top: 20px;
-		}
-
-		.text-from {
-			background-color: #eae5e3;
-			margin-top: 250px;
-			padding: 35px;
-			border: 2px solid #000;
-
-
-		}
-
-		.text-from h2 {
-			font-size: 20px;
-		}
-
-		.btn-border {
-			display: block;
-			/* max-width: 180px;*/
-			/* text-align: center; */
-			margin: 10px auto;
-			border: 2px solid #9ec34b;
-			font-size: 15px;
-			color: #9ec34b;
-			/* text-decoration: none; */
-			/* font-weight: bold; */
-			padding: 8px 16px;
-			/* border-radius: 4px; */
-			transition: .4s;
-			
-		}
-
-		.btn-border:hover {
-			background-color: #9ec34b;
-			border-color: #cbe585;
-			color: #FFF;
-		}
-
-		@media(min-width:410px) {
-			body {
-				background-image: url(../img/25_Member-registration画像.jpg);
-				align-items: center;
-			}
-
-			.tarot-area {
-				width: 180px;
-				min-width: 270px;
-				height: 40px;
-			}
-
-			p {
-				font-size: 15px;
-			}
-
-			.tarot-area p .required::after {
-				content: '必須';
-				font-size: 13px;
-				color: crimson;
-				margin-left: 10px;
-			}
-
-			textarea {
-				width: 450px;
-				height: 200px;
-				overflow-y: scroll;
-			}
-			.btn-border {
-			display: block;
-			/* max-width: 180px;*/
-			/* text-align: center; */
-			margin: 10px auto;
-			border: 2px solid #0d0015;
-			font-size: 15px;
-			color: #0d0015;
-			/* text-decoration: none; */
-			/* font-weight: bold; */
-			padding: 8px 16px;
-			/* border-radius: 4px; */
-			transition: .4s;
-		} 
-		}
-	</style>
 </head>
 
 <body>

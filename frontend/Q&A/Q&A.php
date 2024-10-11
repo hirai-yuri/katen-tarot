@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/confirm.css">
 <?php
 //直リンクされた場合index.phpにリダイレクト
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
@@ -47,39 +48,20 @@ mb_send_mail($to, $Mail, $message, $headers);
 // }
 ?>
 <!DOCTYPE html>
-<html>
-
+<html lang="Ja">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<title>完了画面</title>
-	<style type="text/css">
-		body {
-			height: 100vh;
-			width: 100%;
-			background-image: url(../img/35_R_Member-registration画像.jpg);
-			background-repeat: no-repeat;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		h2,
-		p {
-			background-color: #eae5e3;
-			margin-top: 250px;
-			padding: 35px;
-			border: 2px solid #000;
-		}
-
-		@media(min-width:410px) {}
-	</style>
 </head>
 
 <body>
-	<h2>お問い合わせ完了</h2>
-	<p>お問い合わせありがとうございました。</p>
-	<p>今後とも当サイトをよろしくお願いいたします。</p>
-	<p><a href="Q&A.html">お問い合わせトップへ</p>
+	<div class="final-fool">
+		<h2>お問い合わせ完了</h2>
+		<p>お問い合わせありがとうございました。</p>
+		<p>今後とも当サイトをよろしくお願いいたします。</p>
+		<p><a href="Q&A.html">お問い合わせトップへ</p>
+	</div>
 </body>
 
 </html>
