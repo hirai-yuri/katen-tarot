@@ -9,7 +9,7 @@
 body {
   height: 100vh;
   width: 100%;
-  background-image: url(../img/35_R_Member-registration画像.jpg);
+  background-image: url(../img/33_R_Home画像NEW.jpg);
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ p {
 }
 
 .text-from {
-  background-color: #eae5e3;
+  background-color: #fff;
   margin-top: 250px;
   padding: 35px;
   border: 2px solid #000;
