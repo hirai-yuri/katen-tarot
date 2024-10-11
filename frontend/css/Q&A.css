@@ -35,9 +35,9 @@ p {
 /* */
 .tarot-area .input-pro,
 #ALM {
-  width: 100%;
+  width: 90%;
   min-width: 200px;
-  height: 30px;
+  height: 28px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -53,11 +53,25 @@ p {
 
 /*受け付け内容*/
 textarea {
-  width: 200px;
-  height: 100px;
+  width: 296px;
+  height: 145px;
   line-height: 1.5;
   overflow-y: scroll;
 
+}
+.btn-border{
+  display: block;
+  margin-left: auto;
+  border: 2px solid #0d0015;
+  font-size: 13px;
+  color: #0d0015;
+  padding: 4px 8px;
+  transition: .4s;
+}
+.btn-border:hover {
+  background-color: #c9171e;
+  border-color: #ba2623;
+  color: #FFF;
 }
 
 /*ｗｅｂ版*/
@@ -70,7 +84,7 @@ textarea {
   .tarot-area .input-pro,
   #ALM {
     width: 180px;
-    min-width: 270px;
+    min-width: 380px;
     height: 40px;
   }
 

@@ -242,12 +242,15 @@ function flipCard(card) {
       document.getElementById("showModalButton").style.display = "block";
       document.getElementById("index_to_button").style.display = "block";
 
-      document
-        .getElementById("index_to_button")
-        .addEventListener("click", function () {
-          // リダイレクトしたいURLを指定
-          window.location.href = "/github/katen-tarot/frontend/index.php";
-        });
+      function returnToMain() {
+        // タロットページや他の不要な要素を非表示にする
+        document.getElementById("tarot1").style.display = "none";
+        document.getElementById("tarot2").style.display = "none";
+        document.querySelector(".form-container").style.display = "none";
+
+        // メインページを表示する
+        document.querySelector(".main").style.display = "block";
+      }
     }
 
     // タロットの結果を画像としてキャプチャし、保存する

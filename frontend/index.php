@@ -20,20 +20,8 @@ $isLoggedIn = isset($_SESSION['user_id']);
 </head>
 
 <body class="stars">
-  <!-- トップページ -->
-  <div class="form-container">
-    <div class="title">
-      <p>KATENタロット</p>
-
-      <label for="name" class="name-input"></label>
-      <input type="text" class="name-input" id="usernameInput" placeholder="あなたのニックネームを入力してね" />
-      <button class="start-button" onclick="startDialogue()">開始</button>
-    </div>
-  </div>
-
   <!-- メインページ -->
   <div class="main">
-
     <?php if ($isLoggedIn): ?>
       <!-- ログインしている場合に表示されるリンク -->
       <a href="../backend/tarotresult.php">
@@ -48,7 +36,6 @@ $isLoggedIn = isset($_SESSION['user_id']);
         <button class="login-button">ログイン</button>
       </a>
     <?php endif; ?>
-
 
     <div class="tarot-button" id="tarot-button">
       <div onclick="showTarot('tarot1', 'tarot2')" id="tarot-button1">
@@ -111,7 +98,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
   <div>
     <div class="button_area">
       <div id="showModalButton">ダウンロード</div>
-      <div id="index_to_button">戻る</div>
+      <div id="index_to_button" onclick="returnToMain()">戻る</div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>

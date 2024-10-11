@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+
+body {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  text-align: center;
+}
+
+.title {
+  width: 300px;
+  font-size: 50px;
+  font-family: "Dela Gothic One", sans-serif;
+  color: #b09eaf;
+  text-align: center;
+}
+
+img {
+  width: 300px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* テキスト入力とテキストエリア */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+textarea {
+  width: 250px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+input[type="submit"] {
+  width: 100px;
+  border-radius: 30px;
+  margin-top: 5px;
+  padding: 0.8rem;
+  font-size: 14px;
+}
+
+.start-button:hover {
+  background-color: #b09eaf;
+}
+
+input:-internal-autofill-selected {
+  background-color: #b09eaf;
+}
