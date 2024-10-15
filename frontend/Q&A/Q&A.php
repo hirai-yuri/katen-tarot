@@ -60,7 +60,7 @@ mb_send_mail($to, $Mail, $message, $headers);
 		<h2>お問い合わせ完了</h2>
 		<p>お問い合わせありがとうございました。</p>
 		<p>今後とも当サイトをよろしくお願いいたします。</p>
-		<p><a href="Q&A.html">お問い合わせトップへ</p>
+		<p><a href="Q&A.html" class="return-top">お問い合わせトップへ</p>
 	</div>
 </body>
 

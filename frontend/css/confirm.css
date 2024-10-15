@@ -35,7 +35,7 @@ p {
 
 .text-from {
   background-color: #fff;
-  margin-top: 100px;
+  margin-top: 300px;
   padding: 15px;
   border: 2px solid #000;
 }
@@ -46,16 +46,17 @@ p {
 
 .btn-border {
   display: inline-block;
-  max-width: 180px;
-  text-align: left;
+  /* max-width: 180px; */
+  /* text-align: center; */
   margin: 10px auto;
+  margin-right: 45px;
   border: 2px solid #0d0015;
   font-size: 15px;
   color: #0d0015;
-  /* text-decoration: none; 
+  text-decoration: none; 
   font-weight: bold;
   padding: 8px 16px;
-  border-radius: 4px; */
+  border-radius: 4px;
   transition: .4s;
 
 }
@@ -68,7 +69,14 @@ p {
 
 /*Q&A.php*/
 .final-fool {
-  margin-top: 500px;
+  margin-top: 330px;
+}
+.final-fool p{
+  font-size: 14px;
+}
+.return-top{
+/* margin-right: 20px; */
+margin-left: 60px;
 }
 
 @media(min-width:410px) {
@@ -98,6 +106,12 @@ p {
     width: 450px;
     height: 200px;
     overflow-y: scroll;
+  }
+  .final-fool {
+    margin-top: 450px;
+  }
+  .final-fool p{
+    font-size: 20px;
   }
 
 }
