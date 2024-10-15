@@ -27,10 +27,6 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
 <body class="stars">
 
-
-
-
-
   <!-- タロット占いページ -->
   <div class="tarot-main">
 
