@@ -65,7 +65,7 @@ textarea {
 }
 
 /* ボタンプログラム */
-.btn-border {
+.btn-border .return-top {
   display: block;
   /* margin-right:auto; */
   border: 2px solid #0d0015;
@@ -74,16 +74,21 @@ textarea {
   padding: 4px 8px;
   transition: .4s;
   /* justify-content: right; */
-  
-}
-#submit{
-  width: 370px;
+
 }
 
-  input[type="submit"]{
-    width: 100px;
-    margin-left: auto;
-  }
+#submit,
+#retune-top {
+  width: 370px;
+}
+/* #submit{
+  margin-left: 120px;
+} */
+
+input[type="submit"] {
+  width: 100px;
+  margin-left: auto;
+}
 
 
 .btn-border:hover {
@@ -91,6 +96,7 @@ textarea {
   border-color: #ba2623;
   color: #FFF;
 }
+
 
 /*ｗｅｂ版*/
 @media(min-width:410px) {
@@ -114,7 +120,7 @@ textarea {
   .mailform {
     height: 500px;
     margin-top: 250px;
-  } 
+  }
 
   .tarot-area p .required::after {
     content: '必須';
@@ -129,11 +135,11 @@ textarea {
     /* overflow-y: scroll; */
   }
 
-#submit{
-  width: 450px;
-}
+  #submit {
+    width: 450px;
+  }
 
-  input[type="submit"]{
+  input[type="submit"] {
     width: 100px;
     margin-left: auto;
   }
