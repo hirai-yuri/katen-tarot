@@ -10,10 +10,10 @@ $isLoggedIn = isset($_SESSION['user_id']);
 if (isset($_GET['userName'])) {
   // HTMLエンティティをエスケープしてからセッションに保存
   $username1 = htmlspecialchars($_GET['userName'], ENT_QUOTES, 'UTF-8');
-  $_SESSION['userName'] = $username1;  // セッションに保存
+  $_SESSION['user_name'] = $username1;  // セッションに保存
 } else {
   // セッションに保存されているユーザー名を使用
-  $username1 = isset($_SESSION['userName']) ? $_SESSION['userName'] : '';
+  $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 }
 
 ?>

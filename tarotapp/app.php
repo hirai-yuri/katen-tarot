@@ -117,6 +117,8 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
       // PHPから取得したユーザー名をJSON形式でJavaScriptに渡す
       const userName = <?php echo json_encode($username1, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
 
+
+
       // ユーザー名が存在する場合、対話を開始
       if (userName) {
         startDialogue(userName);
@@ -160,6 +162,8 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
         }
       }
     }
+
+    console.log(userName); // デバッグ用
   </script>
 </body>
 
