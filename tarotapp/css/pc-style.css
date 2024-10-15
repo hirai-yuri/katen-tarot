@@ -13,4 +13,24 @@
     background-image: url(../img/app背景画像PC.jpg);
     background-position: right; /* 画像の位置を中央に */
   }
+
+  .tarot-button {
+    left: 100px;
+    width: 100%;
+    justify-content: left;
+  }
+
+  #tarot-button1 {
+    width: 150px;
+  }
+
+  #tarot-button2 {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .tarot-button {
+    left: 300px;
+  }
 }

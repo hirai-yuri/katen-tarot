@@ -1,8 +1,6 @@
 <?php
 session_start();
-header('Cache-Control: no-cache, no-store, must-revalidate');
-header('Pragma: no-cache');
-header('Expires: 0');
+
 
 // ログインしているかどうかの確認
 $isLoggedIn = isset($_SESSION['user_id']);
@@ -48,7 +46,7 @@ if (isset($_GET['userName'])) {
         <a href="./tarotresult.php">
           <button class="results-button">占い結果を見る</button>
         </a>
-        <a href="">
+        <a href="./Q&A.html">
           <button class="QA-button">Q&A</button>
         </a>
         <a href="./logout.php">
