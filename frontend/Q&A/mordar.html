@@ -7,7 +7,52 @@
   <title>Document</title>
 </head>
 <body>
-  <section class="section">
+  <form action="#" method="POST">
+    @csrf
+    
+    <div class="form-group">
+      <label for="formTitle" class="col-form-label">タイトル</label>
+      <input type="text" class="form-control" id="formTitle" name="title" placeholder="タイトル">
+    </div>
+    
+    <div class="form-group">
+      <label for="formBody" class="col-form-label">本文</label>
+      <textarea id="formBody" name="body" class="form-control" rows="10" placeholder="本文"></textarea>
+    </div>
+    
+    <div class="form-group row justify-content-center">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">送信</button>
+    </div>
+    
+    <!-- モーダルの設定 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">入力内容の確認</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <p class="text-muted">タイトル</p>
+              <p class="px-2" id="modalTitle"></p>
+            </div>
+            <div>
+              <p class="text-muted">本文</p>
+              <p class="px-2" id="modalBody"></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+            <button type="button" class="btn btn-primary">OK</button>
+          </div><!-- /.modal-footer -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    </form>
+  <!-- <section class="section">
     <p class="section-title">Area 1</p>
     <a href="#" class="modal-btn js-modal-open">ここをクリック</a>
   
@@ -34,7 +79,7 @@
     <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
     <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
     <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</p>
-  </section>
+  </section> -->
   <script src="mordar.js"></script>
 </body>
 </html>
