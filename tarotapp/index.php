@@ -34,6 +34,9 @@ $username1 = isset($_GET['userName']) ? htmlspecialchars($_GET['userName'], ENT_
 </head>
 
 <body>
+
+  <img src="./img/main画像.jpg" alt="">
+
   <div class="main">
     <div class="login-button-area">
       <?php if ($isLoggedIn): ?>
