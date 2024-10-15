@@ -3,17 +3,22 @@ let tarotType;
 
 // タロットページ表示関数
 function showTarot(tarotIdToShow, tarotIdToHide) {
-  document.querySelector(".tarot-main").style.display = "none"; // タロット占いメインページ部分を非表示
-  document.querySelector(".tarot-text-box").style.display = "none"; // ダイアログボックスを非表示
-  document.getElementById(tarotIdToShow).style.display = "flex"; // 表示するタロットページを表示
-  document.getElementById(tarotIdToHide).style.display = "none"; // 非表示にするタロットページを隠す
-  document.querySelector(".message1").style.display = "none"; // メッセージ1を隠す
-  document.querySelector(".message2").style.display = "none"; // メッセージ2を隠す
+  // タロット占いメインページ部分を非表示
+  document.querySelector(".tarot-main").style.display = "none";
+  document.querySelector(".tarot-text-box").style.display = "none";
+
+  // 表示するタロットページを表示、非表示にする
+  document.getElementById(tarotIdToShow).style.display = "flex";
+  document.getElementById(tarotIdToHide).style.display = "none";
+
+  // タロットページ内のメッセージを初期化（非表示に設定）
+  document.getElementById("message1-tarot1").style.display = "none";
+  document.getElementById("message1-tarot2").style.display = "none";
+  document.getElementById("message2-tarot1").style.display = "none";
+  document.getElementById("message2-tarot2").style.display = "none";
 
   // 占いの種類を記録する
   tarotType = tarotIdToShow === "tarot1" ? "今日の運勢" : "恋愛運";
-
-  console.log(tarotType);
 
   // 他のすべてのタロットページを非表示にする
   document.querySelectorAll(".tarot-page").forEach((page) => {
@@ -82,6 +87,8 @@ function shuffleCards(displayId) {
   // 2秒後に束を配置する
   setTimeout(() => {
     arrangeBundles(splitIntoBundles(cards, 3)); // カードを3つの束に分ける
+    document.getElementById("message1-tarot1").style.display = "block";
+    document.getElementById("message1-tarot2").style.display = "block";
   }, 2000);
 }
 
@@ -139,15 +146,15 @@ function arrangeBundles(bundles) {
         }
         card.classList.add("bundle-clicked");
 
-        // クリックされた束を3つに制限
+        // クリックされた束が3つになった時にメッセージ2を表示
         if (clickedBundles.length === 3) {
           stackBundles(clickedBundles);
-
-          // メッセージ1を表示 (束が3つ揃った時点で表示)
-          document.querySelector(".message1").style.display = "block";
-
-          // メッセージ2はまだ表示しない
-          document.querySelector(".message2").style.display = "none";
+          // メッセージ1を非表示
+          document.getElementById("message1-tarot1").style.display = "none";
+          document.getElementById("message1-tarot2").style.display = "none";
+          // メッセージ2を表示
+          document.getElementById("message2-tarot1").style.display = "block";
+          document.getElementById("message2-tarot2").style.display = "block";
         }
       });
     });
@@ -176,13 +183,13 @@ function stackBundles(clickedBundles) {
     }
   });
 
-  // 束が重なった後にメッセージ2を表示
-  document.querySelector(".message2").style.display = "block";
-
   if (topCard) {
     topCard.style.pointerEvents = "auto"; // 一番上のカードのみクリック可能にする
     topCard.addEventListener("click", () => {
       flipCard(topCard); // カードをめくる処理
+      document.getElementById("message2-tarot1").style.display = "none";
+      document.getElementById("message2-tarot2").style.display = "none";
+      // メッセージ2を非表示
     });
   }
 }
@@ -200,9 +207,6 @@ function flipCard(card) {
       otherCard.style.display = "none"; // 他のカードを非表示
     }
   });
-
-  // メッセージ2を非表示
-  document.querySelector(".message2").style.display = "none";
 
   // 少し時間を空けてからめくるアニメーションを設定
   setTimeout(() => {
@@ -244,16 +248,6 @@ function flipCard(card) {
       // ダウンロードボタンを表示
       document.getElementById("showModalButton").style.display = "block";
       document.getElementById("index_to_button").style.display = "block";
-
-      function returnToMain() {
-        // タロットページや他の不要な要素を非表示にする
-        document.getElementById("tarot1").style.display = "none";
-        document.getElementById("tarot2").style.display = "none";
-        document.querySelector(".form-container").style.display = "none";
-
-        // メインページを表示する
-        document.querySelector(".main").style.display = "block";
-      }
     }
 
     // タロットの結果を画像としてキャプチャし、保存する
@@ -263,6 +257,7 @@ function flipCard(card) {
     card.style.pointerEvents = "none"; // カードがクリックされないようにする
   }, 400); // 回転が完了した後に画像を変更し、説明を表示
 }
+
 // タロット結果をキャプチャする関数
 function captureTarotResult() {
   const tarotPage = document.querySelector(".tarot-page");
