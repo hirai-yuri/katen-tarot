@@ -1,19 +1,24 @@
 <?php
 session_start();
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
 
 // ログインしているかどうかの確認
 $isLoggedIn = isset($_SESSION['user_id']);
 
-// GETリクエストからユーザー名を取得
-$username1 = isset($_GET['userName']) ? htmlspecialchars($_GET['userName'], ENT_QUOTES, 'UTF-8') : '';
 
-// ユーザー名が存在する場合、セッションに保存
-if ($username1) {
-  $_SESSION['user_name'] = $username1;
+// GETリクエストからユーザー名を取得
+if (isset($_GET['userName'])) {
+  // HTMLエンティティをエスケープしてからセッションに保存
+  $username1 = htmlspecialchars($_GET['userName'], ENT_QUOTES, 'UTF-8');
+  $_SESSION['userName'] = $username1;  // セッションに保存
+} else {
+  // セッションに保存されているユーザー名を使用
+  $username1 = isset($_SESSION['userName']) ? $_SESSION['userName'] : '';
 }
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -49,12 +54,18 @@ if ($username1) {
         <a href="./logout.php">
           <button class="logout-button">ログアウト</button>
         </a>
+        <a href="./top.php">
+          <button class="login-button">名前変更</button>
+        </a>
       <?php else: ?>
         <a href="./app.php">
           <button class="results-button">タロット占い</button>
         </a>
         <a href="./login.php">
           <button class="login-button">ログイン</button>
+        </a>
+        <a href="./top.php">
+          <button class="login-button">名前変更</button>
         </a>
       <?php endif; ?>
     </div>
@@ -65,7 +76,7 @@ if ($username1) {
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // PHPから取得したユーザー名をJSON形式でJavaScriptに渡す
+      // セッションから取得したユーザー名をJavaScriptに渡す
       const userName = <?php echo json_encode($username1, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
 
       // ユーザー名が存在する場合、対話を開始

@@ -1,5 +1,8 @@
 <?php
 session_start();
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
 
 // ログインしているかどうかの確認
 $isLoggedIn = isset($_SESSION['user_id']);
@@ -23,8 +26,21 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 </head>
 
 <body class="stars">
+
   <!-- タロット占いページ -->
   <div class="tarot-main">
+
+    <div class="login-button-area">
+
+      <a href="./index.php">
+        <button class="results-button">戻る</button>
+      </a>
+
+
+    </div>
+
+
+
     <div class="tarot-button" id="tarot-button">
       <div onclick="showTarot('tarot1', 'tarot2')" id="tarot-button1">
         <span>▶︎</span>今日の運勢
@@ -42,7 +58,6 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
   </div>
 
 
-
   <!-- 今日の運勢のタロットページ -->
   <div id="tarot1" class="tarot-page">
     <div class="card-display" id="cardDisplay1"></div>
@@ -54,11 +69,8 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
       シャッフルスタート
     </button>
 
-    <div class="message1" id="message1-tarot1">
-      カードを好きな順番にクリック
-    </div>
+    <div class="message1" id="message1-tarot1">カードを好きな順番にクリック</div>
     <div class="message2" id="message2-tarot1">カードをクリックしてめくってね</div>
-
   </div>
 
   <!-- 恋占いのタロットページ -->
@@ -71,12 +83,9 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
       onclick="shuffleCards('cardDisplay2')">
       シャッフルスタート
     </button>
-    <div class="message1" id="message1-tarot2">
-      カードを好きな順番にクリック
-    </div>
+    <div class="message1" id="message1-tarot2">カードを好きな順番にクリック</div>
     <div class="message2" id="message2-tarot2">カードをクリックしてめくってね</div>
   </div>
-
   <!-- モーダルの構造 -->
   <div id="downloadModal" class="modal">
     <div class="modal-content">
@@ -89,8 +98,12 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
   <div>
     <div class="button_area">
-      <div id="showModalButton">ダウンロード</div>
-      <div id="index_to_button" onclick="returnToMain()">戻る</div>
+      <div class="button_area">
+
+        <div id="showModalButton">ダウンロード</div>
+
+        <div id="index_to_button"><a href="./app.php">戻る</a></div>
+      </div>
     </div>
   </div>
 
