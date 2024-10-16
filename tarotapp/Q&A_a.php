@@ -1,3 +1,9 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+	header("Location: index.php");
+	exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="Ja">
 
@@ -41,7 +47,7 @@
         <input type="submit" name="submit" value="確認画面へ" class="btn-border">
       </div>
       <div class="tarot-area" id="return-top">
-        <input type="button" onclick="location.href='index.php'" value="トップへ戻る">
+        <input type="button" onclick="history.back()" value="トップへ戻る" class="btn-border" >
       <!-- <p><a href="index.php" class="return-top">お問い合わせトップへ 
       </a></p> -->
       </div>

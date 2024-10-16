@@ -66,8 +66,8 @@ textarea {
 
 /* ボタンプログラム */
 .btn-border .return-top {
-  display: block;
-  /* margin-right:auto; */
+  display: inline-block;
+  margin-right:auto;
   border: 2px solid #0d0015;
   font-size: 13px;
   color: #0d0015;

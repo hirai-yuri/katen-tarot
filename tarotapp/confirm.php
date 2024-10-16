@@ -2,7 +2,7 @@
 <?php
 //直リンクされた場合index.phpにリダイレクト
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
-	header("Location: Q&A.html");
+	header("Location: Q&A_a.php");
 	exit();
 }
 
