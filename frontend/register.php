@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './backend/db_connection.php';
+require '../backend/db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
@@ -58,8 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/pc-style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pc-style.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link

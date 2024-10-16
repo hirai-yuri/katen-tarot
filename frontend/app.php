@@ -17,8 +17,8 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KATEN TAROT</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/pc-style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pc-style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
   <script>
@@ -111,10 +111,10 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script src="./js/cardData.js"></script>
-  <script src="./js/stars.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/captureTarotResult.js"></script>
+  <script src="../js/cardData.js"></script>
+  <script src="../js/stars.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/captureTarotResult.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // PHPから取得したユーザー名をJSON形式でJavaScriptに渡す
