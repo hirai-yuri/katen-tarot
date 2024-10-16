@@ -1,8 +1,4 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] != "POST") {
-	header("Location: index.php");
-	exit();
-}
 ?>
 <!DOCTYPE html>
 <html lang="Ja">
@@ -44,10 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
         <textarea name="address" rows="5" placeholder="例）具体的な内容を記載" required></textarea>
       </div>
       <div class="tarot-area" id="submit">
+        <input type="button" onclick="location.href='index.php'" value="トップへ戻る" class="btn-border" >
         <input type="submit" name="submit" value="確認画面へ" class="btn-border">
-      </div>
-      <div class="tarot-area" id="return-top">
-        <input type="button" onclick="history.back()" value="トップへ戻る" class="btn-border" >
       <!-- <p><a href="index.php" class="return-top">お問い合わせトップへ 
       </a></p> -->
       </div>

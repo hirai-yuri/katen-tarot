@@ -45,10 +45,11 @@ p {
 }
 
 .mailform {
-  height: 200px;
+  height: 435px;
   /* width: 200px; */
   margin-top: 293px;
-  /* background-color: #f5f5f5; */
+  background-color: #f5f5f5;
+  padding: 20px;
 }
 
 .mailform h2 {
@@ -67,23 +68,25 @@ textarea {
 /* ボタンプログラム */
 .btn-border .return-top {
   display: inline-block;
-  margin-right:auto;
+  margin: 10px auto;
+  margin-right: 45px;
   border: 2px solid #0d0015;
-  font-size: 13px;
+  font-size: 15px;
   color: #0d0015;
-  padding: 4px 8px;
+  text-decoration: none; 
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
   transition: .4s;
+
   /* justify-content: right; */
 
 }
 
-#submit,
-#retune-top {
-  width: 370px;
+
+#submit{
+  margin-left:180px;
 }
-/* #submit{
-  margin-left: 120px;
-} */
 
 input[type="submit"] {
   width: 100px;
@@ -110,7 +113,7 @@ input[type="submit"] {
   #ALM {
     width: 180px;
     min-width: 380px;
-    height: 40px;
+    height: 35px;
   }
 
   p {
@@ -118,8 +121,8 @@ input[type="submit"] {
   }
 
   .mailform {
-    height: 500px;
-    margin-top: 250px;
+    height: 595px;
+    margin-top: 200px;
   }
 
   .tarot-area p .required::after {
@@ -130,13 +133,14 @@ input[type="submit"] {
   }
 
   textarea {
-    width: 450px;
-    height: 200px;
+    width: 411px;
+    height: 265px;
     /* overflow-y: scroll; */
   }
 
   #submit {
-    width: 450px;
+    /* width: 450px; */
+    margin-left:225px;
   }
 
   input[type="submit"] {
