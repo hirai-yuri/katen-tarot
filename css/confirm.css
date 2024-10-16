@@ -11,6 +11,7 @@ body {
   height: 100vh;
   width: 100%;
   background-image: url(../img/33_R_Home画像NEW.jpg);
+  background-size: 100%;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -79,14 +80,27 @@ p {
 margin-left: 60px;
 }
 
-@media(min-width:410px) {
+@media(max-width:375px) {
   body {
+    height: 800px;
+    width: 100%;
+    background-size: 100%;
+    /*画像のサイズを全自動調整*/
+  }
+  .text-from {
+    margin-top: 250px;
+  }
+}
+
+@media(min-width:450px) {
+  body {
+    height: 111vh;
     background-image: url(../img/25_Member-registration画像.jpg);
+    background-size: cover;
     align-items: center;
   }
 
   .text-from {
-
     margin-top: 250px;
     padding: 35px;
   }
