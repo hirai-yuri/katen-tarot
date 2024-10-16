@@ -21,6 +21,9 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
   <link rel="stylesheet" href="./css/pc-style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
+  <script>
+    const userName = '<?php echo $_SESSION['username']; ?>'; // PHPのセッションからユーザー名を取得
+  </script>
 </head>
 
 <body class="stars">
@@ -162,8 +165,6 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
         }
       }
     }
-
-    console.log(userName); // デバッグ用
   </script>
 </body>
 

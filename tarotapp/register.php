@@ -68,24 +68,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </head>
 
-<body>
+<body class="login">
   <h1>新規登録</h1>
   <?php if (isset($error)): ?>
     <p style="color: red;"><?php echo $error; ?></p>
   <?php endif; ?>
   <form action="./register.php" method="post">
-    <label for="email">メールアドレス:</label>
+    <label for="email">メールアドレス</label>
     <input type="email" name="email" id="email" required>
     <br>
-    <label for="password">パスワード:</label>
+    <label for="password">パスワード</label>
     <input type="password" name="password" id="password" required>
     <br>
-    <label for="confirm_password">パスワードを確認:</label>
+    <label for="confirm_password">パスワードを確認</label>
     <input type="password" name="confirm_password" id="confirm_password" required>
     <br>
     <button type="submit">新規登録</button>
   </form>
-  <a href="./login.php">すでにアカウントをお持ちですか？ログイン</a>
+  <a href="./login.php">すでにアカウントをお持ちの方はこちら</a>
 </body>
 
 </html>

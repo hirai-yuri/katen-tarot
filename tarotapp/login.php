@@ -53,18 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </head>
 
-<body>
+<body class="login">
   <h1>ログイン</h1>
   <?php if (isset($error)): ?>
     <p style="color: red;"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
   <?php endif; ?>
   <form action="./login.php" method="post">
-    <label for="email">メールアドレス:</label>
+    <label for="email">メールアドレス</label>
     <input type="email" name="email" id="email" required>
-    <br>
-    <label for="password">パスワード:</label>
+    <label for="password">パスワード</label>
     <input type="password" name="password" id="password" required>
-    <br>
     <button type="submit">ログイン</button>
   </form>
   <a href="./register.php">新規登録はこちら</a>

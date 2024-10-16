@@ -50,7 +50,7 @@ $conn->close();
 
 </head>
 
-<body>
+<body class="tarot-result">
     <h1>占い結果</h1>
 
     <?php if (empty($results)): ?>
@@ -58,14 +58,14 @@ $conn->close();
     <?php else: ?>
         <table border="1">
             <tr>
-                <th>占いの種類</th>
+                <!-- <th>占いの種類</th> -->
                 <th>結果</th>
                 <th>画像</th>
                 <th>日時</th>
             </tr>
             <?php foreach ($results as $result): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($result['tarot_type'], ENT_QUOTES, 'UTF-8'); ?></td>
+                    <!-- <td><?php echo htmlspecialchars($result['tarot_type'], ENT_QUOTES, 'UTF-8'); ?></td> -->
                     <td><?php echo nl2br(htmlspecialchars($result['tarot_result'], ENT_QUOTES, 'UTF-8')); ?></td>
                     <td><img src="<?php echo htmlspecialchars($result['image_path'], ENT_QUOTES, 'UTF-8'); ?>" alt="Tarot result" width="100"></td>
                     <td><?php echo htmlspecialchars($result['created_at'], ENT_QUOTES, 'UTF-8'); ?></td>
@@ -74,7 +74,7 @@ $conn->close();
         </table>
     <?php endif; ?>
 
-    <p><a href="../frontend/index.php">トップページに戻る</a></p>
+    <p><a href="./index.php">トップページに戻る</a></p>
 </body>
 
 </html>
