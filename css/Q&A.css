@@ -132,7 +132,7 @@ input[type="submit"] {
 
   .mailform {
     height: 595px;
-    margin-top: 266px;
+    margin-top: 342px;
     background-color: #fcfafb;
     padding: 5px;
     width: 480px;
@@ -147,7 +147,7 @@ input[type="submit"] {
 
   textarea {
     width: 470px;
-    height: 265px;
+    height: 220px;
     /* overflow-y: scroll; */
   }
 
