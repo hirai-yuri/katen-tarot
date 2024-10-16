@@ -1,8 +1,6 @@
 <?php
 session_start(); // セッションを開始
-header('Cache-Control: no-cache, no-store, must-revalidate');
-header('Pragma: no-cache');
-header('Expires: 0');
+
 
 // ユーザーがログインしているかどうかをチェック
 $isLoggedIn = isset($_SESSION['user_id']);

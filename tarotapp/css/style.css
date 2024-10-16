@@ -134,6 +134,8 @@ button[type="submit"] {
 
 /* メインページ　ここまで */
 
+/* タロット占い画面の設定　ここから */
+
 .tarot-main {
   display: block;
   width: 100%;
@@ -381,10 +383,10 @@ h1 {
   width: 100%; /* 星空の横幅 */
   height: 100vh; /* 星空の縦幅 */
   background-image: linear-gradient(
-    0deg,
-    #00dedc,
+    45deg,
+    #080f1c,
     #044b74,
-    #080f1c
+    #00dedc
   ); /* 星空の背景色 */
   overflow: hidden; /* 星が枠外にはみ出すのを防ぐ */
 }
