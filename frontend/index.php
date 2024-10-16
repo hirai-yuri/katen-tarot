@@ -27,8 +27,8 @@ if (isset($_GET['userName'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KATEN TAROT</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/pc-style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pc-style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
 
@@ -69,7 +69,7 @@ if (isset($_GET['userName'])) {
     </div>
 
     <div class="main-text" id="main-text"></div>
-    <img src="./img/main猫画像.jpg" alt="猫画像">
+    <img src="../img/main猫画像.jpg" alt="猫画像">
   </div>
 
   <script>
