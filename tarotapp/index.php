@@ -46,7 +46,7 @@ if (isset($_GET['userName'])) {
         <a href="./tarotresult.php">
           <button class="results-button">占い結果を見る</button>
         </a>
-        <a href="./Q&A.html">
+        <a href="./Q&A_a.php">
           <button class="QA-button">Q&A</button>
         </a>
         <a href="./logout.php">
