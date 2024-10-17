@@ -47,7 +47,7 @@ p {
 }
 
 .mailform {
-  height: 435px;
+  /* height: 435px; */
   /* width: 200px; */
   margin-top: 230px;
 
@@ -131,10 +131,10 @@ input[type="submit"] {
   }
 
   .mailform {
-    height: 595px;
-    margin-top: 342px;
+    /* height: 595px; */
+    margin-top: 250px;
     background-color: #fcfafb;
-    padding: 5px;
+    padding: 23px;
     width: 480px;
   }
 
