@@ -73,7 +73,7 @@ $conn->close();
 <body class="tarot-result">
 
     <div class="page">
-        <h1>占い結果</h1>
+        <!-- <h1>占い結果</h1> -->
 
         <?php if (empty($results)): ?>
             <p>まだ占い結果はありません。</p>
@@ -82,23 +82,27 @@ $conn->close();
                 <tr>
                     <th>結果</th>
                     <th>画像</th>
-                    <th>日時</th>
+                    <!-- <th>日時</th> -->
                 </tr>
                 <?php foreach ($results as $result): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($result['tarot_type'], ENT_QUOTES, 'UTF-8'); ?><br>
-                            <?php echo nl2br(htmlspecialchars(str_replace(array('\\n', '\\r'), "\n", $result['tarot_result']), ENT_QUOTES, 'UTF-8')); ?></td>
+                        <td>
+                            <?php echo htmlspecialchars($result['tarot_type'], ENT_QUOTES, 'UTF-8'); ?><br>
+                            <div class="tarot_result_text"><?php echo nl2br(htmlspecialchars(str_replace(array('\\n', '\\r'), "\n", $result['tarot_result']), ENT_QUOTES, 'UTF-8')); ?></div>
+
+                            <div class="created_at"><?php echo htmlspecialchars($result['created_at'], ENT_QUOTES, 'UTF-8'); ?></div>
+                        </td>
 
 
 
                         <td><img src="<?php echo htmlspecialchars($result['image_path'], ENT_QUOTES, 'UTF-8'); ?>" alt="Tarot result" width="100"></td>
-                        <td><?php echo htmlspecialchars($result['created_at'], ENT_QUOTES, 'UTF-8'); ?></td>
+                        <!-- <td></td> -->
                     </tr>
                 <?php endforeach; ?>
             </table>
 
             <!-- ページネーション -->
-            <div class="pagination">
+            <div class="pagination <?php echo ($page == 1 || $page == $total_pages) ? 'single-button' : ''; ?>">
                 <?php if ($page > 1): ?>
                     <a href="?page=<?php echo $page - 1; ?>">前のページ</a>
                 <?php endif; ?>
@@ -110,6 +114,8 @@ $conn->close();
 
         <?php endif; ?>
     </div>
+
+    <img src="../img/占い結果猫画像.png" alt="" id="neko">
     <div class="return"><a href="./index.php">トップページに戻る</a></div>
 
 </body>

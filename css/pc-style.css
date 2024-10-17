@@ -1,4 +1,4 @@
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 450px) {
   /* メインページ */
   .main {
     background-image: url(../img/main画像PC.jpg);
@@ -33,10 +33,26 @@
   .tarot-result {
     background-image: url(../img/占い結果背景画像PC.jpg);
   }
+
+  .page {
+    width: 450px;
+    left: unset;
+    right: 0;
+  }
+
+  #neko {
+    width: 100px;
+    bottom: 0px;
+    left: 100px;
+  }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 700px) {
   .tarot-button {
     left: 300px;
+  }
+
+  .page {
+    width: 700px;
   }
 }

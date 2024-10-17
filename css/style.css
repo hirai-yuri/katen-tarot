@@ -534,7 +534,8 @@ h1 {
   background-image: url(../img/占い結果背景画像.jpg);
   width: 100%;
   height: 100%;
-  /* background-size: cover; 画像を画面全体に表示する */
+  background-size: 100%;
+  /* 画像を画面全体に表示する */
   background-position: bottom;
   background-repeat: no-repeat; /* 繰り返さない */
   background-color: #fcfafb;
@@ -562,26 +563,74 @@ h1 {
   z-index: 2;
 }
 
-.tarot-result h1 {
-  margin: 5px;
-  text-align: center;
+.tarot-result table {
+  height: 330px;
 }
 
 .tarot-result th {
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
-}
-
-.tarot-result td {
-  background-color: #d9d9d946;
-  height: 80px;
   padding: 5px;
 }
 
+.tarot-result td {
+  background-color: #d9d9d9b0;
+  /* height: 00px; */
+  padding: 5px;
+  line-height: 1.5;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.pagination.single-button {
+  justify-content: flex-end;
+}
+
+.pagination a {
+  background-color: #ffffff;
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.pagination a:hover,
+.return:hover {
+  background-color: #00dedc;
+}
+
 .return {
+  background-color: #ffffff;
+  width: 110px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 30px;
   position: absolute;
-  bottom: 100px;
+  bottom: 5px;
   z-index: 2;
+}
+
+.created_at {
+  color: #ff4a68;
+  text-align: right;
+  margin: 10px;
+}
+
+.tarot_result_text {
+  margin: 5px;
+}
+
+#neko {
+  width: 50px;
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
 }
 
 /* 占い結果ページ　ここまで */
