@@ -566,25 +566,43 @@ h1 {
 .page {
   position: absolute;
   top: 0px;
-  left: 0;
+  right: 0;
   z-index: 2;
 }
 
 .tarot-result table {
-  height: 330px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-collapse: separate; /* 必須 */
+  border-spacing: 0; /* セル間のスペースを調整 */
+  border-radius: 10px; /* 角を丸くする */
+  overflow: hidden; /* 丸い角を反映するために必要 */
+  border: 1px solid black; /* ボーダーの太さを3pxに設定 */
 }
 
 .tarot-result th {
-  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black; /* ボーダーの太さを3pxに設定 */
   text-align: center;
   padding: 5px;
 }
 
 .tarot-result td {
-  background-color: #d9d9d9b0;
-  /* height: 00px; */
+  border: 1px solid black; /* ボーダーの太さを3pxに設定 */
   padding: 5px;
+  height: 150px;
   line-height: 1.5;
+}
+
+.tarot-result img {
+  text-align: center;
+  width: 80px;
+  height: 150px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.tarot-result img:hover {
+  opacity: 0.5;
 }
 
 .pagination {
@@ -624,9 +642,14 @@ h1 {
 }
 
 .created_at {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
   color: #ff4a68;
-  text-align: right;
+  text-align: center;
   margin: 10px;
+  height: 150px;
+  font-weight: 900;
+  letter-spacing: 2px; /* 文字間を2px広げる */
 }
 
 .tarot_result_text {

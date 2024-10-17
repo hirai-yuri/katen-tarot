@@ -80,17 +80,26 @@ $conn->close();
         <?php else: ?>
             <table border="1">
                 <tr>
-                    <th>結果</th>
-                    <th>画像</th>
+                    <th colspan="2">結果</th>
+                    <!-- <th>画像</th> -->
                     <!-- <th>日時</th> -->
                 </tr>
                 <?php foreach ($results as $result): ?>
                     <tr>
                         <td>
-                            <?php echo htmlspecialchars($result['tarot_type'], ENT_QUOTES, 'UTF-8'); ?><br>
-                            <div class="tarot_result_text"><?php echo nl2br(htmlspecialchars(str_replace(array('\\n', '\\r'), "\n", $result['tarot_result']), ENT_QUOTES, 'UTF-8')); ?></div>
+                            <!-- <?php echo htmlspecialchars($result['tarot_type'], ENT_QUOTES, 'UTF-8'); ?><br>
+                            <div class="tarot_result_text"><?php echo nl2br(htmlspecialchars(str_replace(array('\\n', '\\r'), "\n", $result['tarot_result']), ENT_QUOTES, 'UTF-8')); ?></div> -->
 
-                            <div class="created_at"><?php echo htmlspecialchars($result['created_at'], ENT_QUOTES, 'UTF-8'); ?></div>
+                            <div class="created_at"><?php
+                                                    // データベースの created_at の値を取得
+                                                    $created_at = $result['created_at'];
+
+                                                    // DateTime オブジェクトを作成
+                                                    $date = new DateTime($created_at);
+
+                                                    // 指定の形式に変換して表示 (例: 2024年5月10日)
+                                                    echo htmlspecialchars($date->format('Y年n月j日'), ENT_QUOTES, 'UTF-8');
+                                                    ?></div>
                         </td>
 
 
