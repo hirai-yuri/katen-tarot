@@ -307,6 +307,7 @@ h1 {
 /* カーソルを置いたカード */
 .card:hover {
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 
 /* クリックしたカード */
@@ -348,25 +349,31 @@ h1 {
   margin-left: 15px;
   border-bottom: 1px solid #f0f0f0;
   text-align: center;
+  line-height: 1.8;
+
+  letter-spacing: 2px;
 }
 
 .description {
-  /* margin-top: 5px; */
-  padding: 15px;
+  margin-top: 5px;
+  padding: 20px;
   position: absolute;
   top: 145px;
   left: 50%;
   transform: translate(-50%, 0%);
   width: 300px;
   line-height: 1.8;
+  letter-spacing: 2px;
+  font-weight: 500;
+  border-radius: 10px;
 }
 
 #description1 {
-  background: rgba(243, 255, 5, 0.5);
+  background: #fde4005b;
 }
 
 #description2 {
-  background: rgba(255, 30, 109, 0.5);
+  background: #ff238d5d;
 }
 
 .message1,

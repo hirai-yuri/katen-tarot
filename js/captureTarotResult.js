@@ -31,18 +31,18 @@ function captureTarotResult(tarotPageId) {
     }).then((canvas) => {
       const ctx = canvas.getContext("2d");
       // 画面の中央部分を取得 (例: 中央300x300の領域)
-      const centerX = canvas.width / 2 - 175; // 中央部分から幅300px分
-      const centerY = canvas.height / 2 - 300; // 中央部分から高さ300px分
+      const centerX = canvas.width / 2 - 200; // 中央部分から幅300px分
+      const centerY = canvas.height / 2 - 400; // 中央部分から高さ300px分
 
       // 中央部分を切り抜くために新しいCanvasを作成
       const croppedCanvas = document.createElement("canvas");
       const croppedCtx = croppedCanvas.getContext("2d");
 
-      croppedCanvas.width = 350; // 切り抜く領域の幅
-      croppedCanvas.height = 600; // 切り抜く領域の高さ
+      croppedCanvas.width = 400; // 切り抜く領域の幅
+      croppedCanvas.height = 800; // 切り抜く領域の高さ
 
       // 元のキャンバスから中央部分をコピー
-      croppedCtx.drawImage(canvas, centerX, centerY, 350, 600, 0, 0, 350, 600);
+      croppedCtx.drawImage(canvas, centerX, centerY, 400, 800, 0, 0, 400, 800);
 
       // JPEG形式で画像データを取得（第2引数で圧縮率を指定: 0.0 - 1.0）
       imgData = croppedCanvas.toDataURL("image/jpeg", 0.8); // 圧縮率を0.8に設定
