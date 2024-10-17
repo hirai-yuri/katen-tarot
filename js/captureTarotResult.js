@@ -8,10 +8,21 @@ const cancelDownloadButton = document.getElementById("cancelDownload");
 const showModalButton = document.getElementById("showModalButton");
 
 // 占い結果の画像データを生成
-function captureTarotResult() {
-  const tarotPage = document.querySelector(".tarot-page");
+function captureTarotResult(tarotPageId) {
+  // const tarotPage = document.querySelector(".tarot-page");
+  const tarotPage = document.getElementById(tarotPageId);
   // 必要なデータ
   const tarotResult = document.querySelector(".card-description").innerText; // 実際の結果に変更
+
+  console.log(tarotResult);
+
+  // Tarot pageの幅と高さが0でないことを確認
+  const width = tarotPage.offsetWidth;
+  const height = tarotPage.offsetHeight;
+  if (width === 0 || height === 0) {
+    console.error("The tarotPage has width or height of 0.");
+    return;
+  }
 
   setTimeout(() => {
     // canvasとしてページ全体をキャプチャ

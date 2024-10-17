@@ -250,8 +250,16 @@ function flipCard(card) {
       document.getElementById("index_to_button").style.display = "block";
     }
 
+    // // タロットの結果を画像としてキャプチャし、保存する
+    // captureTarotResult();
+
     // タロットの結果を画像としてキャプチャし、保存する
-    captureTarotResult();
+    // tarotType に応じてキャプチャするページを変える
+    if (tarotType === "今日の運勢") {
+      captureTarotResult("tarot1");
+    } else if (tarotType === "恋愛運") {
+      captureTarotResult("tarot2");
+    }
 
     // カードのクリックを無効化
     card.style.pointerEvents = "none"; // カードがクリックされないようにする

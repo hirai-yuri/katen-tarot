@@ -22,7 +22,7 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
   <script>
-    const userName = '<?php echo $_SESSION['username']; ?>'; // PHPのセッションからユーザー名を取得
+    const userName = '<?php echo $_SESSION['user_name']; ?>'; // PHPのセッションからユーザー名を取得
   </script>
 </head>
 
