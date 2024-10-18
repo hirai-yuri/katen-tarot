@@ -1,0 +1,156 @@
+@charset "utf-8";
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/33_R_Home画像NEW.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Q&A_a.php */
+p {
+  width: 200px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+/* 必須条件 */
+.tarot-area p .required::after {
+  content: '必須';
+  font-size: 11px;
+  color: crimson;
+  margin-left: 10px;
+}
+
+/* */
+.tarot-area .input-pro,
+#ALM {
+  width: 90%;
+  min-width: 200px;
+  height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mailform {
+  /* height: 435px; */
+  /* width: 200px; */
+  margin-top: 230px;
+
+}
+
+.mailform h2 {
+  font-size: 20px;
+}
+
+/*受け付け内容*/
+textarea {
+  width: 370px;
+  height: 250px;
+  line-height: 2;
+  overflow-y: scroll;
+
+}
+
+/* ボタンプログラム */
+.btn-border .return-top {
+  display: inline-block;
+  margin: 10px auto;
+  margin-right: 45px;
+  border: 2px solid #0d0015;
+  font-size: 15px;
+  color: #0d0015;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+}
+
+.btn-border:hover {
+  background-color: #c9171e;
+  border-color: #ba2623;
+  color: #FFF;
+}
+
+#submit {
+  margin-left: 180px;
+}
+
+input[name="submit"] {
+  width: 100px;
+  margin-left: auto;
+}
+
+/* confirm.php,Q&A.php */
+.form-area {
+  /* margin-bottom: 30px; */
+  /* width: 100%;
+  min-width: 200px;
+  height: 30px; */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.text-from h2 {
+  font-size: 20px;
+}
+
+p {
+  font-weight: bold;
+  font-size: 20px;
+  /* border-bottom: 5px solid #000; */
+  padding-top: 10px;
+}
+
+.text-from {
+  background-color: #fff;
+  margin-top: 300px;
+  padding: 15px;
+  border: 2px solid #000;
+}
+
+
+.btn-border {
+  display: inline-block;
+  text-align: center;
+  margin: 10px 40px;
+  margin-right: 45px;
+  border: 2px solid #0d0015;
+  font-size: 15px;
+  color: #0d0015;
+  text-decoration: none; 
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+
+}
+
+.btn-border:hover {
+  background-color: #c9171e;
+  border-color: #ba2623;
+  color: #FFF;
+}
+
+ /*Q&A.php*/
+.final-fool {
+  margin-top: 330px;
+}
+.final-fool p{
+  font-size: 14px;
+}
+/* トップページへ戻るボタン */
+.return-top{
+/* margin-right: 20px; */
+margin-left: 60px;
+}

@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="../css/confirm.css">
+<!-- <link rel="stylesheet" href="../css/confirm.css"> -->
+<link rel="stylesheet" href="../css/Q&A_mobile.css">
+<link rel="stylesheet" href="../css/Q&A_web.css">
 <?php
 //直リンクされた場合index.phpにリダイレクト
 if ($_SERVER["REQUEST_METHOD"] != "POST") {

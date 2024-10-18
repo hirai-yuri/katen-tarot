@@ -1,0 +1,131 @@
+@charset "utf-8";
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/33_R_Home画像NEW.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media(max-width:375px) {
+  /* Q&A_a.php */
+  body {
+    height: 800px;
+    width: 100%;
+  }
+  .mailform {
+  
+    margin-top: 190px;
+  
+  }
+  /* confirm.php,Q&A.php */
+ 
+  body {
+    /* height: 800px;
+    width: 100%; */
+    background-size: 100%;
+    /*画像のサイズを全自動調整*/
+  }
+  .text-from {
+    margin-top: 250px;
+  }
+}
+/* web版 */
+@media(min-width:450px) {
+  body {
+    height: 111vh;
+    background-image: url(../img/25_Member-registration画像2.jpg);
+    background-size: cover;
+    align-items: center;
+  }
+/* Q&A_a.php */
+  .tarot-area .input-pro,
+  #ALM {
+    width: 180px;
+    min-width: 380px;
+    height: 35px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .mailform {
+    /* height: 595px; */
+    margin-top: 250px;
+    background-color: #fcfafb;
+    padding: 23px;
+    width: 480px;
+  }
+
+  .tarot-area p .required::after {
+    content: '必須';
+    font-size: 13px;
+    color: crimson;
+    margin-left: 10px;
+  }
+
+  textarea {
+    width: 470px;
+    height: 220px;
+    /* overflow-y: scroll; */
+  }
+
+  #submit {
+    /* width: 450px; */
+    margin-left: 265px;
+  }
+
+  /* input[type="submit"] {
+    width: 100px;
+    margin-left: auto;
+  } */
+
+/* confirm.php,Q&A.php */
+  .text-from {
+    margin-top: 250px;
+    padding: 35px;
+  }
+
+  .form-area {
+    margin-bottom: 30px; 
+    width: 180px;
+    min-width: 270px;
+    height: 40px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .btn-border{
+    margin: 10px 30px;
+  }
+  textarea {
+    width: 450px;
+    height: 200px;
+    overflow-y: scroll;
+  }
+
+  .final-fool {
+    margin-top: 450px;
+  }
+  /* .final-fool h2{
+    margin-left: 60px;
+  } */
+  .final-fool p{
+    font-size: 20px;
+    height: 60px;
+    width: 300px;
+  }
+
+}
