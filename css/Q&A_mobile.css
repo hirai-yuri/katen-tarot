@@ -44,7 +44,7 @@ p {
 .mailform {
   /* height: 435px; */
   /* width: 200px; */
-  margin-top: 230px;
+  margin-top: 228px;
 
 }
 
@@ -55,14 +55,18 @@ p {
 /*受け付け内容*/
 textarea {
   width: 370px;
-  height: 250px;
+  height: 212px;
   line-height: 2;
   overflow-y: scroll;
 
 }
 
 /* ボタンプログラム */
-.btn-border .return-top {
+#submit {
+  margin-left: 86px;
+  
+}
+/* .btn-border .return-top {
   display: inline-block;
   margin: 10px auto;
   margin-right: 45px;
@@ -80,11 +84,9 @@ textarea {
   background-color: #c9171e;
   border-color: #ba2623;
   color: #FFF;
-}
+} */
 
-#submit {
-  margin-left: 180px;
-}
+
 
 input[name="submit"] {
   width: 100px;
@@ -124,7 +126,7 @@ p {
   display: inline-block;
   text-align: center;
   margin: 10px 40px;
-  margin-right: 45px;
+  margin-right: 13px;
   border: 2px solid #0d0015;
   font-size: 15px;
   color: #0d0015;
