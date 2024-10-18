@@ -40,11 +40,8 @@
     justify-content: left;
   }
 
-  #tarot-button1 {
-    width: 150px;
-  }
-
-  #tarot-button2 {
+  #tarot-button1 img,
+  #tarot-button2 img {
     width: 150px;
   }
 
