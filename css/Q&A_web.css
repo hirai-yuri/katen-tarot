@@ -96,6 +96,7 @@
     width: 480px;
   }
 
+  
   .tarot-area p .required::after {
     content: '必須';
     font-size: 13px;
