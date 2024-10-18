@@ -21,8 +21,8 @@ button[type="submit"],
 textarea {
   width: 250px;
   padding: 0.5rem;
-  /* border: 1px solid #ccc; */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
   border-radius: 4px;
   font-size: 12px;
   margin-bottom: 15px;
@@ -201,27 +201,17 @@ button[type="submit"] {
   color: #f0f0f0;
 }
 
-#tarot-button1 {
+#tarot-button1 img,
+#tarot-button2 img {
   width: 100px;
   padding: 10px;
   margin-right: 10px;
-  background: linear-gradient(to top, #00026b, #000105);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-#tarot-button1:hover {
-  opacity: 0.5;
-}
-
-#tarot-button2 {
-  width: 100px;
-  padding: 10px;
-  background: linear-gradient(to top, #7c397d, #e167e3);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
+#tarot-button1:hover,
 #tarot-button2:hover {
   opacity: 0.5;
 }
+
 #katen-img {
   position: absolute;
   bottom: 0;
