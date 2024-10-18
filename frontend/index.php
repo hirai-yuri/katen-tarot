@@ -67,8 +67,11 @@ if (isset($_GET['userName'])) {
         </a>
       <?php endif; ?>
     </div>
-
-    <div class="main-text" id="main-text"></div>
+    <div class="tarot-text-box">
+      <div class="katenname">猫</div>
+      <div class="main-text" id="main-text"></div>
+      <span class="cursor"></span>
+    </div>
     <img src="../img/main猫画像.jpg" alt="猫画像">
   </div>
 
@@ -86,9 +89,10 @@ if (isset($_GET['userName'])) {
     // 対話文とタイピングアニメーション
     const meinText = [
       "はじめまして、〇〇ちゃん。",
-      "当サイトでは今日の運勢または恋愛運を神主KARENが占います。",
+      "当サイトでは今日の運勢または恋愛運を",
+      "神主KATENが占います。",
       "会員登録すると占い結果を保存できたり、",
-      "KARENにメールで個別相談もできるよ。",
+      "KATENにメールで個別相談もできるよ。",
     ];
 
     const dialogueElement = document.getElementById("main-text");
