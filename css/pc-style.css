@@ -31,8 +31,7 @@
   /* タロット占い画面の設定　ここから */
 
   .tarot-main {
-    background-image: url(../img/app背景画像PC.jpg);
-    background-position: right; /* 画像の位置を中央に */
+    background-image: url(../img/main画像PC.jpg);
   }
 
   .tarot-button {
