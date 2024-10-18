@@ -35,14 +35,14 @@ body {
 /* */
 .tarot-area .input-pro,
 #ALM {
-  width: 90%;
+  width: 88%;
   min-width: 200px;
-  height: 35px;
+  height: 37px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.mailform {
+.tarot-area .mailform {
   margin-top: 225px;
 
 }

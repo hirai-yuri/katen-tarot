@@ -1,27 +1,5 @@
 @charset "utf-8";
 
-@media(max-width:390px) {
-  .mailform {
-    margin-top: 185px;
-  }
-
-  .mailform h2 {
-    background-color: #fcfafb;
-  }
-
-  .textarea {
-    width: 364px;
-  }
-
-  .btn-border {
-    margin: 10px 118px;
-    margin-right: 14px;
-  }
-
-  #submit {
-    margin-left: initial
-  }
-}
 
 @media(max-width:375px) {
 
@@ -39,11 +17,11 @@
 
   /* submitのmargin-leftを無効化 */
   #submit {
-    margin-left: initial;
+    margin-left: 119px;
   }
-  .btn-border {
-    margin: 10px 113px;
-    margin-right: 14px;
+  .tarot-area .btn-border {
+    margin: 10px;
+    margin-right: 0px;
   }
 
   /* confirm.php,Q&A.php */
@@ -56,7 +34,32 @@
   .text-from {
     margin-top: 250px;
   }
+  .form-area .btn-border{
+    margin: 10px 30px;
+  }
 }
+@media(max-width:390px) {
+
+  .mailform h2 {
+    background-color: #fcfafb;
+  }
+
+  .textarea {
+    width: 364px;
+  }
+
+  .form-area .btn-border {
+    margin: 10px 40px;
+    margin-right: 14px;
+  }
+}
+
+@media(max-width:430px){
+  /* Q&A_a.php */
+.mailform {
+    margin-top: 221px;
+  }
+} 
 
 /* web版 */
 @media(min-width:450px) {
@@ -75,7 +78,7 @@
     height: 35px;
   }
 
-  p {
+  .tarot-area p {
     font-size: 15px;
   }
 
@@ -122,7 +125,7 @@
     height: 40px;
   }
 
-  p {
+  .form-area p {
     font-size: 15px;
   }
 
