@@ -44,10 +44,10 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
     <div class="tarot-button" id="tarot-button">
       <div onclick="showTarot('tarot1', 'tarot2')" id="tarot-button1">
-        <span>▶︎</span>今日の運勢
+        <img src="../img/今日の運勢ボタン.png" alt="今日の運勢">
       </div>
       <div onclick="showTarot('tarot2', 'tarot1')" id="tarot-button2">
-        <span>▶︎</span>恋愛運
+        <img src="../img/恋愛運ボタン.png" alt="恋愛運">
       </div>
     </div>
 
