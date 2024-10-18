@@ -56,6 +56,7 @@
   }
 }
 
+
 /* @media(max-width:430) {
   #submit {
     margin-left: 86px;
@@ -95,6 +96,7 @@
     width: 480px;
   }
 
+  
   .tarot-area p .required::after {
     content: '必須';
     font-size: 13px;

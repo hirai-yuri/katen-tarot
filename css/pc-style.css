@@ -48,6 +48,10 @@
     width: 150px;
   }
 
+  #katen-img {
+    width: 500px;
+  }
+
   /* 占い結果の設定　ここから */
 
   .tarot-result {
