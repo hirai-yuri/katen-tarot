@@ -56,7 +56,7 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
       <div id="tarot-text" class="tarot-text"></div>
       <span class="cursor"></span>
     </div>
-    <img src="../img/KATEN画像.png" alt="KATEN画像" id="katen-img">
+    <img src="../img/KATEN画像.png" alt="KATEN画像" id="katen-img" class="fade-in">
 
   </div>
 
@@ -118,6 +118,11 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
   <script src="../js/app.js"></script>
   <script src="../js/captureTarotResult.js"></script>
   <script>
+    window.addEventListener('load', function() {
+      const image = document.querySelector('.fade-in');
+      image.classList.add('show');
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
       // PHPから取得したユーザー名をJSON形式でJavaScriptに渡す
       const userName = <?php echo json_encode($username1, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;

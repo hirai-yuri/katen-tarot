@@ -34,17 +34,6 @@
     background-image: url(../img/main画像PC.jpg);
   }
 
-  .tarot-button {
-    left: 100px;
-    width: 100%;
-    justify-content: left;
-  }
-
-  #tarot-button1 img,
-  #tarot-button2 img {
-    width: 150px;
-  }
-
   #katen-img {
     width: 500px;
   }
@@ -70,6 +59,16 @@
 
 @media screen and (min-width: 700px) {
   .tarot-button {
-    left: 300px;
+    top: 80%;
+    left: 200px;
+    transform: translate(0%, -100%);
+    width: 100%;
+    justify-content: left;
+  }
+
+  #tarot-button1 img,
+  #tarot-button2 img {
+    width: 150px;
+    height: 370px;
   }
 }
