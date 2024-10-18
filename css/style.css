@@ -192,18 +192,20 @@ button[type="submit"] {
   font-size: 12px;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 0;
   right: 0;
   /* left: 50%; */
-  transform: translate(0%, -100%);
+  /* transform: translate(0%, -100%); */
   width: 200px;
   justify-content: center;
   color: #f0f0f0;
+  z-index: 10;
 }
 
 #tarot-button1 img,
 #tarot-button2 img {
-  width: 100px;
+  width: 80px;
+  height: 187px;
   padding: 10px;
   margin-right: 10px;
 }
@@ -213,9 +215,21 @@ button[type="submit"] {
 }
 
 #katen-img {
+  width: 350px;
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* 少し下にずらしておく */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0); /* 元の位置に戻す */
 }
 
 /* タロット占い画面の設定　ここまで */
