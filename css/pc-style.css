@@ -32,12 +32,7 @@
 
   .tarot-result {
     background-image: url(../img/占い結果背景画像PC.jpg);
-  }
-
-  .page {
-    width: 450px;
-    left: unset;
-    right: 0;
+    background-size: 100% 100%;
   }
 
   #neko {
@@ -50,9 +45,5 @@
 @media screen and (min-width: 700px) {
   .tarot-button {
     left: 300px;
-  }
-
-  .page {
-    width: 700px;
   }
 }
