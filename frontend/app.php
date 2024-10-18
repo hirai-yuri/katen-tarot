@@ -56,6 +56,8 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
       <div id="tarot-text" class="tarot-text"></div>
       <span class="cursor"></span>
     </div>
+    <img src="../img/KATEN画像.png" alt="KATEN画像" id="katen-img">
+
   </div>
 
 
