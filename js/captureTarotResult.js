@@ -24,15 +24,43 @@ function captureTarotResult(tarotPageId) {
     return;
   }
 
+  // setTimeout(() => {
+  //   // canvasとしてページ全体をキャプチャ
+  //   html2canvas(tarotPage, {
+  //     backgroundColor: "#044b74", // 任意の背景色を指定
+  //   }).then((canvas) => {
+  //     const ctx = canvas.getContext("2d");
+  //     // 画面の中央部分を取得 (例: 中央300x300の領域)
+  //     const centerX = canvas.width / 2 - 200; // 中央部分から幅300px分
+  //     const centerY = canvas.height / 2 - 400; // 中央部分から高さ300px分
+
+  //     // 中央部分を切り抜くために新しいCanvasを作成
+  //     const croppedCanvas = document.createElement("canvas");
+  //     const croppedCtx = croppedCanvas.getContext("2d");
+
+  //     croppedCanvas.width = 400; // 切り抜く領域の幅
+  //     croppedCanvas.height = 800; // 切り抜く領域の高さ
+
+  //     // 元のキャンバスから中央部分をコピー
+  //     croppedCtx.drawImage(canvas, centerX, centerY, 400, 800, 0, 0, 400, 800);
+
+  //     // JPEG形式で画像データを取得（第2引数で圧縮率を指定: 0.0 - 1.0）
+  //     imgData = croppedCanvas.toDataURL("image/jpeg", 0.8); // 圧縮率を0.8に設定
+
   setTimeout(() => {
-    // canvasとしてページ全体をキャプチャ
+    const scale = window.devicePixelRatio || 1; // デバイスのピクセル比を取得
+    const viewportWidth = window.innerWidth; // ビューポートの幅を取得
+    const viewportHeight = window.innerHeight; // ビューポートの高さを取得
+
     html2canvas(tarotPage, {
       backgroundColor: "#044b74", // 任意の背景色を指定
+      scale: scale, // スケールをデバイスピクセル比に合わせる
     }).then((canvas) => {
       const ctx = canvas.getContext("2d");
-      // 画面の中央部分を取得 (例: 中央300x300の領域)
-      const centerX = canvas.width / 2 - 200; // 中央部分から幅300px分
-      const centerY = canvas.height / 2 - 400; // 中央部分から高さ300px分
+
+      // ビューポートのサイズに応じて中央の切り抜き領域を計算
+      const centerX = viewportWidth / 2 - 200; // ビューポート中央から幅200px分を引く
+      const centerY = viewportHeight / 2 - 400; // ビューポート中央から高さ400px分を引く
 
       // 中央部分を切り抜くために新しいCanvasを作成
       const croppedCanvas = document.createElement("canvas");
@@ -42,7 +70,17 @@ function captureTarotResult(tarotPageId) {
       croppedCanvas.height = 800; // 切り抜く領域の高さ
 
       // 元のキャンバスから中央部分をコピー
-      croppedCtx.drawImage(canvas, centerX, centerY, 400, 800, 0, 0, 400, 800);
+      croppedCtx.drawImage(
+        canvas,
+        centerX * scale,
+        centerY * scale,
+        400 * scale,
+        800 * scale,
+        0,
+        0,
+        400,
+        800
+      );
 
       // JPEG形式で画像データを取得（第2引数で圧縮率を指定: 0.0 - 1.0）
       imgData = croppedCanvas.toDataURL("image/jpeg", 0.8); // 圧縮率を0.8に設定

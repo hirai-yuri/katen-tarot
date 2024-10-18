@@ -80,22 +80,28 @@ $conn->close();
         <?php else: ?>
             <table border="1">
                 <tr>
-                    <th>結果</th>
-                    <th>画像</th>
+                    <th colspan="2">結果</th>
+                    <!-- <th>画像</th> -->
                     <!-- <th>日時</th> -->
                 </tr>
                 <?php foreach ($results as $result): ?>
                     <tr>
                         <td>
-                            <?php echo htmlspecialchars($result['tarot_type'], ENT_QUOTES, 'UTF-8'); ?><br>
-                            <div class="tarot_result_text"><?php echo nl2br(htmlspecialchars(str_replace(array('\\n', '\\r'), "\n", $result['tarot_result']), ENT_QUOTES, 'UTF-8')); ?></div>
+                            <div class="created_at"><?php
+                                                    // データベースの created_at の値を取得
+                                                    $created_at = $result['created_at'];
 
-                            <div class="created_at"><?php echo htmlspecialchars($result['created_at'], ENT_QUOTES, 'UTF-8'); ?></div>
+                                                    // DateTime オブジェクトを作成
+                                                    $date = new DateTime($created_at);
+
+                                                    // 指定の形式に変換して表示 (例: 2024年5月10日)
+                                                    echo htmlspecialchars($date->format('Y年n月j日'), ENT_QUOTES, 'UTF-8');
+                                                    ?></div>
                         </td>
 
 
 
-                        <td><img src="<?php echo htmlspecialchars($result['image_path'], ENT_QUOTES, 'UTF-8'); ?>" alt="Tarot result" width="100"></td>
+                        <td><img src="<?php echo htmlspecialchars($result['image_path'], ENT_QUOTES, 'UTF-8'); ?>" alt="Tarot result" width="100" class="tarot-image"></td>
                         <!-- <td></td> -->
                     </tr>
                 <?php endforeach; ?>
@@ -115,9 +121,46 @@ $conn->close();
         <?php endif; ?>
     </div>
 
+    <!-- モーダルの構造 -->
+    <div id="imgModal" class="modal">
+        <div class="modal-content">
+            <img id="modal-tarot-image">
+            <div class="close">とじる</div> <!-- 閉じるボタン -->
+            <div class="delete">削除</div> <!-- 削除ボタン -->
+        </div>
+    </div>
+
     <img src="../img/占い結果猫画像.png" alt="" id="neko">
     <div class="return"><a href="./index.php">トップページに戻る</a></div>
 
+
+    <script>
+        // JavaScriptによるモーダル表示処理
+        var modal = document.getElementById("imgModal");
+        var modalImg = document.getElementById("modal-tarot-image");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        // すべてのtarot-imageクラスの画像に対してクリックイベントを追加
+        var images = document.getElementsByClassName("tarot-image");
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                modal.style.display = "block"; // モーダルを表示
+                modalImg.src = this.src; // クリックした画像のソースをモーダル内の画像に設定
+            };
+        }
+
+        // 閉じるボタンをクリックしたとき
+        closeBtn.onclick = function() {
+            modal.style.display = "none"; // モーダルを閉じる
+        }
+
+        // モーダルの外側をクリックしたときに閉じる
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

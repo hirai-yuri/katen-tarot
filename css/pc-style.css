@@ -1,3 +1,24 @@
+@media screen and (max-height: 667px) {
+  /* 占い結果のモーダルウィンドウの高さ指定 */
+  .tarot-result .modal {
+    height: 150vh;
+  }
+
+  /* 占いのページのモーダルウィンドウの高さ指定 */
+  .modal-content {
+    margin: 20px auto;
+  }
+
+  /* 占いのページのボタンの位置 */
+  .button_area {
+    bottom: 5px;
+  }
+  /* 占いのページのカードディスプレイの位置 */
+  .card-display {
+    margin-top: 80px;
+  }
+}
+
 @media screen and (min-width: 450px) {
   /* メインページ */
   .main {
@@ -32,12 +53,7 @@
 
   .tarot-result {
     background-image: url(../img/占い結果背景画像PC.jpg);
-  }
-
-  .page {
-    width: 450px;
-    left: unset;
-    right: 0;
+    background-size: 100% 100%;
   }
 
   #neko {
@@ -45,14 +61,15 @@
     bottom: 0px;
     left: 100px;
   }
+
+  .tarot-result .modal-content,
+  .tarot-result .modal {
+    background-color: transparent;
+  }
 }
 
 @media screen and (min-width: 700px) {
   .tarot-button {
     left: 300px;
-  }
-
-  .page {
-    width: 700px;
   }
 }
