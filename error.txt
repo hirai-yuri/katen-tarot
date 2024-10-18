@@ -1,1 +1,0 @@
-Fatal error: Uncaught mysqli_sql_exception: Unknown column 'id' in 'field list' in C:\xampp\htdocs\github\katen-tarot\backend\register.php:16 Stack trace: #0 C:\xampp\htdocs\github\katen-tarot\backend\register.php(16): mysqli->prepare('SELECT id FROM ...') #1 {main} thrown in C:\xampp\htdocs\github\katen-tarot\backend\register.php on line 16

@@ -17,10 +17,10 @@ services:
     image: mysql:8.0
     container_name: mysql-container
     environment:
-      MYSQL_ROOT_PASSWORD: "" # パスワードを空に設定
+      MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: tarot_db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: "" # パスワードを空に設定
+      MYSQL_USER: test
+      MYSQL_PASSWORD: testpass
 
     ports:
       - "3306:3306"

@@ -693,12 +693,14 @@ h1 {
 
 .close,
 .delete {
+  display: inline-block;
+  width: 100px;
   background-color: #ffffff;
   width: 50px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   /* border: #000 solid 1px; */
   border-radius: 20px;
-  margin: 10px auto;
+  margin: 10px;
   padding: 5px;
   cursor: pointer;
 }
