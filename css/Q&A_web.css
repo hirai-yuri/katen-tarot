@@ -33,13 +33,17 @@
 
   .mailform {
 
-    margin-top: 190px;
+    margin-top: 159px;
 
   }
 
   /* submitのmargin-leftを無効化 */
   #submit {
     margin-left: initial;
+  }
+  .btn-border {
+    margin: 10px 113px;
+    margin-right: 14px;
   }
 
   /* confirm.php,Q&A.php */
@@ -96,7 +100,8 @@
     width: 480px;
   }
 
-  
+
+
   .tarot-area p .required::after {
     content: '必須';
     font-size: 13px;
