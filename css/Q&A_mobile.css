@@ -17,10 +17,11 @@ body {
   align-items: center;
 }
 /* Q&A_a.php */
-p {
+.tarot-area p {
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
   width: 200px;
-  margin-top: 15px;
-  font-size: 13px;
 }
 
 /* 必須条件 */
@@ -42,8 +43,6 @@ p {
 }
 
 .mailform {
-  /* height: 435px; */
-  /* width: 200px; */
   margin-top: 225px;
 
 }
@@ -66,28 +65,6 @@ textarea {
   margin-left: 83px;
   
 }
-/* .btn-border .return-top {
-  display: inline-block;
-  margin: 10px auto;
-  margin-right: 45px;
-  border: 2px solid #0d0015;
-  font-size: 15px;
-  color: #0d0015;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: .4s;
-}
-
-.btn-border:hover {
-  background-color: #c9171e;
-  border-color: #ba2623;
-  color: #FFF;
-} */
-
-
-
 input[name="submit"] {
   width: 100px;
   margin-left: auto;
@@ -95,10 +72,6 @@ input[name="submit"] {
 
 /* confirm.php,Q&A.php */
 .form-area {
-  /* margin-bottom: 30px; */
-  /* width: 100%;
-  min-width: 200px;
-  height: 30px; */
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -107,10 +80,9 @@ input[name="submit"] {
   font-size: 20px;
 }
 
-p {
+.form-area p {
   font-weight: bold;
   font-size: 20px;
-  /* border-bottom: 5px solid #000; */
   padding-top: 10px;
 }
 

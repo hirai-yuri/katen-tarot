@@ -49,8 +49,6 @@
   /* confirm.php,Q&A.php */
 
   body {
-    /* height: 800px;
-    width: 100%; */
     background-size: 100%;
     /*画像のサイズを全自動調整*/
   }
@@ -59,17 +57,6 @@
     margin-top: 250px;
   }
 }
-
-
-/* @media(max-width:430) {
-  #submit {
-    margin-left: 86px;
-  }
-
-  .btn-border {
-    margin-right: 13px;
-  }
-} */
 
 /* web版 */
 @media(min-width:450px) {
@@ -93,7 +80,7 @@
   }
 
   .mailform {
-    /* height: 595px; */
+    
     margin-top: 250px;
     background-color: #fcfafb;
     padding: 23px;
@@ -112,18 +99,15 @@
   textarea {
     width: 470px;
     height: 220px;
-    /* overflow-y: scroll; */
+    
   }
 
   #submit {
-    /* width: 450px; */
+    
     margin-left: 158px;
   }
 
-  /* input[type="submit"] {
-    width: 100px;
-    margin-left: auto;
-  } */
+  
 
   /* confirm.php,Q&A.php */
   .text-from {
@@ -156,9 +140,7 @@
     margin-top: 450px;
   }
 
-  /* .final-fool h2{
-    margin-left: 60px;
-  } */
+
   .final-fool p {
     font-size: 20px;
     height: 60px;
