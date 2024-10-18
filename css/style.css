@@ -21,7 +21,8 @@ button[type="submit"],
 textarea {
   width: 250px;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   font-size: 12px;
   margin-bottom: 15px;
@@ -347,7 +348,8 @@ h1 {
   margin: 0;
   margin-top: 5px;
   margin-left: 15px;
-  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* border-bottom: 1px solid #f0f0f0; */
   text-align: center;
   line-height: 1.8;
 
@@ -576,17 +578,20 @@ h1 {
   border-spacing: 0; /* セル間のスペースを調整 */
   border-radius: 10px; /* 角を丸くする */
   overflow: hidden; /* 丸い角を反映するために必要 */
-  border: 1px solid black; /* ボーダーの太さを3pxに設定 */
+  /* border: 1px solid black; ボーダーの太さを3pxに設定 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .tarot-result th {
-  border: 1px solid black; /* ボーダーの太さを3pxに設定 */
+  /* border: 1px solid black; ボーダーの太さを3pxに設定 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   text-align: center;
   padding: 5px;
 }
 
 .tarot-result td {
-  border: 1px solid black; /* ボーダーの太さを3pxに設定 */
+  /* border: 1px solid black; ボーダーの太さを3pxに設定 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   padding: 5px;
   height: 150px;
   line-height: 1.5;
@@ -701,11 +706,38 @@ h1 {
 .delete {
   background-color: #ffffff;
   width: 50px;
-  border: #000 solid 1px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* border: #000 solid 1px; */
   border-radius: 20px;
   margin: 10px auto;
   padding: 5px;
   cursor: pointer;
+}
+
+#confirmModal-content {
+  margin: 300px auto;
+  width: 250px;
+  height: 100px;
+  background-color: #ffffff;
+}
+
+#confirmModal-content p {
+  color: red;
+}
+
+#confirmDelete,
+#cancelDelete {
+  width: 80px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#confirmDelete:hover,
+#cancelDelete:hover {
+  background-color: #00dedc;
 }
 
 /* 占い結果ページ　ここまで */

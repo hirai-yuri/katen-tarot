@@ -141,7 +141,7 @@ $conn->close();
 
     <!-- 確認モーダル -->
     <div id="confirmModal" class="modal">
-        <div class="modal-content">
+        <div id="confirmModal-content" class="modal-content">
             <p>本当に削除してもよろしいですか？</p>
             <button id="confirmDelete">はい</button>
             <button id="cancelDelete">いいえ</button>
