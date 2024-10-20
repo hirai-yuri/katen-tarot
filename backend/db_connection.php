@@ -1,7 +1,7 @@
 <?php
-$servername = "tarot-db-instance.cujbwcxqcbel.us-east-1.rds.amazonaws.com";
-$username = "root";
-$password = "fOm36AO6U7v7Y6CcvUyc";
+$servername = "db";
+$username = "test";
+$password = "testpass";
 $dbname = "tarot_db";
 
 // データベース接続
