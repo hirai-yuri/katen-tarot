@@ -62,7 +62,7 @@ if (isset($_GET['userName'])) {
         <a href="./login.php">
           <button class="login-button">ログイン</button>
         </a>
-        <a href="./top.php">
+        <a href="../top.php">
           <button class="login-button">名前変更</button>
         </a>
       <?php endif; ?>
