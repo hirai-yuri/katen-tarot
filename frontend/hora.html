@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="Ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="submit-button" type="submit">送信</button>
+  <script>
+    window.onload = function() {
+  document.getElementById('submit-button').addEventListener('click', function() {
+    this.disabled = true;
+  });
+}
+  </script>
+</body>
+
+</html>

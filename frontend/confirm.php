@@ -43,13 +43,14 @@ $reason = $_POST['reason'];
 		</div>
 		<div class="form-area">
 			<input type='button' onclick='history.back()' value='戻る' class="btn-border">
-			<input type="submit" name="lord" value="送信" class="btn-border">
+			<input type="submit" name="lord" value="送信" class="btn-border" id="Flere210">
 			<input type="hidden" name="name" value="<?php echo $name; ?>">
 			<input type="hidden" name="Email" value="<?php echo $Email; ?>">
 			<input type="hidden" name="reason" value="<?php echo $reason; ?>">
 			<input type="hidden" name="address" value="<?php echo $address; ?>">
 		</div>
 	</form>
+	<script src="../js/Flere.js"></script>
 </body>
 
 </html>
