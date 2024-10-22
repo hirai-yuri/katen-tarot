@@ -56,7 +56,7 @@ if (isset($_GET['userName'])) {
           <button class="login-button">名前変更</button>
         </a>
       <?php else: ?>
-        <a href="./app.php">
+        <a href="../top.php">
           <button class="results-button">タロット占い</button>
         </a>
         <a href="./login.php">
