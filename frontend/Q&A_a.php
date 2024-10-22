@@ -44,8 +44,6 @@
       <div class="tarot-area" id="submit">
         <input type="button" onclick="location.href='index.php'" value="トップへ戻る" class="btn-border" >
         <input type="submit" name="submit" value="確認画面へ" class="btn-border">
-      <!-- <p><a href="index.php" class="return-top">お問い合わせトップへ 
-      </a></p> -->
       </div>
     </form>
     

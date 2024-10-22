@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 *,
 ::before,
 ::after {
@@ -16,6 +17,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 /* Q&A_a.php */
 .tarot-area p {
   font-weight: bold;
@@ -35,12 +37,13 @@ body {
 /* */
 .tarot-area .input-pro,
 #ALM {
-  width: 88%;
+  width: 87%;
   min-width: 200px;
-  height: 37px;
+  height: 38px;
   padding-left: 10px;
   padding-right: 10px;
 }
+
 
 .tarot-area .mailform {
   margin-top: 225px;
@@ -63,10 +66,11 @@ textarea {
 /* ボタンプログラム */
 #submit {
   margin-left: 83px;
-  
+
 }
+
 input[name="submit"] {
-  width: 100px;
+  width: 108px;
   margin-left: auto;
 }
 
@@ -102,7 +106,7 @@ input[name="submit"] {
   border: 2px solid #0d0015;
   font-size: 15px;
   color: #0d0015;
-  text-decoration: none; 
+  text-decoration: none;
   font-weight: bold;
   padding: 8px 16px;
   border-radius: 4px;
@@ -116,15 +120,16 @@ input[name="submit"] {
   color: #FFF;
 }
 
- /*Q&A.php*/
+/*Q&A.php*/
 .final-fool {
   margin-top: 330px;
 }
-.final-fool p{
+
+.final-fool p {
   font-size: 14px;
 }
+
 /* トップページへ戻るボタン */
-.return-top{
-/* margin-right: 20px; */
-margin-left: 60px;
+.return-top {
+  margin-left: 60px;
 }

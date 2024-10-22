@@ -1,43 +1,8 @@
 @charset "utf-8";
 
 
-@media(max-width:375px) {
 
-  /* Q&A_a.php */
-  body {
-    height: 800px;
-    width: 100%;
-  }
 
-  .mailform {
-
-    margin-top: 159px;
-
-  }
-
-  /* submitのmargin-leftを無効化 */
-  #submit {
-    margin-left: 119px;
-  }
-  .tarot-area .btn-border {
-    margin: 10px;
-    margin-right: 0px;
-  }
-
-  /* confirm.php,Q&A.php */
-
-  body {
-    background-size: 100%;
-    /*画像のサイズを全自動調整*/
-  }
-
-  .text-from {
-    margin-top: 250px;
-  }
-  .form-area .btn-border{
-    margin: 10px 30px;
-  }
-}
 @media(max-width:390px) {
 
   .mailform h2 {
@@ -54,12 +19,52 @@
   }
 }
 
-@media(max-width:430px){
+@media(max-width:430px) {
+
   /* Q&A_a.php */
-.mailform {
+  .mailform {
     margin-top: 221px;
   }
-} 
+}
+@media(max-width:375px) {
+
+  /* Q&A_a.php */
+  body {
+    height: 800px;
+    width: 100%;
+  }
+
+  .mailform {
+
+    margin-top: 159px;
+
+  }
+
+  /* submitのmargin-leftを無効化 */
+  #submit {
+    margin-left: 104px;
+  }
+
+  .tarot-area .btn-border {
+    margin: 10px;
+    margin-right: 0px;
+  }
+
+  /* confirm.php,Q&A.php */
+
+  body {
+    background-size: 100%;
+    /*画像のサイズを全自動調整*/
+  }
+
+  .text-from {
+    margin-top: 250px;
+  }
+
+  .form-area .btn-border {
+    margin: 10px 30px;
+  }
+}
 
 /* web版 */
 @media(min-width:450px) {
@@ -83,7 +88,7 @@
   }
 
   .mailform {
-    
+
     margin-top: 250px;
     background-color: #fcfafb;
     padding: 23px;
@@ -102,15 +107,15 @@
   textarea {
     width: 470px;
     height: 220px;
-    
+
   }
 
   #submit {
-    
+
     margin-left: 158px;
   }
 
-  
+
 
   /* confirm.php,Q&A.php */
   .text-from {
@@ -130,7 +135,7 @@
   }
 
   .btn-border {
-    margin: 10px 30px;
+    margin: 10px 27px;
   }
 
   textarea {
