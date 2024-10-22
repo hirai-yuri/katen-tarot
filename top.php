@@ -35,7 +35,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
       <p>KATEN</p>
       <p>タロット占い</p>
     </div>
-    <img src="../img/TOP猫画像.jpg" alt="猫画像">
+    <img src="./img/TOP猫画像.jpg" alt="猫画像">
     <form action="./frontend/index.php" method="GET">
       <label for="username1" class="name-input"></label>
       <input type="text" class="name-input" id="username" name="userName" placeholder="あなたのニックネームを教えてね" required />

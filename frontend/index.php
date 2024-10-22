@@ -52,7 +52,7 @@ if (isset($_GET['userName'])) {
         <a href="./logout.php">
           <button class="logout-button">ログアウト</button>
         </a>
-        <a href="./top.php">
+        <a href="../top.php">
           <button class="login-button">名前変更</button>
         </a>
       <?php else: ?>
