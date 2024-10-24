@@ -35,7 +35,7 @@ function generateCards(displayId) {
     card.className = "card";
     card.dataset.id = i;
     const img = document.createElement("img");
-    img.src = "../images/cards/backside.jpg";
+    img.src = "../../../public/images/cards/rowsen_cross.jpg";
     img.alt = "tarot card";
     card.appendChild(img);
     displayElement.appendChild(card);

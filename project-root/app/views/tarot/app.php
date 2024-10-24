@@ -9,6 +9,8 @@ $isLoggedIn = isset($_SESSION['user_id']);
 $userName = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -16,26 +18,27 @@ $userName = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>タロット占い</title>
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+  <link rel="stylesheet" href="../../../public/css/app.css">
   <script>
     const userName = '<?php echo $userName; ?>'; // PHPのセッションからユーザー名を取得
   </script>
 </head>
 
-<body>
+<body class="stars">
   <div class="tarot-main">
     <div class="login-button-area">
-      <a href="./index.php">
+      <a href="../../../public/top.php">
         <button class="results-button">戻る</button>
       </a>
     </div>
 
     <div class="tarot-button" id="tarot-button">
       <div onclick="showTarot('tarot1', 'tarot2')" id="tarot-button1">
-        <img src="/public/images/ui/今日の運勢ボタン.png" alt="今日の運勢">
+        <img src="../../../public/images/ui/今日の運勢ボタン.png" alt="今日の運勢">
       </div>
       <div onclick="showTarot('tarot2', 'tarot1')" id="tarot-button2">
-        <img src="/public/images/ui/恋愛運ボタン.png" alt="恋愛運">
+        <img src="../../../public/images/ui/恋愛運ボタン.png" alt="恋愛運">
       </div>
     </div>
 
@@ -44,7 +47,7 @@ $userName = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
       <div id="tarot-text" class="tarot-text"></div>
       <span class="cursor"></span>
     </div>
-    <img src="/public/images/ui/KATEN画像.png" alt="KATEN画像" id="katen-img" class="fade-in">
+    <img src="../../../public/images/ui/KATEN画像.png" alt="KATEN画像" id="katen-img" class="fade-in">
   </div>
 
   <!-- 今日の運勢のタロットページ -->
@@ -78,8 +81,80 @@ $userName = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
     </div>
   </div>
 
-  <script src="/public/js/app.js"></script>
-  <script src="/public/js/captureTarotResult.js"></script>
+
+  <div>
+    <div class="button_area">
+      <div class="button_area">
+
+        <div id="showModalButton">ダウンロード</div>
+
+        <div id="index_to_button"><a href="./app.php">戻る</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  <script src="../../../public/js/app.js"></script>
+  <script src="../../../public/js/captureTarotResult.js"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../../public/js/cardData.js"></script>
+  <script src="../../../public/js//stars.js"></script>
+  <script src="../../../public/js/app.js"></script>
+  <script src="../../../public/js/captureTarotResult.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      const image = document.querySelector('.fade-in');
+      image.classList.add('show');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // PHPから取得したユーザー名をJSON形式でJavaScriptに渡す
+      const userName = <?php echo json_encode($username1, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
+      // ユーザー名が存在する場合、対話を開始
+      if (userName) {
+        startDialogue(userName);
+      }
+    });
+
+    const tarotText = [
+      "はじめまして、〇〇ちゃん。",
+      "タロット占い師のKATENと申します。",
+      "ぼくがこの先起こる〇〇ちゃんの未来を占います。",
+      "今日の運勢、または恋愛運、どちらを占いますか？",
+    ];
+
+    const dialogueElement = document.getElementById("tarot-text");
+    let currentText = "";
+    let textIndex = 0;
+    let charIndex = 0;
+    let delayBetweenLines = 1000;
+
+    function startDialogue(userName) {
+      const dialogueText = tarotText.map((text) => text.replace(/〇〇ちゃん/g, userName + "ちゃん"));
+
+      typeText(dialogueText);
+    }
+
+    function typeText(dialogueText) {
+      if (textIndex < dialogueText.length) {
+        const currentLine = dialogueText[textIndex];
+        if (charIndex < currentLine.length) {
+          currentText += currentLine[charIndex];
+          dialogueElement.innerHTML = currentText;
+          charIndex++;
+          setTimeout(() => typeText(dialogueText), 50);
+        } else {
+          setTimeout(() => {
+            charIndex = 0;
+            currentText += "<br>";
+            textIndex++;
+            typeText(dialogueText);
+          }, delayBetweenLines);
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>

@@ -1,38 +1,48 @@
 <?php
 
-// タロット結果を管理するモデルです。データベースに保存、取得、削除などの操作を行います。
-// saveResult()で占い結果をデータベースに保存し、getResultsByUserId()でユーザーごとの結果を取得します。
+# タロット結果のデータベース操作
 
 namespace App\Models;
 
+use PDO;
+use PDOException;
+
 class TarotResult
 {
-    private $conn;
+    private $pdo;
 
-    public function __construct()
+    public function __construct($db)
     {
-        // データベース接続を読み込む
-        $this->conn = include '../config/db.php';
+        $this->pdo = $db;
     }
 
-    // タロット結果を保存するメソッド
-    public function saveResult($userId, $tarotResult, $imagePath, $tarotType)
+    // タロット占いの結果を保存
+    public function saveResult($userId, $tarotResult, $tarotType, $imagePath)
     {
-        $stmt = $this->conn->prepare("INSERT INTO tarot_results (user_id, tarot_result, image_path, tarot_type, created_at) VALUES (?, ?, ?, ?, NOW())");
-        $stmt->bind_param("isss", $userId, $tarotResult, $imagePath, $tarotType);
-
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            error_log("SQLエラー: " . $stmt->error);
+        try {
+            $stmt = $this->pdo->prepare("INSERT INTO tarot_results (user_id, result, tarot_type, image_path, created_at) VALUES (:user_id, :result, :tarot_type, :image_path, NOW())");
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->bindParam(':result', $tarotResult, PDO::PARAM_STR);
+            $stmt->bindParam(':tarot_type', $tarotType, PDO::PARAM_STR);
+            $stmt->bindParam(':image_path', $imagePath, PDO::PARAM_STR);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            // エラーログなどを追加するとよい
             return false;
         }
     }
 
-    // 指定ユーザーのタロット結果を取得するメソッド
+    // ユーザーIDに基づくタロット結果を取得
     public function getResultsByUserId($userId)
     {
-        $stmt = $this->conn->prepare("SELECT id, tarot_result, image_path, tarot_type, created_at FROM tarot_results WHERE user_id = ? ORDER BY created_at DESC");
-        $stmt->bind_param("i", $userId);
-        $stmt->execute();
-        $result = $stmt->get_r
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM tarot_results WHERE user_id = :user_id ORDER BY created_at DESC");
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // エラーハンドリング
+            return [];
+        }
+    }
+}
