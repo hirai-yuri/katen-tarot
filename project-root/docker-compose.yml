@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  php-apache:
+    build: .
+    container_name: php-apache-container
+    ports:
+      - "80:80" # ホストの8080ポートにアクセスすると、コンテナのApacheに接続
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: tarot_db
+      MYSQL_USER: test
+      MYSQL_PASSWORD: testpass
+
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
