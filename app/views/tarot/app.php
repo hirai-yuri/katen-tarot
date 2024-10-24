@@ -96,7 +96,7 @@ $userName = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="../../../public/js/cardData.js"></script>
-  <script src="../../../public/js//stars.js"></script>
+  <script src="../../../public/js/stars.js"></script>
   <script src="../../../public/js/app.js"></script>
   <script src="../../../public/js/captureTarotResult.js"></script>
   <script>
@@ -107,7 +107,7 @@ $userName = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
     document.addEventListener('DOMContentLoaded', () => {
       // PHPから取得したユーザー名をJSON形式でJavaScriptに渡す
-      const userName = <?php echo json_encode($username1, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
+      const userName = <?php echo json_encode($username, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
       // ユーザー名が存在する場合、対話を開始
       if (userName) {
         startDialogue(userName);
