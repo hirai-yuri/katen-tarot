@@ -37,7 +37,9 @@ $isLoggedIn = isset($_SESSION['user_id']);
       <input type="text" class="name-input" id="username" name="userName" placeholder="あなたのニックネームを教えてね" required />
       <button type="submit" class="start-button">開始</button>
     </form>
+
   </div>
+
 </body>
 
 </html>
