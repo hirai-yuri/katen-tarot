@@ -1,8 +1,3 @@
-<<<<<<< HEAD:frontend/Q&A.php
-<link rel="stylesheet" href="../css/Q&A_mobile.css">
-<link rel="stylesheet" href="../css/Q&A_web.css">
-=======
->>>>>>> ディレクトリ改修②:public/Q&A.php
 <?php
 //直リンクされた場合index.phpにリダイレクト
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
@@ -59,7 +54,7 @@ mb_send_mail($to, $Mail, $message, $headers);
 		<h2>お問い合わせ完了</h2>
 		<p>お問い合わせありがとうございました。</p>
 		<p>今後とも当サイトをよろしくお願いいたします。</p>
-		<p><a href="index.php" class="return-top">お問い合わせトップへ</p>
+		<p><a href="top.php" class="return-top">お問い合わせトップへ</p>
 	</div>
 </body>
 
