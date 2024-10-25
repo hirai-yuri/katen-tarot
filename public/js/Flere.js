@@ -6,12 +6,12 @@ document.getElementById('Flere210').onclick=function(event){
   document.form.submit();
 }
 $(window).on('load',function(){
-  $("#loading").delay(10000).fadeOut('slow');
+  $("#loading").delay(12000).fadeOut('slow');
   //ローディング画面を1.2秒（1200ms）待機してからフェードアウト
 });
 var bar = new ProgressBar.Line(loading_text, {//id名を指定
   strokeWidth: 0,//進捗ゲージの太さ
-  duration: 20000,//時間指定(1000＝5秒)
+  duration: 5100,//時間指定(1000＝5秒)
   trailWidth: 0,//線の太さ
   text: {//テキストの形状を直接指定 
     style: {
