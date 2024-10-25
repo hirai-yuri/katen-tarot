@@ -1,11 +1,7 @@
 <?php
 session_start();
-
-
 // ログインしているかどうかの確認
 $isLoggedIn = isset($_SESSION['user_id']);
-
-
 // GETリクエストからユーザー名を取得
 if (isset($_GET['userName'])) {
   // HTMLエンティティをエスケープしてからセッションに保存
@@ -15,9 +11,7 @@ if (isset($_GET['userName'])) {
   // セッションに保存されているユーザー名を使用
   $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -27,8 +21,7 @@ if (isset($_GET['userName'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KATEN TAROT</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/pc-style.css" />
+  <link rel="stylesheet" href="./css/APP.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
 
@@ -52,17 +45,17 @@ if (isset($_GET['userName'])) {
         <a href="./logout.php">
           <button class="logout-button">ログアウト</button>
         </a>
-        <a href="../top.php">
+        <a href="./index.php">
           <button class="login-button">名前変更</button>
         </a>
       <?php else: ?>
-        <a href="../top.php">
+        <a href="./app.php">
           <button class="results-button">タロット占い</button>
         </a>
         <a href="./login.php">
           <button class="login-button">ログイン</button>
         </a>
-        <a href="../top.php">
+        <a href="./index.php">
           <button class="login-button">名前変更</button>
         </a>
       <?php endif; ?>
@@ -72,7 +65,7 @@ if (isset($_GET['userName'])) {
       <div class="main-text" id="main-text"></div>
       <span class="cursor"></span>
     </div>
-    <img src="../img/main猫画像.jpg" alt="猫画像">
+    <img src="./images/main猫画像.jpg" alt="猫画像">
   </div>
 
   <script>

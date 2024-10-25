@@ -1,14 +1,10 @@
 <?php
 session_start();
-
-
 // ログインしているかどうかの確認
 $isLoggedIn = isset($_SESSION['user_id']);
-
 // セッションからユーザー名を取得
 $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -17,8 +13,7 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KATEN TAROT</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/pc-style.css" />
+  <link rel="stylesheet" href="./css/APP.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
   <script>
@@ -30,24 +25,18 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
   <!-- タロット占いページ -->
   <div class="tarot-main">
-
     <div class="login-button-area">
-
-      <a href="./index.php">
+      <a href="./top.php">
         <button class="results-button">戻る</button>
       </a>
-
-
     </div>
-
-
 
     <div class="tarot-button" id="tarot-button">
       <div onclick="showTarot('tarot1', 'tarot2')" id="tarot-button1">
-        <img src="../img/今日の運勢ボタン.png" alt="今日の運勢">
+        <img src="./images/今日の運勢ボタン.png" alt="今日の運勢">
       </div>
       <div onclick="showTarot('tarot2', 'tarot1')" id="tarot-button2">
-        <img src="../img/恋愛運ボタン.png" alt="恋愛運">
+        <img src="./images/恋愛運ボタン.png" alt="恋愛運">
       </div>
     </div>
 
@@ -56,7 +45,7 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
       <div id="tarot-text" class="tarot-text"></div>
       <span class="cursor"></span>
     </div>
-    <img src="../img/KATEN画像.png" alt="KATEN画像" id="katen-img" class="fade-in">
+    <img src="./images/KATEN画像.png" alt="KATEN画像" id="katen-img" class="fade-in">
 
   </div>
 
@@ -113,10 +102,10 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script src="../js/cardData.js"></script>
-  <script src="../js/stars.js"></script>
-  <script src="../js/app.js"></script>
-  <script src="../js/captureTarotResult.js"></script>
+  <script src="./js/cardData.js"></script>
+  <script src="./js/stars.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/captureTarotResult.js"></script>
   <script>
     window.addEventListener('load', function() {
       const image = document.querySelector('.fade-in');

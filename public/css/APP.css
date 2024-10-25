@@ -70,7 +70,7 @@ button[type="submit"] {
 /* メインページ */
 
 .main {
-  background-image: url(../img/main画像.jpg);
+  background-image: url(../images/main画像.jpg);
   width: 100%;
   height: 100%;
   /* background-size: cover; 画像を画面全体に表示する */
@@ -120,7 +120,7 @@ button[type="submit"] {
   display: block;
   width: 100%;
   height: 100dvh;
-  background-image: url(../img/main画像.jpg);
+  background-image: url(../images/main画像.jpg);
   /* background-size: cover; */
   /* 画像を画面全体に表示する */
   /* background-position: center; 画像の位置を中央に */
@@ -529,7 +529,7 @@ h1 {
 /* 占い結果ページ　ここから */
 
 .tarot-result {
-  background-image: url(../img/占い結果背景画像.jpg);
+  background-image: url(../images/占い結果背景画像.jpg);
   width: 100%;
   height: 100%;
   background-size: 100%;
@@ -732,3 +732,80 @@ h1 {
 }
 
 /* 占い結果ページ　ここまで */
+
+/* 以下、PCの設定 */
+
+@media screen and (max-height: 667px) {
+  /* 占い結果のモーダルウィンドウの高さ指定 */
+  .tarot-result .modal {
+    height: 150vh;
+  }
+
+  /* 占いのページのモーダルウィンドウの高さ指定 */
+  .modal-content {
+    margin: 20px auto;
+  }
+
+  /* 占いのページのボタンの位置 */
+  .button_area {
+    bottom: 5px;
+  }
+  /* 占いのページのカードディスプレイの位置 */
+  .card-display {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  /* メインページ */
+  .main {
+    background-image: url(../images/main画像PC.jpg);
+    background-size: 100%;
+  }
+
+  /* メインページ　ここまで */
+
+  /* タロット占い画面の設定　ここから */
+
+  .tarot-main {
+    background-image: url(../images/main画像PC.jpg);
+  }
+
+  #katen-img {
+    width: 500px;
+  }
+
+  /* 占い結果の設定　ここから */
+
+  .tarot-result {
+    background-image: url(../images/占い結果背景画像PC.jpg);
+    background-size: 100% 100%;
+  }
+
+  #neko {
+    width: 100px;
+    bottom: 0px;
+    left: 100px;
+  }
+
+  .tarot-result .modal-content,
+  .tarot-result .modal {
+    background-color: transparent;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .tarot-button {
+    top: 80%;
+    left: 200px;
+    transform: translate(0%, -100%);
+    width: 100%;
+    justify-content: left;
+  }
+
+  #tarot-button1 img,
+  #tarot-button2 img {
+    width: 150px;
+    height: 370px;
+  }
+}
