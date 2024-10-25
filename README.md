@@ -33,3 +33,12 @@ tarot_type VARCHAR(50),
 created_at DATETIME,
 FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
+### ** composer にインストールしたライブラリ**
+
+PHPMailer: Q&A フォームやユーザー登録時のメール送信 (Q&AController.php や UserController.php など)。
+Monolog: エラーログやデバッグログの管理 (LogService.php で使用)。
+Guzzle: 必要に応じて外部 API と連携する場合。
+dotenv: .env ファイルにデータベース接続情報や API キーを保存し、安全にアクセス (config/db.php で使用)。
+Carbon: 日付の処理やフォーマット (TarotResult.php などで使用)。
+PHPUnit: tests/ ディレクトリのユニットテストを実行。
