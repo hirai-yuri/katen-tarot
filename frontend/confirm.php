@@ -46,7 +46,10 @@ $reason = $_POST['reason'];
 			<input type='button' onclick='history.back()' value='戻る' class="btn-border">
 			<input type="submit" id="Flere210" name="lord" value="送信" class="btn-border">
 			<div id="loading">
-				<img src="../svg/829.svg" alt="太極図">
+				<div class="kvArea" id="loading_logo">
+				<div class="img_box"><img src="../svg/829.svg" alt="太極図" class="salvare"></div>
+				</div>
+				<div id="loading_text"></div>
 			</div>
 			<input type="hidden" name="name" value="<?php echo $name; ?>">
 			<input type="hidden" name="Email" value="<?php echo $Email; ?>">
@@ -55,6 +58,8 @@ $reason = $_POST['reason'];
 		</div>
 
 	</form>
+	<script src="../js/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
 	<script src="../js/Flere.js"></script>
 </body>
 

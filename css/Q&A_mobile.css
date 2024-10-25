@@ -83,20 +83,54 @@ input[name="submit"] {
 #loading img{
   /* display: none; */
   position: fixed;
-  /* text-align: center; */
+  text-align: center;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   /* background-color: rgba(0,0,0,0.5); */
   z-index: 9999;
 }
 #loading{
-  display: block;
+  display: none;
   
+}
+#loading_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#loading .kvArea {
+  width: 100%;
+}
+#loading .kvArea .img_box {
+  text-align: center;
+}
+#loading .kvArea .img_box img {
+  max-width: 100%;
+  height: auto;
+}
+/*salvare=救い*/
+.fadeUp {
+  animation-name: salvareAnime;
+  animation-duration: 1.2s;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+@keyframes salvareAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
 }
 
 .text-from h2 {
