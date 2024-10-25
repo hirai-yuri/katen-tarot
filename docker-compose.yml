@@ -5,7 +5,7 @@ services:
     build: .
     container_name: php-apache-container
     ports:
-      - "80:80" # ホストの8080ポートにアクセスすると、コンテナのApacheに接続
+      - "8080:80" # ホストの8080ポートにアクセスすると、コンテナのApacheに接続
     volumes:
       - .:/var/www/html
     depends_on:

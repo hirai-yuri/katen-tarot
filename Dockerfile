@@ -12,3 +12,6 @@ COPY . /var/www/html/
 
 # Apacheの設定でmod_rewriteを有効にする
 RUN a2enmod rewrite
+
+# Dockerfile example to set DocumentRoot
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' /etc/apache2/sites-available/000-default.conf
