@@ -16,6 +16,7 @@ $reason = $_POST['reason'];
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@ $reason = $_POST['reason'];
 </head>
 
 <body>
-	<form action="Q&A.php" method="post" class="text-from">
+	<form action="Q&A.php" method="post" class="text-from" name="form">
 		<h2>お問い合わせ内容確認</h2>
 		<div class="form-area">
 			<p>名前</p>
@@ -43,12 +44,16 @@ $reason = $_POST['reason'];
 		</div>
 		<div class="form-area">
 			<input type='button' onclick='history.back()' value='戻る' class="btn-border">
-			<input type="submit" name="lord" value="送信" class="btn-border" id="Flere210">
+			<input type="submit" id="Flere210" name="lord" value="送信" class="btn-border">
+			<div id="loading">
+				<img src="../svg/829.svg" alt="太極図">
+			</div>
 			<input type="hidden" name="name" value="<?php echo $name; ?>">
 			<input type="hidden" name="Email" value="<?php echo $Email; ?>">
 			<input type="hidden" name="reason" value="<?php echo $reason; ?>">
 			<input type="hidden" name="address" value="<?php echo $address; ?>">
 		</div>
+
 	</form>
 	<script src="../js/Flere.js"></script>
 </body>

@@ -1,6 +1,12 @@
 'use strict';
-window.onload = function() {
-  document.getElementsById('Flere210').addEventListener('click', function() {
-    this.disabled = true;
-  });
+
+
+
+document.getElementById('Flere210').onclick=function(event){
+  event.preventDefault();//タグの動作をキャンセルするメソッド。
+  let ele = document.getElementById('loading');
+  ele.style.display = 'block';
+  document.form.submit();
+
+
 }
