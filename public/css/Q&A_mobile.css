@@ -76,7 +76,7 @@ input[name="submit"] {
   padding-right: 10px;
 }
 /*SVGの奴*/
-#loading img{
+#loading img {
   position: fixed;
   text-align: center;
   top: 0;
@@ -88,9 +88,8 @@ input[name="submit"] {
   height: 150px;
   z-index: 9999;
 }
-#loading{
+#loading {
   display: none;
-  
 }
 #loading_logo {
   position: absolute;
