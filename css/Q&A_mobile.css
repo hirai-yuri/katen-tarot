@@ -81,7 +81,6 @@ input[name="submit"] {
 }
 /*SVGの奴*/
 #loading img{
-  /* display: none; */
   position: fixed;
   text-align: center;
   top: 0;
@@ -91,7 +90,6 @@ input[name="submit"] {
   margin: auto;
   width: 150px;
   height: 150px;
-  /* background-color: rgba(0,0,0,0.5); */
   z-index: 9999;
 }
 #loading{

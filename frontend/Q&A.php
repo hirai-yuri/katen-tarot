@@ -1,4 +1,3 @@
-<!-- <link rel="stylesheet" href="../css/confirm.css"> -->
 <link rel="stylesheet" href="../css/Q&A_mobile.css">
 <link rel="stylesheet" href="../css/Q&A_web.css">
 <?php
@@ -39,15 +38,6 @@ EOF;
 $headers = "From: {$Mail}\nReply-To: {$Mail}\nContent-Type: text/plain;";
 //メール送信
 mb_send_mail($to, $Mail, $message, $headers);
-//【性別】
-//{$_POST['sex']}
-// if (mb_send_mail($to, $Mail,$message,$headers)) {
-//   echo "メール送信成功です";
-// } elseif (empty($_POST['check_data'])) {
-//   echo "未記入があります。";
-// } else {
-//   echo "メール送信失敗です";
-// }
 ?>
 <!DOCTYPE html>
 <html lang="Ja">
