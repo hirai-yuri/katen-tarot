@@ -1,10 +1,6 @@
 @charset "utf-8";
 
-
-
-
-@media(max-width:390px) {
-
+@media (max-width: 390px) {
   .mailform h2 {
     background-color: #fcfafb;
   }
@@ -19,15 +15,13 @@
   }
 }
 
-@media(max-width:430px) {
-
+@media (max-width: 430px) {
   /* Q&A_a.php */
   .mailform {
     margin-top: 221px;
   }
 }
-@media(max-width:375px) {
-
+@media (max-width: 375px) {
   /* Q&A_a.php */
   body {
     height: 800px;
@@ -35,9 +29,7 @@
   }
 
   .mailform {
-
     margin-top: 159px;
-
   }
 
   /* submitのmargin-leftを無効化 */
@@ -67,10 +59,10 @@
 }
 
 /* web版 */
-@media(min-width:450px) {
+@media (min-width: 450px) {
   body {
     height: 111vh;
-    background-image: url(../img/25_Member-registration画像2.jpg);
+    background-image: url(../images/25_Member-registration画像2.jpg);
     background-size: cover;
     align-items: center;
   }
@@ -88,17 +80,14 @@
   }
 
   .mailform {
-
     margin-top: 250px;
     background-color: #fcfafb;
     padding: 23px;
     width: 480px;
   }
 
-
-
   .tarot-area p .required::after {
-    content: '必須';
+    content: "必須";
     font-size: 13px;
     color: crimson;
     margin-left: 10px;
@@ -107,15 +96,11 @@
   textarea {
     width: 470px;
     height: 220px;
-
   }
 
   #submit {
-
     margin-left: 158px;
   }
-
-
 
   /* confirm.php,Q&A.php */
   .text-from {
@@ -148,11 +133,9 @@
     margin-top: 450px;
   }
 
-
   .final-fool p {
     font-size: 20px;
     height: 60px;
     width: 300px;
   }
-
 }

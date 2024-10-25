@@ -17,7 +17,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-  <link rel="stylesheet" href="./css/APP.css" />
+  <link rel="stylesheet" href="./css/app.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"

@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require '../config/db_connection.php';
+
 // エラーログを有効化し、ログファイルに出力
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -9,21 +11,6 @@ error_reporting(E_ALL);
 // エラーログの出力先を指定
 ini_set('log_errors', 1);
 ini_set('error_log', '/path_to_your_logs/php_errors.log'); // ログファイルのパスを指定
-
-$servername = "db";
-$username = "test";
-$password = "testpass";
-$dbname = "tarot_db";
-
-
-// データベース接続
-$conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset('utf8mb4');
-
-// 接続エラーのチェック
-if ($conn->connect_error) {
-  die("接続失敗: " . $conn->connect_error);
-}
 
 // セッションから user_id を取得
 if (!isset($_SESSION['user_id'])) {
@@ -51,21 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tarotResult = $conn->real_escape_string($data['tarot_result']);
     $tarotType = $conn->real_escape_string($data['tarot_type']);
 
-    // // ユーザー名を users テーブルから取得
-    // $sql = "SELECT user_name FROM users WHERE user_id = ?";
-    // $stmt = $conn->prepare($sql);
-    // $stmt->bind_param("i", $user_id);
-    // $stmt->execute();
-    // $stmt->bind_result($userName);
-    // $stmt->fetch();
-    // $stmt->close();
-
-    // // ユーザー名が取得できない場合のエラー処理
-    // if (!$userName) {
-    //   echo json_encode(['success' => false, 'error' => 'ユーザー名が見つかりません。']);
-    //   exit();
-    // }
-
     // 画像データの処理
     $imgData = str_replace('data:image/jpeg;base64,', '', $imgData);
     $imgData = str_replace(' ', '+', $imgData);
@@ -75,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $filename = 'tarot_result_' . time() . '.jpg';
 
     // 画像を保存し、失敗した場合はエラーログに記録
-    $filePath = '../images/' . $filename;
+    $filePath = '../storage/images/' . $filename;
     if (file_put_contents($filePath, $decodedData) === false) {
       error_log("Failed to save image: " . $filename); // 画像保存エラーのログ出力
       echo json_encode(['success' => false, 'error' => '画像の保存に失敗しました。']);

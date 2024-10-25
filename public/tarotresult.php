@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../backend/db_connection.php';
+require '../config/db_connection.php';
 
 // ユーザーがログインしているか確認
 if (!isset($_SESSION['user_id'])) {
@@ -63,9 +63,7 @@ $conn->close();
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/pc-style.css" />
-
+    <link rel="stylesheet" href="./css/app.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
@@ -77,15 +75,12 @@ $conn->close();
 
     <div class="page">
         <!-- <h1>占い結果</h1> -->
-
         <?php if (empty($results)): ?>
             <p>まだ占い結果はありません。</p>
         <?php else: ?>
             <table border="1">
                 <tr>
                     <th colspan="2">結果</th>
-                    <!-- <th>画像</th> -->
-                    <!-- <th>日時</th> -->
                 </tr>
                 <?php foreach ($results as $result): ?>
                     <tr>
@@ -101,9 +96,6 @@ $conn->close();
                                                     echo htmlspecialchars($date->format('Y年n月j日'), ENT_QUOTES, 'UTF-8');
                                                     ?></div>
                         </td>
-
-
-
                         <td>
                             <!-- 削除対象IDをdata属性に含める -->
                             <img src="<?php echo htmlspecialchars($result['image_path'], ENT_QUOTES, 'UTF-8'); ?>"
@@ -148,8 +140,8 @@ $conn->close();
         </div>
     </div>
 
-    <img src="../img/占い結果猫画像.png" alt="" id="neko">
-    <div class="return"><a href="./index.php">トップページに戻る</a></div>
+    <img src="./images/占い結果猫画像.png" alt="" id="neko">
+    <div class="return"><a href="./top.php">トップページに戻る</a></div>
 
     <script>
         var modal = document.getElementById("imgModal");

@@ -45,7 +45,7 @@ function generateCards(displayId) {
     card.className = "card";
     card.dataset.id = i; // カードIDを設定
     const img = document.createElement("img");
-    img.src = "../images/rowsen_cross.jpg"; // 画像パスを設定
+    img.src = "./images/rowsen_cross.jpg"; // 画像パスを設定
     img.alt = "tarot card";
     card.appendChild(img);
     displayElement.appendChild(card);

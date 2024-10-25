@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../backend/db_connection.php';
+require '../config/db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->execute()) {
           // 登録成功、ログイン状態にしてリダイレクト
           $_SESSION['user_id'] = $stmt->insert_id; // 登録されたユーザーIDをセッションに保存
-          header("Location: ./index.php"); // index.phpにリダイレクト
+          header("Location: ./top.php"); // top.phpにリダイレクト
           exit();
         } else {
           $error = "登録に失敗しました。もう一度お試しください。";
@@ -58,9 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/pc-style.css" />
-
+  <link rel="stylesheet" href="./css/app.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"

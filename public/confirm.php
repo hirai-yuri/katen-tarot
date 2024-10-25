@@ -1,6 +1,3 @@
-<!-- <link rel="stylesheet" href="../css/confirm.css"> -->
-<link rel="stylesheet" href="../css/Q&A_mobile.css">
-<link rel="stylesheet" href="../css/Q&A_web.css">
 <?php
 //直リンクされた場合index.phpにリダイレクト
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
@@ -16,10 +13,14 @@ $reason = $_POST['reason'];
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>確認画面</title>
+	<!-- <link rel="stylesheet" href="../css/confirm.css"> -->
+	<link rel="stylesheet" href="./css/Q&A_mobile.css">
+	<link rel="stylesheet" href="./css/Q&A_web.css">
 </head>
 
 <body>
@@ -50,7 +51,7 @@ $reason = $_POST['reason'];
 			<input type="hidden" name="address" value="<?php echo $address; ?>">
 		</div>
 	</form>
-	<script src="../js/Flere.js"></script>
+	<script src="./js/Flere.js"></script>
 </body>
 
 </html>

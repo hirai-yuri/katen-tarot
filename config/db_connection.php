@@ -1,7 +1,12 @@
 <?php
-$servername = "db";
-$username = "test";
-$password = "testpass";
+// $servername = "db";
+// $username = "test";
+// $password = "testpass";
+// $dbname = "tarot_db";
+
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "tarot_db";
 
 // データベース接続

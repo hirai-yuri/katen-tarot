@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../backend/db_connection.php';
+require '../config/db_connection.php';
 
 // ユーザーがログインしているか確認
 if (!isset($_SESSION['user_id'])) {

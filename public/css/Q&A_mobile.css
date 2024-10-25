@@ -10,7 +10,7 @@
 body {
   height: 100vh;
   width: 100%;
-  background-image: url(../img/33_R_Home画像NEW.jpg);
+  background-image: url(../images/33_R_Home画像NEW.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   display: flex;
@@ -28,7 +28,7 @@ body {
 
 /* 必須条件 */
 .tarot-area p .required::after {
-  content: '必須';
+  content: "必須";
   font-size: 11px;
   color: crimson;
   margin-left: 10px;
@@ -44,10 +44,8 @@ body {
   padding-right: 10px;
 }
 
-
 .tarot-area .mailform {
   margin-top: 225px;
-
 }
 
 .mailform h2 {
@@ -60,13 +58,11 @@ textarea {
   height: 212px;
   line-height: 2;
   overflow-y: scroll;
-
 }
 
 /* ボタンプログラム */
 #submit {
   margin-left: 83px;
-
 }
 
 input[name="submit"] {
@@ -97,7 +93,6 @@ input[name="submit"] {
   border: 2px solid #000;
 }
 
-
 .btn-border {
   display: inline-block;
   text-align: center;
@@ -110,14 +105,13 @@ input[name="submit"] {
   font-weight: bold;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: .4s;
-
+  transition: 0.4s;
 }
 
 .btn-border:hover {
   background-color: #c9171e;
   border-color: #ba2623;
-  color: #FFF;
+  color: #fff;
 }
 
 /*Q&A.php*/
