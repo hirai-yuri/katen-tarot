@@ -1,3 +1,6 @@
+<!-- <link rel="stylesheet" href="../css/confirm.css"> -->
+<link rel="stylesheet" href="./css/Q&A_mobile.css">
+<link rel="stylesheet" href="./css/Q&A_web.css">
 <?php
 //直リンクされた場合index.phpにリダイレクト
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
@@ -18,9 +21,6 @@ $reason = $_POST['reason'];
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>確認画面</title>
-	<!-- <link rel="stylesheet" href="../css/confirm.css"> -->
-	<link rel="stylesheet" href="./css/Q&A_mobile.css">
-	<link rel="stylesheet" href="./css/Q&A_web.css">
 </head>
 
 <body>
