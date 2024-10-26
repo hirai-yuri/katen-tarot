@@ -37,6 +37,7 @@ services:
 
 volumes:
   db_data:
+  images_data: # 画像保存用のボリューム
 
 networks:
   app-network:
