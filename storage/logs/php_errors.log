@@ -1,0 +1,39 @@
+[26-Oct-2024 08:38:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/config/db_connection.php:13
+Stack trace:
+#0 /var/www/html/config/db_connection.php(13): mysqli->__construct('localhost', 'root', '', 'tarot_db')
+#1 /var/www/html/public/login.php(3): require('/var/www/html/c...')
+#2 {main}
+  thrown in /var/www/html/config/db_connection.php on line 13
+[26-Oct-2024 08:38:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/config/db_connection.php:13
+Stack trace:
+#0 /var/www/html/config/db_connection.php(13): mysqli->__construct('localhost', 'root', '', 'tarot_db')
+#1 /var/www/html/public/save_image.php(4): require('/var/www/html/c...')
+#2 {main}
+  thrown in /var/www/html/config/db_connection.php on line 13
+[26-Oct-2024 08:38:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /var/www/html/config/db_connection.php:13
+Stack trace:
+#0 /var/www/html/config/db_connection.php(13): mysqli->__construct('localhost', 'root', '', 'tarot_db')
+#1 /var/www/html/public/login.php(3): require('/var/www/html/c...')
+#2 {main}
+  thrown in /var/www/html/config/db_connection.php on line 13
+[26-Oct-2024 09:37:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'tarot_db.users' doesn't exist in /var/www/html/public/login.php:13
+Stack trace:
+#0 /var/www/html/public/login.php(13): mysqli->prepare('SELECT user_id,...')
+#1 {main}
+  thrown in /var/www/html/public/login.php on line 13
+[26-Oct-2024 09:41:41 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Connection refused in /var/www/html/config/db_connection.php:13
+Stack trace:
+#0 /var/www/html/config/db_connection.php(13): mysqli->__construct('db', 'test', 'testpass', 'tarot_db')
+#1 /var/www/html/public/login.php(3): require('/var/www/html/c...')
+#2 {main}
+  thrown in /var/www/html/config/db_connection.php on line 13
+[26-Oct-2024 11:07:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'tarot_db.users' doesn't exist in /var/www/html/public/login.php:13
+Stack trace:
+#0 /var/www/html/public/login.php(13): mysqli->prepare('SELECT user_id,...')
+#1 {main}
+  thrown in /var/www/html/public/login.php on line 13
+[26-Oct-2024 11:11:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'tarot_db.users' doesn't exist in /var/www/html/public/login.php:13
+Stack trace:
+#0 /var/www/html/public/login.php(13): mysqli->prepare('SELECT user_id,...')
+#1 {main}
+  thrown in /var/www/html/public/login.php on line 13

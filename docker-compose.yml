@@ -12,6 +12,11 @@ services:
       - db
     networks:
       - app-network
+    environment:
+      DB_HOST: db
+      DB_USER: test
+      DB_PASS: testpass
+      DB_NAME: tarot_db
 
   db:
     image: mysql:8.0
