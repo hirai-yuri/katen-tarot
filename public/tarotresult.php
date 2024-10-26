@@ -140,7 +140,7 @@ $conn->close();
         </div>
     </div>
 
-    <img src="./images/占い結果猫画像.png" alt="" id="neko">
+    <img src="./img/占い結果猫画像.png" alt="" id="neko">
     <div class="return"><a href="./top.php">トップページに戻る</a></div>
 
     <script>

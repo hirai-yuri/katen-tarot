@@ -33,10 +33,10 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 
     <div class="tarot-button" id="tarot-button">
       <div onclick="showTarot('tarot1', 'tarot2')" id="tarot-button1">
-        <img src="./images/今日の運勢ボタン.png" alt="今日の運勢">
+        <img src="./img/今日の運勢ボタン.png" alt="今日の運勢">
       </div>
       <div onclick="showTarot('tarot2', 'tarot1')" id="tarot-button2">
-        <img src="./images/恋愛運ボタン.png" alt="恋愛運">
+        <img src="./img/恋愛運ボタン.png" alt="恋愛運">
       </div>
     </div>
 
@@ -45,7 +45,7 @@ $username1 = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
       <div id="tarot-text" class="tarot-text"></div>
       <span class="cursor"></span>
     </div>
-    <img src="./images/KATEN画像.png" alt="KATEN画像" id="katen-img" class="fade-in">
+    <img src="./img/KATEN画像.png" alt="KATEN画像" id="katen-img" class="fade-in">
 
   </div>
 

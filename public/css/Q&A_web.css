@@ -62,7 +62,7 @@
 @media (min-width: 450px) {
   body {
     height: 111vh;
-    background-image: url(../images/25_Member-registration画像2.jpg);
+    background-image: url(../img/25_Member-registration画像2.jpg);
     background-size: cover;
     align-items: center;
   }
