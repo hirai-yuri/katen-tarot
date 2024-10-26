@@ -23,4 +23,4 @@ RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' /et
     && echo '<Directory /var/www/html/config>\n    Require all denied\n</Directory>' >> /etc/apache2/sites-available/000-default.conf
 
     # ServerNameを設定して警告を抑制
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+RUN echo "ServerName db" >> /etc/apache2/apache2.conf
