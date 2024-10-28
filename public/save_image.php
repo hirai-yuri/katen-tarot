@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+header('Content-Type: application/json; charset=utf-8');
 require '../config/db_connection.php';
 
 // エラーログを有効化し、ログファイルに出力
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $filename = 'tarot_result_' . time() . '.jpg';
 
     // 画像を保存し、失敗した場合はエラーログに記録
-    $filePath = '../storage/images/' . $filename;
+    $filePath = '/var/www/html/storage/images/' . $filename;
     if (file_put_contents($filePath, $decodedData) === false) {
       error_log("Failed to save image: " . $filename); // 画像保存エラーのログ出力
       echo json_encode(['success' => false, 'error' => '画像の保存に失敗しました。']);

@@ -65,9 +65,17 @@ if (isset($_GET['userName'])) {
       <div class="main-text" id="main-text"></div>
       <span class="cursor"></span>
     </div>
-    <img src="./images/main猫画像.jpg" alt="猫画像">
-  </div>
 
+    <img src="./img/main猫画像.jpg" alt="猫画像">
+
+
+
+
+  </div>
+  <div class="blog">
+    <a href="https://t1029n.wordpress.com/"><img src="./img/KATENの部屋画像.jpg" alt=""></a>
+    <p>KATENの部屋をのぞく</p>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // セッションから取得したユーザー名をJavaScriptに渡す

@@ -3,7 +3,7 @@ const cardData = [
   {
     id: 0,
     name: "The Fool",
-    img: "./images/0_The fool.jpg",
+    img: "./img/0_The fool.jpg",
     meaning: "愚者(ぐしゃ)",
     keyword: "自由・可能性・楽天的・自分勝手",
     description1:
@@ -14,7 +14,7 @@ const cardData = [
   {
     id: 1,
     name: "The Magician",
-    img: "./images/1_The Magus.jpg",
+    img: "./img/1_The Magus.jpg",
     meaning: "魔術師(まじゅつし)",
     keyword: "コミュニケーション・自己実現・集中力・成功",
     description1:
@@ -25,7 +25,7 @@ const cardData = [
   {
     id: 2,
     name: "The Priestess",
-    img: "./images/2_The Priestess.jpg",
+    img: "./img/2_The Priestess.jpg",
     meaning: "女祭司(じょさいし)",
     keyword: "感受性、純粋、冷静さ、直観力",
     description1:
@@ -36,7 +36,7 @@ const cardData = [
   {
     id: 3,
     name: "The Empress",
-    img: "./images/3_The Empress.jpg",
+    img: "./img/3_The Empress.jpg",
     meaning: "女帝(じょてい)",
     keyword: "母性愛・愛・幸福",
     description1:
@@ -47,7 +47,7 @@ const cardData = [
   {
     id: 4,
     name: "The Emperor",
-    img: "./images/4_The Emperor.jpg",
+    img: "./img/4_The Emperor.jpg",
     meaning: "皇帝(こうてい)",
     keyword: "大胆な行動・責任",
     description1:
@@ -58,7 +58,7 @@ const cardData = [
   {
     id: 5,
     name: "The Hierophant",
-    img: "./images/5_The Hierophant.jpg",
+    img: "./img/5_The Hierophant.jpg",
     meaning: "神官(しんかん)",
     keyword: "包容力、受け入れる心の広さ、落ち着き",
     description1:
@@ -69,7 +69,7 @@ const cardData = [
   {
     id: 6,
     name: "The Lovers",
-    img: "./images/6_The Lovers.jpg",
+    img: "./img/6_The Lovers.jpg",
     meaning: "恋人(こいびと)",
     keyword: "恋愛・分析・直観",
     description1:
@@ -80,7 +80,7 @@ const cardData = [
   {
     id: 7,
     name: "The Chariot",
-    img: "./images/7_The Chariot.jpg",
+    img: "./img/7_The Chariot.jpg",
     meaning: "戦車(せんしゃ)",
     keyword: "飛躍、ハイパワー、挑戦する、積極的に動く",
     description1:
@@ -91,7 +91,7 @@ const cardData = [
   {
     id: 8,
     name: "Adjustment",
-    img: "./images/8_Adjustment.jpg",
+    img: "./img/8_Adjustment.jpg",
     meaning: "調整(ちょうせい)",
     keyword: "法則、規律、公平、バランス、ただ見守ること",
     description1:
@@ -102,7 +102,7 @@ const cardData = [
   {
     id: 9,
     name: "The Hermit",
-    img: "./images/9_The Hermit.jpg",
+    img: "./img/9_The Hermit.jpg",
     meaning: "隠者(いんじゃ)",
     keyword: "孤独、精神的自由、癒し",
     description1:
@@ -113,7 +113,7 @@ const cardData = [
   {
     id: 10,
     name: "Fortune",
-    img: "./images/10_Fortune.jpg",
+    img: "./img/10_Fortune.jpg",
     meaning: "運命(うんめい)",
     keyword: "流れに身を任せる、幸運、チャンス到来",
     description1:
@@ -124,7 +124,7 @@ const cardData = [
   {
     id: 11,
     name: "Last",
-    img: "./images/11_Lust.jpg",
+    img: "./img/11_Lust.jpg",
     meaning: "欲望(よくぼう)",
     keyword: "欲望、本能、生命力 、情熱、力の発揮",
     description1:
@@ -135,7 +135,7 @@ const cardData = [
   {
     id: 12,
     name: "The Hanged Man",
-    img: "./images/12_The Hanged Man.jpg",
+    img: "./img/12_The Hanged Man.jpg",
     meaning: "吊るされた男",
     keyword: "犠牲、手放す、我慢、洗礼",
     description1:
@@ -146,7 +146,7 @@ const cardData = [
   {
     id: 13,
     name: "The Death",
-    img: "./images/13_Death.jpg",
+    img: "./img/13_Death.jpg",
     meaning: "死神(しにがみ)",
     keyword: "生と死、変化、終わりと始まり、再生",
     description1:
@@ -157,7 +157,7 @@ const cardData = [
   {
     id: 14,
     name: "Art",
-    img: "./images/14_Art.jpg",
+    img: "./img/14_Art.jpg",
     meaning: "技(わざ)",
     keyword: "分解と統合、実現、変化",
     description1:
@@ -168,7 +168,7 @@ const cardData = [
   {
     id: 15,
     name: "The Devil",
-    img: "./images/15_The Devil.jpg",
+    img: "./img/15_The Devil.jpg",
     meaning: "悪魔(あくま)",
     keyword: "誘惑、執着、野望、望むこと",
     description1:
@@ -179,7 +179,7 @@ const cardData = [
   {
     id: 16,
     name: "The Tower",
-    img: "./images/16_The Tower.jpg",
+    img: "./img/16_The Tower.jpg",
     meaning: "塔(とう)",
     keyword: "事故、災難、悲劇、突然の崩壊",
     description1:
@@ -190,7 +190,7 @@ const cardData = [
   {
     id: 17,
     name: "The Star",
-    img: "./images/17_The Star.jpg",
+    img: "./img/17_The Star.jpg",
     meaning: "星",
     keyword: "未来の希望、信頼、リラクゼーション",
     description1:
@@ -201,7 +201,7 @@ const cardData = [
   {
     id: 18,
     name: "The Moon",
-    img: "./images/18_The Moon.jpg",
+    img: "./img/18_The Moon.jpg",
     meaning: "月",
     keyword: "精神的不安、ハッキリしない関係、安心できない恋模様",
     description1:
@@ -212,7 +212,7 @@ const cardData = [
   {
     id: 19,
     name: "The Sun",
-    img: "./images/19_The Sun.jpg",
+    img: "./img/19_The Sun.jpg",
     meaning: "太陽",
     keyword: "喜び、友情、達成",
     description1:
@@ -223,7 +223,7 @@ const cardData = [
   {
     id: 20,
     name: "The Aeon",
-    img: "./images/20_The Aeon.jpg",
+    img: "./img/20_The Aeon.jpg",
     meaning: "永劫(えいごう)",
     keyword: "過去へ戻る、成功、再誕生、ターニングポイント",
     description1:
@@ -234,7 +234,7 @@ const cardData = [
   {
     id: 21,
     name: "The Universe",
-    img: "./images/21_The Universe.jpg",
+    img: "./img/21_The Universe.jpg",
     meaning: "宇宙",
     keyword: "完成、達成、開花",
     description1:

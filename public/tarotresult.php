@@ -98,7 +98,7 @@ $conn->close();
                         </td>
                         <td>
                             <!-- 削除対象IDをdata属性に含める -->
-                            <img src="<?php echo htmlspecialchars($result['image_path'], ENT_QUOTES, 'UTF-8'); ?>"
+                            <img src="get_image.php?id=<?php echo htmlspecialchars($result['tarot_result_id'], ENT_QUOTES, 'UTF-8'); ?>"
                                 alt="Tarot result"
                                 width="100"
                                 class="tarot-image"
@@ -140,7 +140,7 @@ $conn->close();
         </div>
     </div>
 
-    <img src="./images/占い結果猫画像.png" alt="" id="neko">
+    <img src="./img/占い結果猫画像.png" alt="" id="neko">
     <div class="return"><a href="./top.php">トップページに戻る</a></div>
 
     <script>

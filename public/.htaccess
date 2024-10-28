@@ -4,11 +4,10 @@ DirectoryIndex index.php
 # URLの書き換えを有効にする
 RewriteEngine On
 
-# 全てのリクエストをindex.phpにリダイレクトする
+# 静的ファイルのリクエストを除外（CSS, JS, 画像ファイルなど）
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [L,QSA]
-
+RewriteRule !\.(css|js|jpg|jpeg|png|gif|svg)$ index.php [L,QSA]
 
 # PHPのエラーメッセージ表示を無効化
 php_flag display_errors Off
@@ -17,4 +16,6 @@ php_flag display_errors Off
 php_flag log_errors On
 
 # エラーログの保存場所を指定（storage/logsディレクトリに保存）
-php_value error_log /var/www/my-app/storage/logs/php_errors.log
+php_value error_log /var/www/html/storage/logs/php_errors.log
+
+
