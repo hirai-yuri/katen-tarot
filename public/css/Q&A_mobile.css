@@ -60,7 +60,7 @@ textarea {
   overflow-y: scroll;
 }
 
-/* ボタンプログラム */
+/* ボタンプログラム Q&A_a.php*/
 #submit {
   margin-left: 83px;
 }
@@ -125,7 +125,7 @@ input[name="submit"] {
     transform: translateY(-100px);
   }
 }
-
+/*SVGはここまで*/
 .text-from h2 {
   font-size: 20px;
 }
@@ -142,7 +142,7 @@ input[name="submit"] {
   padding: 15px;
   border: 2px solid #000;
 }
-
+/*共通　ボタンプログラム*/
 .btn-border {
   display: inline-block;
   text-align: center;
