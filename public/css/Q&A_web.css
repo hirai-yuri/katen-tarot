@@ -56,6 +56,12 @@
   .form-area .btn-border {
     margin: 10px 30px;
   }
+  .final-fool h2{
+    margin-left: 50px;
+  }
+  .return-top{
+    margin-left: 104px;
+  }
 }
 
 /* web版 */
@@ -128,14 +134,20 @@
     height: 200px;
     overflow-y: scroll;
   }
-
+/* Q&A.php */
   .final-fool {
     margin-top: 450px;
+  }
+  .final-fool h2{
+    margin-left: 98px;
   }
 
   .final-fool p {
     font-size: 20px;
     height: 60px;
-    width: 300px;
+    width: 440px;
+  }
+  .return-top{
+    margin-left: 140px;
   }
 }
