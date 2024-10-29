@@ -6,7 +6,7 @@ document.getElementById('Flere210').onclick=function(event){
   document.form.submit();
 }
 $(window).on('load',function(){
-  $("#loading").delay(18000);
+  $("#loading").delay(17300);
   //ローディング画面を1.2秒（1200ms）待機してからフェードアウト
 });
 var bar = new ProgressBar.Line(loading_text, {//id名を指定
