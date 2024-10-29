@@ -44,7 +44,6 @@ mb_send_mail($to, $Mail, $message, $headers);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<title>完了画面</title>
-	<!-- <link rel="stylesheet" href="../css/confirm.css"> -->
 	<link rel="stylesheet" href="./css/Q&A_mobile.css">
 	<link rel="stylesheet" href="./css/Q&A_web.css">
 </head>
