@@ -55,6 +55,9 @@ if (isset($_GET['userName'])) {
         <a href="./login.php">
           <button class="login-button">ログイン</button>
         </a>
+        <a href="./register.php">
+          <button class="login-button">会員登録</button>
+        </a>
         <a href="./index.php">
           <button class="login-button">名前変更</button>
         </a>

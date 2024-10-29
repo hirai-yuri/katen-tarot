@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" name="password" id="password" required>
     <button type="submit">ログイン</button>
   </form>
-  <a href="./register.php">新規登録はこちら</a>
+  <a href="./register.php">会員登録はこちら</a>
   <a href="./top.php">戻る</a>
 </body>
 

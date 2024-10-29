@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新規登録</title>
+  <title>会員登録</title>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body class="login">
-  <h1>新規登録</h1>
+  <h1>会員登録</h1>
   <?php if (isset($error)): ?>
     <p style="color: red;"><?php echo $error; ?></p>
   <?php endif; ?>
