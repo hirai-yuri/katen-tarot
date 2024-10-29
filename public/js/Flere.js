@@ -5,9 +5,8 @@ document.getElementById('Flere210').onclick=function(event){
   ele.style.display = 'block';
   document.form.submit();
 }
-
-// $(window).on('load',function(){
-//   $("#loading").delay(12000).fadeOut('slow');
+$(window).on('load',function(){
+  $("#loading").delay(17300);
   //ローディング画面を1.2秒（1200ms）待機してからフェードアウト
 // });
 var bar = new ProgressBar.Line(loading_text, {//id名を指定
@@ -31,8 +30,5 @@ var bar = new ProgressBar.Line(loading_text, {//id名を指定
     bar.setText(Math.round(bar.value() * 100) + ' %'); //テキストの数値
   }
 });
-// bar.animate(1.0, function () {
+bar.animate(1.0, function () {});
   //バーを描画する割合を指定します 1.0 なら100%まで描画
-  // $("#loading_text").delay(0).fadeOut('fast');
-  //アニメーションが終わったら#loading_textをフェードアウト
-// });

@@ -91,6 +91,7 @@ input[name="submit"] {
 #loading {
   display: none;
 }
+/*  */
 #loading_logo {
   position: absolute;
   top: 50%;

@@ -56,7 +56,6 @@ $reason = $_POST['reason'];
 			<input type="hidden" name="reason" value="<?php echo $reason; ?>">
 			<input type="hidden" name="address" value="<?php echo $address; ?>">
 		</div>
-
 	</form>
 	<script src="./js/jquery-3.7.1.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
