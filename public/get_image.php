@@ -21,6 +21,7 @@ $stmt->fetch();
 $stmt->close();
 $conn->close();
 
+
 if ($image_path && file_exists($image_path)) {
     // MIMEタイプを設定して画像を返す
     header("Content-Type: image/jpeg"); // 画像形式に応じて調整
