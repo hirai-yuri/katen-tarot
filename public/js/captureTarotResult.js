@@ -82,15 +82,15 @@ function captureTarotResult(tarotPageId) {
         })
         .then((data) => {
           if (data.success) {
-            alert("画像を保存しました！");
+            console.log("画像を保存しました！");
           } else {
             console.error("サーバーエラー:", data.error); // サーバーのエラーメッセージを表示
-            alert("エラーが発生しました。");
+            console.log("エラーが発生しました。");
           }
         })
         .catch((error) => {
           console.error("エラー:", error);
-          alert("リクエストに失敗しました。");
+          console.log("リクエストに失敗しました。");
         });
     });
   }, 1000); // 1000ミリ秒（1秒後にキャプチャ）、アニメーション時間に合わせて調整
@@ -111,7 +111,7 @@ function downloadTarotResultImage() {
     // ダウンロード後、リンクをDOMから削除
     document.body.removeChild(downloadLink);
   } else {
-    alert("画像がまだ生成されていません。まず画像を生成してください。");
+    console.log("画像がまだ生成されていません。まず画像を生成してください。");
   }
 }
 
@@ -150,6 +150,6 @@ showModalButton.addEventListener("click", () => {
   if (imgData) {
     showDownloadModal(imgData);
   } else {
-    alert("画像がまだ生成されていません。まず画像を生成してください。");
+    console.log("画像がまだ生成されていません。まず画像を生成してください。");
   }
 });
