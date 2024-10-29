@@ -14,13 +14,12 @@ $image_id = (int)$_GET['id'];
 // データベースから画像パスを取得
 $sql = "SELECT image_path FROM tarot_results WHERE id = ? AND user_id = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ii", $image_id, $_SESSION['user_id']); // ユーザーIDもチェックしてセキュリティを確保
+$stmt->bind_param("ii", $image_id, $_SESSION['user_id']); // ユーザーIDもチェック、セキュリティを確保
 $stmt->execute();
 $stmt->bind_result($image_path);
 $stmt->fetch();
 $stmt->close();
 $conn->close();
-
 
 if ($image_path && file_exists($image_path)) {
     // MIMEタイプを設定して画像を返す
