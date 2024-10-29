@@ -36,7 +36,7 @@ try {
       throw new Exception("必要なデータが不足しています。");
     }
     // 画像データの処理
-    $imgData = str_replace('data:image/jpeg;base64,', '', $imgData);
+    $imgData = str_replace('data:image/jpeg;base64,', '', $data['imgData']);
     $imgData = str_replace(' ', '+', $imgData);
     $decodedData = base64_decode($imgData);
 

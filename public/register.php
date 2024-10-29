@@ -84,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit">新規登録</button>
   </form>
   <a href="./login.php">すでにアカウントをお持ちの方はこちら</a>
+  <a href="./top.php">戻る</a>
 </body>
 
 </html>
