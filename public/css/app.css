@@ -99,7 +99,7 @@ button[type="submit"] {
   background-size: 100%;
   /* background-position: center; 画像の位置を中央に */
   background-repeat: no-repeat; /* 繰り返さない */
-  background-color: #fcfafb;
+  background-color: #ffffff;
 }
 .login-button-area {
   height: 150px;
@@ -147,7 +147,7 @@ button[type="submit"] {
   /* background-position: center; 画像の位置を中央に */
   background-repeat: no-repeat; /* 繰り返さない */
   position: relative;
-  background-color: #fcfafb;
+  background-color: #ffffff;
 }
 .tarot-text-box {
   width: 330px;
@@ -557,7 +557,7 @@ h1 {
   /* 画像を画面全体に表示する */
   background-position: bottom;
   background-repeat: no-repeat; /* 繰り返さない */
-  background-color: #fcfafb;
+  background-color: #ffffff;
   background-attachment: fixed;
   font-size: 10px;
   color: #000;
