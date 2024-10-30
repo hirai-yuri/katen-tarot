@@ -130,6 +130,7 @@ function splitIntoBundles(cards, numBundles) {
 function arrangeBundles(bundles) {
   const bundleOffsets = [-125, 0, 125];
   const clickedBundles = [];
+  const liftAmount = -20; // 上にずらす距離
 
   bundles.forEach((bundle, index) => {
     const offsetX = bundleOffsets[index];
@@ -142,10 +143,21 @@ function arrangeBundles(bundles) {
       // カードクリック時の処理
       card.addEventListener("click", () => {
         if (!clickedBundles.includes(bundle)) {
-          clickedBundles.push(bundle);
-        }
-        card.classList.add("bundle-clicked");
+          // まだ選択されていない場合、選択する
+          clickedBundles.push(bundle); // 配列に追加
 
+          bundle.forEach((card) => {
+            card.classList.add("bundle-clicked"); // 選択スタイル追加
+            card.style.transform = `translate(${offsetX}px, ${liftAmount}px) rotate(0deg)`; // 上にずらす
+          });
+        } else {
+          // クリックされた束がすでに選択されている場合、解除する
+          clickedBundles.splice(clickedBundles.indexOf(bundle), 1); // 配列から削除
+          bundle.forEach((card) => {
+            card.classList.remove("bundle-clicked"); // 選択解除スタイル
+            card.style.transform = `translate(${offsetX}px, 0) rotate(0deg)`; // 元の位置に戻す
+          });
+        }
         // クリックされた束が3つになった時にメッセージ2を表示
         if (clickedBundles.length === 3) {
           stackBundles(clickedBundles);
