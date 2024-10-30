@@ -137,6 +137,10 @@ button[type="submit"] {
 /*  */
 /* タロット占い画面の設定　ここから */
 
+.tarot {
+  height: 100%;
+}
+
 .tarot-main {
   background-image: url(../img/main画像.jpg),
     linear-gradient(to bottom, #f8f8f8, #ffffff);
@@ -400,7 +404,7 @@ h1 {
 .stars {
   position: relative;
   width: 100%; /* 星空の横幅 */
-  height: 100%; /* 星空の縦幅 */
+  height: 100vh; /* 星空の縦幅 */
   background-image: linear-gradient(
     45deg,
     #080f1c,
