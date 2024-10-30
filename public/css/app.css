@@ -99,7 +99,7 @@ button[type="submit"] {
   background-size: 100%;
   /* background-position: center; 画像の位置を中央に */
   background-repeat: no-repeat; /* 繰り返さない */
-  background-color: #ffffff;
+  background: linear-gradient(to bottom, #f8f8f8, #ffffff);
 }
 .login-button-area {
   height: 150px;
@@ -147,7 +147,7 @@ button[type="submit"] {
   /* background-position: center; 画像の位置を中央に */
   background-repeat: no-repeat; /* 繰り返さない */
   position: relative;
-  background-color: #ffffff;
+  background: linear-gradient(to bottom, #f8f8f8, #ffffff);
 }
 .tarot-text-box {
   width: 330px;
