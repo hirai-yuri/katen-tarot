@@ -756,9 +756,9 @@ h1 {
 
 /* 以下、PCの設定 */
 
-@media screen and (min-height: 800px) {
+@media screen and (min-height: 750px) {
   #katen-img {
-    width: 500px;
+    width: 480px;
   }
 }
 
