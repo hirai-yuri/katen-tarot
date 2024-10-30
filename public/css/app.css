@@ -93,8 +93,8 @@ button[type="submit"] {
 /* メインページ */
 
 .main {
-  background-image: linear-gradient(to bottom, #f8f8f8, #ffffff),
-    url("../img/main画像.jpg");
+  background-image: url("../img/main画像.jpg"),
+    linear-gradient(to bottom, #f8f8f8, #ffffff);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
@@ -138,8 +138,8 @@ button[type="submit"] {
 /* タロット占い画面の設定　ここから */
 
 .tarot-main {
-  background-image: linear-gradient(to bottom, #f8f8f8, #ffffff),
-    url(../img/main画像.jpg);
+  background-image: url(../img/main画像.jpg),
+    linear-gradient(to bottom, #f8f8f8, #ffffff);
   background-size: 100%;
   background-repeat: no-repeat; /* 繰り返さない */
   position: relative;
